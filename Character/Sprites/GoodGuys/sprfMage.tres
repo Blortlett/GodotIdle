@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://p1na7ynjh28j"]
+
+[ext_resource type="Texture2D" uid="uid://803qmipc8ecv" path="res://Art/Characters/Heroes/Wizard.png" id="1_fpt4t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cexi"]
+atlas = ExtResource("1_fpt4t")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_144hw"]
+atlas = ExtResource("1_fpt4t")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wffjp"]
+atlas = ExtResource("1_fpt4t")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rasq"]
+atlas = ExtResource("1_fpt4t")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46pac"]
+atlas = ExtResource("1_fpt4t")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j521"]
+atlas = ExtResource("1_fpt4t")
+region = Rect2(500, 0, 100, 100)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cexi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_144hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wffjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rasq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46pac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j521")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]

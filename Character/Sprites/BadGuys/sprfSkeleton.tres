@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://77nb86i1fech"]
+
+[ext_resource type="Texture2D" uid="uid://bb1efir5c0i5r" path="res://Art/Characters/Enemies/Skeleton.png" id="1_up3mv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhmo6"]
+atlas = ExtResource("1_up3mv")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rijc0"]
+atlas = ExtResource("1_up3mv")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7olw"]
+atlas = ExtResource("1_up3mv")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3asf"]
+atlas = ExtResource("1_up3mv")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sbw7"]
+atlas = ExtResource("1_up3mv")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soa81"]
+atlas = ExtResource("1_up3mv")
+region = Rect2(500, 0, 100, 100)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhmo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rijc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7olw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3asf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sbw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soa81")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]

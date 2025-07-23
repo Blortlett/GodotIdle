@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://8vyvaxykm4g4"]
+
+[ext_resource type="PackedScene" uid="uid://b3bd2ccqkh00a" path="res://Inventory/UI/InventoryUI/nInventoryUI.tscn" id="1_x6p71"]
+
+[node name="Node" type="Node"]
+
+[node name="InventoryUI" parent="." instance=ExtResource("1_x6p71")]
+offset_left = -576.0
+offset_top = -323.0
+offset_right = -536.0
+offset_bottom = -283.0
+
+[node name="Camera2D" type="Camera2D" parent="."]

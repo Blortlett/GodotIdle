@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://0luyfwm87ckl"]
+
+[ext_resource type="Script" uid="uid://drm2cbmnkp5fg" path="res://Inventory/UI/InventoryUI/scrSlotUI.gd" id="1_dvaq4"]
+[ext_resource type="Texture2D" uid="uid://c2ua4d1e13ss1" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_Slot01a.png" id="1_fxivn"]
+[ext_resource type="Texture2D" uid="uid://cj3s6gf7cewsn" path="res://Art/Items/Items32x32.png" id="3_47yyq"]
+
+[node name="InvSlotUI" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(30, 30)
+offset_right = 30.0
+offset_bottom = 30.0
+script = ExtResource("1_dvaq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_fxivn")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 0
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="ItemDisplaySprite" type="Sprite2D" parent="CenterContainer/Panel"]
+texture_filter = 1
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_47yyq")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 23)
+layout_mode = 0
+offset_left = -9.0
+offset_top = 3.0
+offset_right = 31.0
+offset_bottom = 26.0
+scale = Vector2(0.6, 0.6)
+text = "99"
+horizontal_alignment = 2
+vertical_alignment = 2

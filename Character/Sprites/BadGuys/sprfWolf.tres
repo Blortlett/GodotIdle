@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://dm2w2d2vhjx6c"]
+
+[ext_resource type="Texture2D" uid="uid://218g3n8tlvog" path="res://Art/Characters/Enemies/Werewolf.png" id="1_lytna"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxpwb"]
+atlas = ExtResource("1_lytna")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t7k3"]
+atlas = ExtResource("1_lytna")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohcd1"]
+atlas = ExtResource("1_lytna")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo1j2"]
+atlas = ExtResource("1_lytna")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgmwg"]
+atlas = ExtResource("1_lytna")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc8vu"]
+atlas = ExtResource("1_lytna")
+region = Rect2(500, 0, 100, 100)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxpwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t7k3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohcd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo1j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgmwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc8vu")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]

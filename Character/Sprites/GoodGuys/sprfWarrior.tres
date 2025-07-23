@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://cfnav5y7dpyq4"]
+
+[ext_resource type="Texture2D" uid="uid://dtql4vk8i0wx3" path="res://Art/Characters/Heroes/Knight.png" id="1_nuuji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e4dv"]
+atlas = ExtResource("1_nuuji")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgt74"]
+atlas = ExtResource("1_nuuji")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s5hx"]
+atlas = ExtResource("1_nuuji")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u60ay"]
+atlas = ExtResource("1_nuuji")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4xci"]
+atlas = ExtResource("1_nuuji")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjdfu"]
+atlas = ExtResource("1_nuuji")
+region = Rect2(500, 0, 100, 100)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e4dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgt74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s5hx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u60ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4xci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjdfu")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]

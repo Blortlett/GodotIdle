@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://ck6sjg3apgjg1"]
+
+[ext_resource type="Texture2D" uid="uid://bw5o1w4ykyhb2" path="res://Art/Characters/Enemies/Slime.png" id="1_km3h6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1fmg"]
+atlas = ExtResource("1_km3h6")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_067aq"]
+atlas = ExtResource("1_km3h6")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peffb"]
+atlas = ExtResource("1_km3h6")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctxp5"]
+atlas = ExtResource("1_km3h6")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1tmb"]
+atlas = ExtResource("1_km3h6")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro20y"]
+atlas = ExtResource("1_km3h6")
+region = Rect2(500, 0, 100, 100)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k1fmg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_067aq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peffb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctxp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1tmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro20y")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]

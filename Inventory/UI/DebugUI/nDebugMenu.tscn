@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://ei8qtpsb0tex"]
+
+[ext_resource type="Script" uid="uid://bxbbabyp5fysh" path="res://Inventory/UI/DebugUI/scrDebugMenu.gd" id="1_fead5"]
+[ext_resource type="Resource" uid="uid://b1hc8degw40i8" path="res://Inventory/Items/apple.tres" id="2_ihfgy"]
+[ext_resource type="Texture2D" uid="uid://coevcludfskv0" path="res://Art/TravelBookUI/AnimatedSprites/Button/UI_TravelBook_Button01a_1.png" id="2_t2lyf"]
+[ext_resource type="Texture2D" uid="uid://cj3s6gf7cewsn" path="res://Art/Items/Items32x32.png" id="3_ihfgy"]
+
+[node name="DebugMenu" type="GridContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+script = ExtResource("1_fead5")
+mItem = ExtResource("2_ihfgy")
+
+[node name="AddApple" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="NinePatchButton" type="NinePatchRect" parent="AddApple"]
+texture_filter = 1
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_t2lyf")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="sprIcon" type="Sprite2D" parent="AddApple/NinePatchButton"]
+position = Vector2(20, 20)
+texture = ExtResource("3_ihfgy")
+region_enabled = true
+
+[connection signal="pressed" from="AddApple" to="." method="_on_add_apple_pressed"]
