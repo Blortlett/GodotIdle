@@ -140,7 +140,7 @@ axis_stretch_vertical = 1
 
 [node name="ActionUI" parent="BookLeftPageSprite" instance=ExtResource("8_20xsb")]
 layout_mode = 1
-offset_left = 85.6707
-offset_top = 67.9878
-offset_right = -83.3292
-offset_bottom = -115.012
+offset_left = 88.4146
+offset_top = 85.061
+offset_right = -80.5853
+offset_bottom = -97.939

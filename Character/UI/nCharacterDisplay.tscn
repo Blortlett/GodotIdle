@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.8, 1.8)
+scale = Vector2(-1.8, 1.8)
 sprite_frames = ExtResource("1_nqcan")
 animation = &"Idle"
 autoplay = "Idle"
