@@ -47,7 +47,7 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 	if (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth <= 0):
 		var Loot: InvItem = mCharacterRegister.KillEnemy();
 		mInventoryUI.inv.insert(Loot);
-		mInventoryUI.EnemyDisplay.StopAnimation();
+		mInventoryUI.EnemyDisplay.PlayDeathAnimation();
 		EndCombat();
 	
 	if (mCharacterRegister.mActiveCharacter.CurrentHealth <= 0):

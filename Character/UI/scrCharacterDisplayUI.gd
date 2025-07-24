@@ -36,8 +36,12 @@ func PlayAttackAnimation():
 	else:
 		DisplaySprite.play("Attack1");
 
+func PlayDeathAnimation():
+	DisplaySprite.play("Die");
+
 func StopAnimation():
 	DisplaySprite.pause();
 
 func SwapToIdleAnimation():
-	DisplaySprite.play("Idle");
+	if (DisplaySprite.animation != "Die"):
+		DisplaySprite.play("Idle");

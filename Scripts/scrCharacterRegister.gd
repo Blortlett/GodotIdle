@@ -17,5 +17,15 @@ func _ready() -> void:
 
 
 func KillEnemy() -> InvItem:
+	StartRespawnDelay();
 	var ItemLoot: InvItem = mActiveEnemyCharacter.Die();
 	return ItemLoot;
+
+
+func StartRespawnDelay(delay: float = 3.0) -> void:
+	await get_tree().create_timer(delay).timeout;
+	RespawnEnemy();
+
+func RespawnEnemy() -> void:
+	mActiveEnemyCharacter.InitCharacter();
+	mCombatManager.BeginCombat();
