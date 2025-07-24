@@ -12,6 +12,8 @@ var CurrentCharacter: Character;
 @export var CreatureHealthDisplay: TextureProgressBar;
 @export var IsPlayerDisplay: bool;
 
+@onready var mCharacterRegister: CharacterRegister = get_node("../InventoryUI");
+
 func _ready() -> void:
 	DisplaySprite.animation_finished.connect(SwapToIdleAnimation);
 	# if player display, flip it to face enemy character
@@ -27,7 +29,6 @@ func SetCharacter(_Character: Character) -> void:
 
 func UpdateHealth(_PercentValue: float):
 	CreatureHealthDisplay.value = _PercentValue;
-	print_debug("Updated Health Display!: " + str(_PercentValue));
 
 func PlayAttackAnimation():
 	var HeavyAttack = randi_range(0, 1);

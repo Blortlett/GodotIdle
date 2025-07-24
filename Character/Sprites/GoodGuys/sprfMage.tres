@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=30 format=3 uid="uid://p1na7ynjh28j"]
+[gd_resource type="SpriteFrames" load_steps=34 format=3 uid="uid://p1na7ynjh28j"]
 
 [ext_resource type="Texture2D" uid="uid://803qmipc8ecv" path="res://Art/Characters/Heroes/Wizard.png" id="1_fpt4t"]
 
@@ -89,6 +89,22 @@ region = Rect2(1000, 500, 100, 100)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jw8pu"]
 atlas = ExtResource("1_fpt4t")
 region = Rect2(1100, 500, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41tau"]
+atlas = ExtResource("1_fpt4t")
+region = Rect2(0, 900, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ases"]
+atlas = ExtResource("1_fpt4t")
+region = Rect2(100, 900, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt4x7"]
+atlas = ExtResource("1_fpt4t")
+region = Rect2(200, 900, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftoo7"]
+atlas = ExtResource("1_fpt4t")
+region = Rect2(300, 900, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0cexi"]
 atlas = ExtResource("1_fpt4t")
@@ -191,6 +207,23 @@ animations = [{
 "loop": false,
 "name": &"Attack2",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41tau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ases")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt4x7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftoo7")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

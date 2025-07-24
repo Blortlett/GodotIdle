@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://8vyvaxykm4g4"]
+[gd_scene load_steps=10 format=3 uid="uid://8vyvaxykm4g4"]
 
 [ext_resource type="PackedScene" uid="uid://b3bd2ccqkh00a" path="res://Inventory/UI/InventoryUI/nInventoryUI.tscn" id="1_x6p71"]
 [ext_resource type="Script" uid="uid://dlkijgainja7j" path="res://Scripts/scrCharacterRegister.gd" id="2_cbp6g"]
 [ext_resource type="Resource" uid="uid://croc7fprjc5ic" path="res://Character/Characters/rMage.tres" id="3_fhe0x"]
+[ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="3_n4b4m"]
 [ext_resource type="Resource" uid="uid://bhdvldq5o1m0l" path="res://Character/Characters/rSlime.tres" id="4_idfla"]
 [ext_resource type="Script" uid="uid://dtbqlt8shj24b" path="res://Scripts/scrCombatManager.gd" id="5_idfla"]
+[ext_resource type="Resource" uid="uid://bpgn4u4gf56w" path="res://Character/Characters/rSkeleton.tres" id="5_vwlks"]
+[ext_resource type="Resource" uid="uid://swafbebokb5g" path="res://Character/Characters/rOrc.tres" id="6_4kpeb"]
+[ext_resource type="Resource" uid="uid://cthf622hxw7xg" path="res://Character/Characters/rWolf.tres" id="7_gc5i1"]
 
 [node name="Node" type="Node"]
 
@@ -18,6 +22,7 @@ offset_bottom = -283.0
 
 [node name="CharacterRegister" type="Node" parent="."]
 script = ExtResource("2_cbp6g")
+mSpawnableEnemies = Array[ExtResource("3_n4b4m")]([ExtResource("4_idfla"), ExtResource("5_vwlks"), ExtResource("6_4kpeb"), ExtResource("7_gc5i1")])
 mActiveCharacter = ExtResource("3_fhe0x")
 mActiveEnemyCharacter = ExtResource("4_idfla")
 metadata/_custom_type_script = "uid://dlkijgainja7j"
