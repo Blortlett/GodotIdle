@@ -49,7 +49,7 @@ grow_vertical = 2
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("1_qg7yw")
-animation = &"Idle"
+animation = &"Attack2"
 autoplay = "Idle"
 
 [node name="CreatureInfoDisplay" type="Control" parent="."]

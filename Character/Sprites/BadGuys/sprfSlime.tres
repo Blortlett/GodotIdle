@@ -119,9 +119,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_flf7u")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack1",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -160,9 +160,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h00lo")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack2",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -185,5 +185,5 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 5.0
+"speed": 12.0
 }]

@@ -13,6 +13,7 @@ var CurrentCharacter: Character;
 @export var IsPlayerDisplay: bool;
 
 func _ready() -> void:
+	DisplaySprite.animation_finished.connect(SwapToIdleAnimation);
 	# if player display, flip it to face enemy character
 	if (IsPlayerDisplay):
 		DisplaySprite.scale.x = -2;
@@ -37,3 +38,6 @@ func PlayAttackAnimation():
 
 func StopAnimation():
 	DisplaySprite.pause();
+
+func SwapToIdleAnimation():
+	DisplaySprite.play("Idle");
