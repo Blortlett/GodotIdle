@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://8vyvaxykm4g4"]
+
+[ext_resource type="PackedScene" uid="uid://b3bd2ccqkh00a" path="res://Inventory/UI/InventoryUI/nInventoryUI.tscn" id="1_x6p71"]
+[ext_resource type="Script" uid="uid://dlkijgainja7j" path="res://Scripts/scrCharacterRegister.gd" id="2_cbp6g"]
+[ext_resource type="Resource" uid="uid://croc7fprjc5ic" path="res://Character/Characters/rMage.tres" id="3_fhe0x"]
+[ext_resource type="Resource" uid="uid://bhdvldq5o1m0l" path="res://Character/Characters/rSlime.tres" id="4_idfla"]
+[ext_resource type="Script" uid="uid://dtbqlt8shj24b" path="res://Scripts/scrCombatManager.gd" id="5_idfla"]
+
+[node name="Node" type="Node"]
+
+[node name="InventoryUI" parent="." instance=ExtResource("1_x6p71")]
+offset_left = -576.0
+offset_top = -323.0
+offset_right = -536.0
+offset_bottom = -283.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CharacterRegister" type="Node" parent="."]
+script = ExtResource("2_cbp6g")
+mActiveCharacter = ExtResource("3_fhe0x")
+mActiveEnemyCharacter = ExtResource("4_idfla")
+metadata/_custom_type_script = "uid://dlkijgainja7j"
+
+[node name="CombatManager" type="Node" parent="."]
+script = ExtResource("5_idfla")
+metadata/_custom_type_script = "uid://dtbqlt8shj24b"

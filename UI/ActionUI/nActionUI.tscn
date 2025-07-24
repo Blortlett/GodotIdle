@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8aw6sgpiap08"]
+[gd_scene load_steps=9 format=3 uid="uid://c8aw6sgpiap08"]
 
 [ext_resource type="SpriteFrames" uid="uid://ck6sjg3apgjg1" path="res://Character/Sprites/BadGuys/sprfSlime.tres" id="1_qg7yw"]
 [ext_resource type="Texture2D" uid="uid://b3eswuyjyk6bx" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_Frame01a.png" id="2_riiue"]
@@ -6,10 +6,17 @@
 [ext_resource type="FontFile" uid="uid://bhkd6t2hvac7k" path="res://Art/Fonts/PeaberryBase.ttf" id="4_cv8tj"]
 [ext_resource type="Script" uid="uid://b8d1riuq4m3fn" path="res://Character/UI/scrCharacterDisplayUI.gd" id="5_f38va"]
 
+[sub_resource type="Gradient" id="Gradient_f38va"]
+colors = PackedColorArray(0.672305, 1.76881e-06, 6.257e-07, 1, 0.773856, 2.23808e-06, 9.62615e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8w0gs"]
+gradient = SubResource("Gradient_f38va")
+width = 67
+
 [sub_resource type="LabelSettings" id="LabelSettings_f38va"]
 font = ExtResource("4_cv8tj")
 
-[node name="CharacterDisplay" type="Control" node_paths=PackedStringArray("CreatureSpriteDisplay", "CreatureInfoPanel", "DisplaySprite", "CreatureNameDisplay")]
+[node name="CharacterDisplay" type="Control" node_paths=PackedStringArray("CreatureSpriteDisplay", "CreatureInfoPanel", "DisplaySprite", "CreatureNameDisplay", "CreatureHealthDisplay")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -19,6 +26,7 @@ CreatureSpriteDisplay = NodePath("CreatureDisplay")
 CreatureInfoPanel = NodePath("CreatureInfoDisplay")
 DisplaySprite = NodePath("CreatureDisplay/AnimatedSprite2D")
 CreatureNameDisplay = NodePath("CreatureInfoDisplay/CreatureName")
+CreatureHealthDisplay = NodePath("CreatureInfoDisplay/NinePatchHealthbar/TextureProgressBar")
 metadata/_custom_type_script = "uid://b8d1riuq4m3fn"
 
 [node name="CreatureDisplay" type="Control" parent="."]
@@ -90,6 +98,16 @@ patch_margin_left = 3
 patch_margin_top = 3
 patch_margin_right = 3
 patch_margin_bottom = 3
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CreatureInfoDisplay/NinePatchHealthbar"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 70.0
+offset_bottom = 2.0
+scale = Vector2(1, 4)
+texture_progress = SubResource("GradientTexture1D_8w0gs")
 
 [node name="CreatureName" type="Label" parent="CreatureInfoDisplay"]
 self_modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)

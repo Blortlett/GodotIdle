@@ -104,6 +104,13 @@ layout_mode = 2
 [node name="InvSlotUI12" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
 layout_mode = 2
 
+[node name="CharacterDisplay" parent="BookRightPageSprite/CharacterUI" instance=ExtResource("8_20xsb")]
+offset_left = 86.0
+offset_top = 88.0
+offset_right = 126.0
+offset_bottom = 128.0
+IsPlayerDisplay = true
+
 [node name="DebugMenu" parent="BookRightPageSprite/CharacterUI" instance=ExtResource("7_e8s8e")]
 layout_mode = 0
 anchors_preset = 0
@@ -117,12 +124,6 @@ offset_right = 163.78
 offset_bottom = 40.3049
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="CharacterDisplay" parent="BookRightPageSprite/CharacterUI" instance=ExtResource("8_20xsb")]
-offset_left = 86.0
-offset_top = 88.0
-offset_right = 126.0
-offset_bottom = 128.0
 
 [node name="BookLeftPageSprite" type="NinePatchRect" parent="."]
 texture_filter = 1

@@ -11,5 +11,6 @@ class_name CharacterRegister
 func _ready() -> void:
 	mActiveCharacter.InitCharacter();
 	mActiveEnemyCharacter.InitCharacter();
-	mInventoryUI.SetPlayerUI(mActiveCharacter)
-	mInventoryUI.SetEnemyUI(mActiveEnemyCharacter)
+	mInventoryUI.SetPlayerUI(mActiveCharacter);
+	mInventoryUI.SetEnemyUI(mActiveEnemyCharacter);
+	mCombatManager.BeginCombat();

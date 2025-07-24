@@ -37,3 +37,7 @@ func SetPlayerUI(_Character: Character):
 
 func SetEnemyUI(_Character: Character):
 	EnemyDisplay.SetCharacter(_Character);
+
+func UpdateCharacterHealthVisuals(_PlayerHealthPercent: float, _EnemyHealthPercent: float):
+	PlayerDisplay.UpdateHealth(_PlayerHealthPercent);
+	EnemyDisplay.UpdateHealth(_EnemyHealthPercent);
