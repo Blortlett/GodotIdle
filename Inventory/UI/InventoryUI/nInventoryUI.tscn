@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://0luyfwm87ckl" path="res://Inventory/UI/InventoryUI/nInvSlotUI.tscn" id="4_keych"]
 [ext_resource type="Texture2D" uid="uid://so2dglihxik1" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookPageLeft01a.png" id="5_kydoc"]
 [ext_resource type="PackedScene" uid="uid://ei8qtpsb0tex" path="res://Inventory/UI/DebugUI/nDebugMenu.tscn" id="7_e8s8e"]
-[ext_resource type="PackedScene" uid="uid://bfgpar26yjdfd" path="res://UI/ActionUI/nActionUI.tscn" id="8_20xsb"]
+[ext_resource type="PackedScene" uid="uid://c8aw6sgpiap08" path="res://UI/ActionUI/nActionUI.tscn" id="8_20xsb"]
 [ext_resource type="PackedScene" uid="uid://2nnh4f80nnll" path="res://UI/DestinationMenuUI/nDestinationMenuUI.tscn" id="9_sfvvv"]
 
 [node name="InventoryUI" type="Control"]
@@ -51,13 +51,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ActionUI" parent="BookRightPageSprite/CharacterUI" instance=ExtResource("8_20xsb")]
-layout_mode = 1
-offset_left = 25.0
-offset_top = 13.4146
-offset_right = -15.0
-offset_bottom = -26.5854
 
 [node name="InventoryGrid" type="GridContainer" parent="BookRightPageSprite/CharacterUI"]
 layout_mode = 1
@@ -125,6 +118,12 @@ offset_bottom = 40.3049
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="CharacterDisplay" parent="BookRightPageSprite/CharacterUI" instance=ExtResource("8_20xsb")]
+offset_left = 86.0
+offset_top = 88.0
+offset_right = 126.0
+offset_bottom = 128.0
+
 [node name="BookLeftPageSprite" type="NinePatchRect" parent="."]
 texture_filter = 1
 layout_mode = 0
@@ -140,12 +139,11 @@ patch_margin_right = 13
 patch_margin_bottom = 13
 axis_stretch_vertical = 1
 
-[node name="ActionUI" parent="BookLeftPageSprite" instance=ExtResource("8_20xsb")]
-visible = false
-layout_mode = 1
-offset_left = 87.5
-offset_top = 85.061
-offset_right = -81.4999
-offset_bottom = -97.939
-
 [node name="DestinationMenuUI" parent="BookLeftPageSprite" instance=ExtResource("9_sfvvv")]
+layout_mode = 1
+
+[node name="CharacterDisplay" parent="BookLeftPageSprite" instance=ExtResource("8_20xsb")]
+offset_left = 87.805
+offset_top = 88.0
+offset_right = 127.805
+offset_bottom = 128.0

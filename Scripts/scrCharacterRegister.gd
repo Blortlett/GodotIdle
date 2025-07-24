@@ -2,11 +2,14 @@ extends Node
 
 class_name CharacterRegister
 
-@export var mCharacterSlots: Array[Character];
-var mActiveCharacter: Character;
+@export var mActiveCharacter: Character;
+@export var mActiveEnemyCharacter: Character;
+
+@onready var mInventoryUI: InventoryUI = get_node("../InventoryUI");
+@onready var mCombatManager: CombatManager = get_node("../CombatManager");
 
 func _ready() -> void:
-	mCharacterSlots[0] = Character.Warrior.new();
-	mCharacterSlots[1] = Character.Ranger.new();
-	mCharacterSlots[2] = Character.Mage.new();
-	mActiveCharacter = mCharacterSlots[0];
+	mActiveCharacter.InitCharacter();
+	mActiveEnemyCharacter.InitCharacter();
+	mInventoryUI.SetPlayerUI(mActiveCharacter)
+	mInventoryUI.SetEnemyUI(mActiveEnemyCharacter)

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://croc7fprjc5ic"]
+
+[ext_resource type="SpriteFrames" uid="uid://p1na7ynjh28j" path="res://Character/Sprites/GoodGuys/sprfMage.tres" id="1_crnpi"]
+[ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="2_y6vo5"]
+
+[resource]
+script = ExtResource("2_y6vo5")
+Name = "Mage"
+Alliance = 0
+Sprite = ExtResource("1_crnpi")
+Health = 80.0
+Damage = 2.0
+MagicDamage = 12.0
+Defense = 2.0
+MagicDefense = 10.0
+AttackSpeed = 1.5
+metadata/_custom_type_script = "uid://dhdrxna4ooxij"

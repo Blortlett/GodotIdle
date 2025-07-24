@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://swafbebokb5g"]
+
+[ext_resource type="SpriteFrames" uid="uid://d083ct0xwgi6" path="res://Character/Sprites/BadGuys/sprfOrc.tres" id="1_4q431"]
+[ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="2_cktqm"]
+
+[resource]
+script = ExtResource("2_cktqm")
+Name = "Orc"
+Alliance = 1
+Sprite = ExtResource("1_4q431")
+Health = 150.0
+Damage = 19.0
+MagicDamage = 0.0
+Defense = 8.0
+MagicDefense = 0.0
+AttackSpeed = 1.1
+metadata/_custom_type_script = "uid://dhdrxna4ooxij"
