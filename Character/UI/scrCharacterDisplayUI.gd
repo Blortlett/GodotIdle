@@ -27,3 +27,6 @@ func SetCharacter(_Character: Character) -> void:
 func UpdateHealth(_PercentValue: float):
 	CreatureHealthDisplay.value = _PercentValue;
 	print_debug("Updated Health Display!: " + str(_PercentValue));
+
+func StopAnimation():
+	DisplaySprite.pause();

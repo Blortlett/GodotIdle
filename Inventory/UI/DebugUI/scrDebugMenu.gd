@@ -1,7 +1,7 @@
 extends Control
 
+@onready var mInventoryTarget: InventoryUI = get_node("../../..");
 @export var mItem: InvItem;
-var mInventoryToCheat: Inv = null;
 
 signal AddItemToInventory;
 
@@ -15,3 +15,4 @@ func _ready() -> void:
 	
 func _on_add_apple_pressed() -> void:
 	print_debug("Adding apple to inventory!");
+	mInventoryTarget.inv.insert(mItem);

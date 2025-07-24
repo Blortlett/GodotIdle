@@ -6,10 +6,11 @@ class_name CombatManager;
 @onready var mInventoryUI: InventoryUI = get_node("../InventoryUI");
 
 var IsCombatActive: bool = false;
-
+# Attack cooldown
 var PlayerAttackTimer: float;
 var EnemyAttackTimer: float;
 
+# On tick
 func _process(delta):
 	if IsCombatActive:
 		PlayerAttackTimer -= delta
@@ -24,6 +25,8 @@ func _process(delta):
 			ApplyAttackDamage(mCharacterRegister.mActiveEnemyCharacter, mCharacterRegister.mActiveCharacter)
 			# Reset Enemy attack timer
 			EnemyAttackTimer = mCharacterRegister.mActiveEnemyCharacter.AttackSpeed;
+
+
 func ApplyAttackDamage(Attacker: Character, Defender: Character):
 	#Calculate Damage
 	var AttackDamage = Attacker.Damage - Defender.Defense;
@@ -39,8 +42,18 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 	var EnemyHealthPercent = (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth / mCharacterRegister.mActiveEnemyCharacter.Health) * 100;
 	mInventoryUI.UpdateCharacterHealthVisuals(PlayerHealthPercent, EnemyHealthPercent);
 	
-	#Debug output
-	print_debug(Attacker.Name + " Atttacked " + Defender.Name + " for " + str(AttackDamage + MagicDamage) + " damage!");
+	if (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth <= 0):
+		var Loot: InvItem = mCharacterRegister.KillEnemy();
+		mInventoryUI.inv.insert(Loot);
+		mInventoryUI.EnemyDisplay.StopAnimation();
+		EndCombat();
+	
+	if (mCharacterRegister.mActiveCharacter.CurrentHealth <= 0):
+		EndCombat();
+
 
 func BeginCombat():
 	IsCombatActive = true;
+
+func EndCombat():
+	IsCombatActive = false;

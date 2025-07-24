@@ -14,3 +14,8 @@ func _ready() -> void:
 	mInventoryUI.SetPlayerUI(mActiveCharacter);
 	mInventoryUI.SetEnemyUI(mActiveEnemyCharacter);
 	mCombatManager.BeginCombat();
+
+
+func KillEnemy() -> InvItem:
+	var ItemLoot: InvItem = mActiveEnemyCharacter.Die();
+	return ItemLoot;

@@ -15,6 +15,8 @@ width = 67
 
 [sub_resource type="LabelSettings" id="LabelSettings_f38va"]
 font = ExtResource("4_cv8tj")
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.137255)
 
 [node name="CharacterDisplay" type="Control" node_paths=PackedStringArray("CreatureSpriteDisplay", "CreatureInfoPanel", "DisplaySprite", "CreatureNameDisplay", "CreatureHealthDisplay")]
 layout_mode = 3
@@ -119,9 +121,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -35.0
-offset_top = -12.0
+offset_top = -14.0
 offset_right = 35.0
-offset_bottom = 11.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "SLIME"
