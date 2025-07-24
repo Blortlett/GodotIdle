@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://8vyvaxykm4g4"]
+[gd_scene load_steps=11 format=3 uid="uid://8vyvaxykm4g4"]
 
 [ext_resource type="PackedScene" uid="uid://b3bd2ccqkh00a" path="res://Inventory/UI/InventoryUI/nInventoryUI.tscn" id="1_x6p71"]
 [ext_resource type="Script" uid="uid://dlkijgainja7j" path="res://Scripts/scrCharacterRegister.gd" id="2_cbp6g"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://bpgn4u4gf56w" path="res://Character/Characters/rSkeleton.tres" id="5_vwlks"]
 [ext_resource type="Resource" uid="uid://swafbebokb5g" path="res://Character/Characters/rOrc.tres" id="6_4kpeb"]
 [ext_resource type="Resource" uid="uid://cthf622hxw7xg" path="res://Character/Characters/rWolf.tres" id="7_gc5i1"]
+[ext_resource type="Script" uid="uid://bg0uiysd0i8ja" path="res://Scripts/GameManager/scrGameManager.gd" id="10_4kpeb"]
 
 [node name="Node" type="Node"]
 
@@ -30,3 +31,7 @@ metadata/_custom_type_script = "uid://dlkijgainja7j"
 [node name="CombatManager" type="Node" parent="."]
 script = ExtResource("5_idfla")
 metadata/_custom_type_script = "uid://dtbqlt8shj24b"
+
+[node name="GameStateManager" type="Node" parent="."]
+script = ExtResource("10_4kpeb")
+metadata/_custom_type_script = "uid://bg0uiysd0i8ja"

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv0y07r2i4vmd"]
+
+[ext_resource type="Script" uid="uid://bawdq6okk8g68" path="res://UI/DestinationMenuUI/scrDestinationMenuUI.gd" id="1_3tlmd"]
+[ext_resource type="Script" uid="uid://bpiip7dmpkbh8" path="res://Areas/scrArea.gd" id="2_evclo"]
+[ext_resource type="Resource" uid="uid://c3swi46siy438" path="res://Areas/ExplorableAreas/rSunnyMeadow.tres" id="3_x7i7m"]
+[ext_resource type="Resource" uid="uid://g6wywgfjtwwu" path="res://Areas/ExplorableAreas/rDecreptGraveyard.tres" id="4_75n3r"]
+[ext_resource type="Resource" uid="uid://cgdt811iygfxe" path="res://Areas/ExplorableAreas/rBottomlessCanyon.tres" id="5_q2pkd"]
+
+[node name="HomeMenuUI" type="Control" node_paths=PackedStringArray("ButtonParent")]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3tlmd")
+Destinations = Array[ExtResource("2_evclo")]([ExtResource("3_x7i7m"), ExtResource("4_75n3r"), ExtResource("5_q2pkd")])
+ButtonParent = NodePath("GridContainer")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -20.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
