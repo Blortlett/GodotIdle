@@ -17,11 +17,13 @@ func _process(delta):
 		EnemyAttackTimer -= delta
 		if PlayerAttackTimer <= 0:
 			# Player attack here
+			mInventoryUI.PlayerDisplay.PlayAttackAnimation();
 			ApplyAttackDamage(mCharacterRegister.mActiveCharacter, mCharacterRegister.mActiveEnemyCharacter)
 			# Reset Player attack timer
 			PlayerAttackTimer = mCharacterRegister.mActiveCharacter.AttackSpeed;
 		if EnemyAttackTimer <= 0:
 			#Enemy attack here
+			mInventoryUI.EnemyDisplay.PlayAttackAnimation();
 			ApplyAttackDamage(mCharacterRegister.mActiveEnemyCharacter, mCharacterRegister.mActiveCharacter)
 			# Reset Enemy attack timer
 			EnemyAttackTimer = mCharacterRegister.mActiveEnemyCharacter.AttackSpeed;

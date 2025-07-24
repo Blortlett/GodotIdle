@@ -28,5 +28,12 @@ func UpdateHealth(_PercentValue: float):
 	CreatureHealthDisplay.value = _PercentValue;
 	print_debug("Updated Health Display!: " + str(_PercentValue));
 
+func PlayAttackAnimation():
+	var HeavyAttack = randi_range(0, 1);
+	if (HeavyAttack == 1):
+		DisplaySprite.play("Attack2");
+	else:
+		DisplaySprite.play("Attack1");
+
 func StopAnimation():
 	DisplaySprite.pause();
