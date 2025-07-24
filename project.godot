@@ -14,3 +14,7 @@ config/name="GodotIdle"
 run/main_scene="uid://8vyvaxykm4g4"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

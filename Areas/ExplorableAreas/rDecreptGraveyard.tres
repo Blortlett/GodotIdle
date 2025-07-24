@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ExplorableArea" load_steps=5 format=3 uid="uid://g6wywgfjtwwu"]
+
+[ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="1_eb76w"]
+[ext_resource type="Resource" uid="uid://bpgn4u4gf56w" path="res://Character/Characters/rSkeleton.tres" id="2_3tkiq"]
+[ext_resource type="Resource" uid="uid://cthf622hxw7xg" path="res://Character/Characters/rWolf.tres" id="3_gc0cn"]
+[ext_resource type="Script" uid="uid://bpiip7dmpkbh8" path="res://Areas/scrArea.gd" id="4_0yut1"]
+
+[resource]
+script = ExtResource("4_0yut1")
+Name = "Decrepit Graveyard"
+SpawnableEnemies = Array[ExtResource("1_eb76w")]([ExtResource("2_3tkiq"), ExtResource("3_gc0cn")])
+metadata/_custom_type_script = "uid://bpiip7dmpkbh8"

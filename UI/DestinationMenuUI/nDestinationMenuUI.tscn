@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://2nnh4f80nnll"]
+[gd_scene load_steps=6 format=3 uid="uid://2nnh4f80nnll"]
 
-[ext_resource type="PackedScene" uid="uid://cw6wtuw8h4nqc" path="res://UI/ButtonUI/nButtonUI.tscn" id="1_qbhu4"]
+[ext_resource type="Script" uid="uid://bawdq6okk8g68" path="res://UI/DestinationMenuUI/scrDestinationMenuUI.gd" id="1_guki0"]
+[ext_resource type="Script" uid="uid://bpiip7dmpkbh8" path="res://Areas/scrArea.gd" id="2_u557j"]
+[ext_resource type="Resource" uid="uid://c3swi46siy438" path="res://Areas/ExplorableAreas/rSunnyMeadow.tres" id="3_7xbhf"]
+[ext_resource type="Resource" uid="uid://g6wywgfjtwwu" path="res://Areas/ExplorableAreas/rDecreptGraveyard.tres" id="4_5evxd"]
+[ext_resource type="Resource" uid="uid://cgdt811iygfxe" path="res://Areas/ExplorableAreas/rBottomlessCanyon.tres" id="5_tfm8e"]
 
-[node name="DestinationMenuUI" type="Control"]
+[node name="DestinationMenuUI" type="Control" node_paths=PackedStringArray("ButtonParent")]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -15,27 +19,20 @@ offset_right = -576.0
 offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_guki0")
+Destinations = Array[ExtResource("2_u557j")]([ExtResource("3_7xbhf"), ExtResource("4_5evxd"), ExtResource("5_tfm8e")])
+ButtonParent = NodePath("GridContainer")
 
-[node name="ButtonSunnyMeadow" parent="." instance=ExtResource("1_qbhu4")]
-self_modulate = Color(1, 1, 1, 0)
+[node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
-offset_left = -62.0
-offset_top = -40.0
-offset_right = 62.0
-offset_bottom = -14.0
-
-[node name="ButtonCanyons" parent="." instance=ExtResource("1_qbhu4")]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-offset_left = -62.0
-offset_top = 0.0
-offset_right = 62.0
-offset_bottom = 26.0
-
-[node name="ButtonNightFields" parent="." instance=ExtResource("1_qbhu4")]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-offset_left = -62.0
-offset_top = 40.0
-offset_right = 62.0
-offset_bottom = 66.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -20.0
+offset_right = 75.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
