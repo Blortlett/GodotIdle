@@ -33,7 +33,7 @@ func StartRespawnDelay(delay: float = 3.0) -> void:
 func RespawnEnemy() -> void:
 	# Pick Random Enemy
 	var RandomEnemyInt = randi_range(0, mSpawnableEnemies.size() - 1);
-	mActiveCharacter = mSpawnableEnemies[RandomEnemyInt];
+	mActiveEnemyCharacter = mSpawnableEnemies[RandomEnemyInt];
 	mActiveEnemyCharacter.InitCharacter();
 	NewEnemySpawn.emit();
 	mCombatManager.BeginCombat();

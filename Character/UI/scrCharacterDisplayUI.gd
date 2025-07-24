@@ -12,9 +12,11 @@ var CurrentCharacter: Character;
 @export var CreatureHealthDisplay: TextureProgressBar;
 @export var IsPlayerDisplay: bool;
 
-@onready var mCharacterRegister: CharacterRegister = get_node("../InventoryUI");
+@onready var mCharacterRegister: CharacterRegister = get_tree().get_root().get_node("Node/CharacterRegister") 
 
 func _ready() -> void:
+	if !IsPlayerDisplay:
+		mCharacterRegister.NewEnemySpawn.connect(OnEnemyRespawn);
 	DisplaySprite.animation_finished.connect(SwapToIdleAnimation);
 	# if player display, flip it to face enemy character
 	if (IsPlayerDisplay):
@@ -46,3 +48,8 @@ func StopAnimation():
 func SwapToIdleAnimation():
 	if (DisplaySprite.animation != "Die"):
 		DisplaySprite.play("Idle");
+
+func OnEnemyRespawn():
+	DisplaySprite.sprite_frames = mCharacterRegister.mActiveEnemyCharacter.Sprite;
+	CreatureNameDisplay.text = mCharacterRegister.mActiveEnemyCharacter.Name;
+	CreatureHealthDisplay.value = (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth / mCharacterRegister.mActiveEnemyCharacter.Health) * 100;

@@ -51,6 +51,7 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 		EndCombat();
 	
 	if (mCharacterRegister.mActiveCharacter.CurrentHealth <= 0):
+		mInventoryUI.PlayerDisplay.PlayDeathAnimation();
 		EndCombat();
 
 

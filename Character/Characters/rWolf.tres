@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://cthf622hxw7xg"]
+[gd_resource type="Resource" script_class="Character" load_steps=4 format=3 uid="uid://cthf622hxw7xg"]
 
 [ext_resource type="Resource" uid="uid://b1hc8degw40i8" path="res://Inventory/Items/apple.tres" id="1_jxqu3"]
+[ext_resource type="SpriteFrames" uid="uid://dm2w2d2vhjx6c" path="res://Character/Sprites/BadGuys/sprfWolf.tres" id="2_fkpck"]
 [ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="2_x5yvg"]
 
 [resource]
 script = ExtResource("2_x5yvg")
 Name = "WOLF"
 Alliance = 1
+Sprite = ExtResource("2_fkpck")
 Health = 180.0
 Damage = 10.0
 MagicDamage = 7.0
