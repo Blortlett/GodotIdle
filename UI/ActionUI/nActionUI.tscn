@@ -20,37 +20,24 @@ shadow_color = Color(0, 0, 0, 0.137255)
 
 [node name="CharacterDisplay" type="Control" node_paths=PackedStringArray("CreatureSpriteDisplay", "CreatureInfoPanel", "DisplaySprite", "CreatureNameDisplay", "CreatureHealthDisplay")]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("5_f38va")
-CreatureSpriteDisplay = NodePath("CreatureDisplay")
-CreatureInfoPanel = NodePath("CreatureInfoDisplay")
-DisplaySprite = NodePath("CreatureDisplay/AnimatedSprite2D")
-CreatureNameDisplay = NodePath("CreatureInfoDisplay/CreatureName")
-CreatureHealthDisplay = NodePath("CreatureInfoDisplay/NinePatchHealthbar/TextureProgressBar")
-metadata/_custom_type_script = "uid://b8d1riuq4m3fn"
-
-[node name="CreatureDisplay" type="Control" parent="."]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = -20.0
-offset_bottom = -20.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CreatureDisplay"]
-texture_filter = 1
-scale = Vector2(2, 2)
-sprite_frames = ExtResource("1_qg7yw")
-animation = &"Attack2"
-autoplay = "Idle"
+script = ExtResource("5_f38va")
+CreatureSpriteDisplay = NodePath("CreatureDisplay")
+CreatureInfoPanel = NodePath("CreatureInfoDisplay")
+DisplaySprite = NodePath("CreatureDisplay/CenterContainer/AnimatedSprite2D")
+CreatureNameDisplay = NodePath("CreatureInfoDisplay/CreatureName")
+CreatureHealthDisplay = NodePath("CreatureInfoDisplay/NinePatchHealthbar/TextureProgressBar")
+metadata/_custom_type_script = "uid://b8d1riuq4m3fn"
 
 [node name="CreatureInfoDisplay" type="Control" parent="."]
 layout_mode = 1
@@ -59,24 +46,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -92.0
-offset_bottom = -52.0
+offset_left = -42.0
+offset_top = -32.0
+offset_right = 42.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NinePatchBackground" type="NinePatchRect" parent="CreatureInfoDisplay"]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -17.0
-offset_right = 40.0
-offset_bottom = 17.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_riiue")
@@ -89,10 +71,14 @@ patch_margin_bottom = 3
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.4
-anchor_top = 0.65
-anchor_right = 1.4
-anchor_bottom = 0.8
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.9
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = 4.685
+offset_right = 3.0
+offset_bottom = 10.685
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_cv8tj")
@@ -115,18 +101,43 @@ texture_progress = SubResource("GradientTexture1D_8w0gs")
 self_modulate = Color(0.0605303, 0.0605303, 0.0605303, 1)
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -14.0
-offset_right = 35.0
-offset_bottom = 9.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -4.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "SLIME"
 label_settings = SubResource("LabelSettings_f38va")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CreatureDisplay" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CreatureDisplay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CreatureDisplay/CenterContainer"]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_qg7yw")
+animation = &"Attack2"
+autoplay = "Idle"

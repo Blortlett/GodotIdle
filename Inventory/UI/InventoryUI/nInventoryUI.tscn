@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3bd2ccqkh00a"]
+[gd_scene load_steps=11 format=3 uid="uid://b3bd2ccqkh00a"]
 
 [ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_dhcfh"]
 [ext_resource type="Texture2D" uid="uid://cwn4h5cyakgm7" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookCover01a.png" id="2_il5vc"]
@@ -9,35 +9,87 @@
 [ext_resource type="PackedScene" uid="uid://c8aw6sgpiap08" path="res://UI/ActionUI/nActionUI.tscn" id="8_20xsb"]
 [ext_resource type="PackedScene" uid="uid://dv0y07r2i4vmd" path="res://UI/HomeMenuUI/nHomeMenuUI.tscn" id="9_2bf1r"]
 [ext_resource type="PackedScene" uid="uid://2nnh4f80nnll" path="res://UI/DestinationMenuUI/nDestinationMenuUI.tscn" id="9_sfvvv"]
+[ext_resource type="Script" uid="uid://h20ddr8cjwko" path="res://UI/CombatMenuUI/scrCombatMenuUI.gd" id="10_2bf1r"]
 
 [node name="InventoryUI" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -798.0
+offset_bottom = -455.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_dhcfh")
 
 [node name="BookBackgroundSprite" type="NinePatchRect" parent="."]
 texture_filter = 1
-layout_mode = 0
-offset_right = 351.0
-offset_bottom = 197.0
-scale = Vector2(3.28, 3.28)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_il5vc")
+patch_margin_left = 13
+patch_margin_top = 13
+patch_margin_right = 13
+patch_margin_bottom = 13
+
+[node name="BookLeftPageSprite" type="NinePatchRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.03
+anchor_right = 0.5
+anchor_bottom = 0.97
+grow_vertical = 2
+texture = ExtResource("5_kydoc")
 patch_margin_left = 13
 patch_margin_top = 13
 patch_margin_right = 13
 patch_margin_bottom = 13
 axis_stretch_vertical = 1
 
+[node name="DestinationMenuUI" parent="BookLeftPageSprite" instance=ExtResource("9_sfvvv")]
+layout_mode = 1
+offset_left = 0.256119
+offset_top = 1.48781
+offset_right = 0.256119
+offset_bottom = 1.48781
+
+[node name="HomeMenuUI" parent="BookLeftPageSprite" instance=ExtResource("9_2bf1r")]
+layout_mode = 1
+
+[node name="CombatMenuUI" type="Control" parent="BookLeftPageSprite"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_2bf1r")
+
+[node name="CharacterDisplay" parent="BookLeftPageSprite/CombatMenuUI" instance=ExtResource("8_20xsb")]
+layout_mode = 1
+offset_left = 0.0
+offset_top = -42.5
+offset_right = 0.0
+offset_bottom = -42.5
+
 [node name="BookRightPageSprite" type="NinePatchRect" parent="."]
 texture_filter = 1
-layout_mode = 0
-offset_left = 579.0
-offset_top = 23.0
-offset_right = 746.0
-offset_bottom = 206.0
-scale = Vector2(3.28, 3.28)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.03
+anchor_right = 0.97
+anchor_bottom = 0.97
+grow_horizontal = 0
+grow_vertical = 2
 texture = ExtResource("3_pct40")
 patch_margin_left = 13
 patch_margin_top = 13
@@ -47,9 +99,11 @@ axis_stretch_vertical = 1
 
 [node name="CharacterUI" type="Control" parent="BookRightPageSprite"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -106,10 +160,11 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="CharacterDisplay" parent="BookRightPageSprite/CharacterUI" instance=ExtResource("8_20xsb")]
-offset_left = 86.0
-offset_top = 88.0
-offset_right = 126.0
-offset_bottom = 128.0
+layout_mode = 1
+offset_left = 0.0
+offset_top = -42.5
+offset_right = 0.0
+offset_bottom = -42.5
 IsPlayerDisplay = true
 
 [node name="DebugMenu" parent="BookRightPageSprite/CharacterUI" instance=ExtResource("7_e8s8e")]
@@ -126,36 +181,3 @@ offset_right = 163.78
 offset_bottom = 40.3049
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="BookLeftPageSprite" type="NinePatchRect" parent="."]
-texture_filter = 1
-layout_mode = 0
-offset_left = 25.0001
-offset_top = 23.0
-offset_right = 194.0
-offset_bottom = 206.0
-scale = Vector2(3.28, 3.28)
-texture = ExtResource("5_kydoc")
-patch_margin_left = 13
-patch_margin_top = 13
-patch_margin_right = 13
-patch_margin_bottom = 13
-axis_stretch_vertical = 1
-
-[node name="DestinationMenuUI" parent="BookLeftPageSprite" instance=ExtResource("9_sfvvv")]
-visible = false
-layout_mode = 1
-offset_left = 0.256119
-offset_top = 1.48781
-offset_right = 0.256119
-offset_bottom = 1.48781
-
-[node name="CharacterDisplay" parent="BookLeftPageSprite" instance=ExtResource("8_20xsb")]
-visible = false
-offset_left = 87.805
-offset_top = 88.0
-offset_right = 127.805
-offset_bottom = 128.0
-
-[node name="HomeMenuUI" parent="BookLeftPageSprite" instance=ExtResource("9_2bf1r")]
-layout_mode = 1

@@ -8,24 +8,31 @@
 [ext_resource type="Resource" uid="uid://bpgn4u4gf56w" path="res://Character/Characters/rSkeleton.tres" id="5_vwlks"]
 [ext_resource type="Resource" uid="uid://swafbebokb5g" path="res://Character/Characters/rOrc.tres" id="6_4kpeb"]
 [ext_resource type="Resource" uid="uid://cthf622hxw7xg" path="res://Character/Characters/rWolf.tres" id="7_gc5i1"]
-[ext_resource type="Resource" uid="uid://dg3s05hoirm13" path="res://Character/Characters/rRanger.tres" id="8_4kpeb"]
+[ext_resource type="Resource" uid="uid://croc7fprjc5ic" path="res://Character/Characters/rMage.tres" id="8_gc5i1"]
 [ext_resource type="Script" uid="uid://bg0uiysd0i8ja" path="res://Scripts/GameManager/scrGameManager.gd" id="10_4kpeb"]
 [ext_resource type="Script" uid="uid://dho7oenng3gns" path="res://Scripts/scrUIController.gd" id="11_gc5i1"]
 
 [node name="Node" type="Node"]
 
 [node name="InventoryUI" parent="." instance=ExtResource("1_x6p71")]
-offset_left = -576.0
-offset_top = -323.0
-offset_right = -536.0
-offset_bottom = -283.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 383.0
+offset_bottom = 215.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(192, 108)
+zoom = Vector2(3, 3)
 
 [node name="CharacterRegister" type="Node" parent="."]
 script = ExtResource("2_cbp6g")
 mSpawnableEnemies = Array[ExtResource("3_n4b4m")]([ExtResource("4_idfla"), ExtResource("5_vwlks"), ExtResource("6_4kpeb"), ExtResource("7_gc5i1")])
-mActiveCharacter = ExtResource("8_4kpeb")
+mActiveCharacter = ExtResource("8_gc5i1")
 metadata/_custom_type_script = "uid://dlkijgainja7j"
 
 [node name="CombatManager" type="Node" parent="."]

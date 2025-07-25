@@ -18,3 +18,4 @@ config/icon="res://icon.svg"
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+2d/hdr_2d=false
