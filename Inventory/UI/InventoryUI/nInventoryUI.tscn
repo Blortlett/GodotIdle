@@ -142,6 +142,7 @@ patch_margin_bottom = 13
 axis_stretch_vertical = 1
 
 [node name="DestinationMenuUI" parent="BookLeftPageSprite" instance=ExtResource("9_sfvvv")]
+visible = false
 layout_mode = 1
 offset_left = 0.256119
 offset_top = 1.48781
@@ -149,7 +150,6 @@ offset_right = 0.256119
 offset_bottom = 1.48781
 
 [node name="CharacterDisplay" parent="BookLeftPageSprite" instance=ExtResource("8_20xsb")]
-visible = false
 offset_left = 87.805
 offset_top = 88.0
 offset_right = 127.805

@@ -10,7 +10,7 @@ func update(slot: InvSlot):
 	else:
 		mItemVisual.visible = true;
 		# Set item sprite from ItemID
-		var xPos : int = ((slot.item.ItemID % 16) - 1) * 32;
+		var xPos : int = ((slot.item.ItemID % 16)) * 32;
 		var yPos: int = (slot.item.ItemID / 16) * 32;
 		var regionPosition : Vector2 = Vector2(xPos, yPos);
 		mItemVisual.region_rect.position = regionPosition;

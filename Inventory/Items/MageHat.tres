@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cowt4to4mem15"]
+
+[ext_resource type="Script" uid="uid://c7op3b5r7t54q" path="res://Inventory/Scripts/scrInventoryItem.gd" id="1_s8m0u"]
+[ext_resource type="Texture2D" uid="uid://b2xvxvatdu37y" path="res://Art/Items/ItemAtlas.tres" id="2_72a0a"]
+
+[resource]
+script = ExtResource("1_s8m0u")
+name = "Mage's Hat"
+texture = ExtResource("2_72a0a")
+ItemID = 1841
+metadata/_custom_type_script = "uid://c7op3b5r7t54q"
