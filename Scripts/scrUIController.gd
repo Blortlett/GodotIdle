@@ -3,7 +3,7 @@ extends Node
 
 @onready var HomeUI: Control = get_node("../InventoryUI/BookLeftPageSprite/HomeMenuUI")
 @onready var DestinationUI: Control = get_node("../InventoryUI/BookLeftPageSprite/DestinationMenuUI")
-@onready var EnemyCharacterUI: Control = get_node("../InventoryUI/BookLeftPageSprite/CombatMenuUI/CharacterDisplay")
+@onready var EnemyCharacterUI: Control = get_node("../InventoryUI/BookLeftPageSprite/CombatMenuUI")
 
 
 func _ready():

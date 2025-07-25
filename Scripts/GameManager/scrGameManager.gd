@@ -18,7 +18,7 @@ func _ready() -> void:
 func ChangeState(new_state: GameState) -> void:
 	if CurrentGameState != null:
 		CurrentGameState.ExitState()
-		CurrentGameState.queue_free()
+		#CurrentGameState.queue_free()
 	
 	CurrentGameState = new_state
 	add_child(CurrentGameState)

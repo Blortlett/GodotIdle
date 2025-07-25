@@ -40,5 +40,5 @@ func RespawnEnemy() -> void:
 	mCombatManager.BeginCombat();
 
 func ClearEnemySlot() -> void:
-	mActiveEnemyCharacter.queue_free();
+	#mActiveEnemyCharacter.queue_free();
 	mCombatManager.EndCombat();
