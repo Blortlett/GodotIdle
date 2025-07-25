@@ -21,7 +21,7 @@ func ChangeState(new_state: GameState) -> void:
 		#CurrentGameState.queue_free()
 	
 	CurrentGameState = new_state
-	add_child(CurrentGameState)
+	#add_child(CurrentGameState)
 	CurrentGameState.EnterState()
 	
 	# Emit signal with state type enum

@@ -59,10 +59,8 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 		Defender.CurrentHealth -= AttackDamage;
 	if MagicDamage > 0:
 		Defender.CurrentHealth -= MagicDamage;
-		
+	
 	#Update Health UI
-	var PlayerHealthPercent = (mCharacterRegister.mActiveCharacter.CurrentHealth / mCharacterRegister.mActiveCharacter.Health) * 100;
-	var EnemyHealthPercent = (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth / mCharacterRegister.mActiveEnemyCharacter.Health) * 100;
 	mCharacterDisplayController.UpdateCharacterHealthVisuals();
 	
 	if (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth <= 0):
