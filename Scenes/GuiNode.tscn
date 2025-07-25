@@ -26,7 +26,6 @@ offset_bottom = -283.0
 script = ExtResource("2_cbp6g")
 mSpawnableEnemies = Array[ExtResource("3_n4b4m")]([ExtResource("4_idfla"), ExtResource("5_vwlks"), ExtResource("6_4kpeb"), ExtResource("7_gc5i1")])
 mActiveCharacter = ExtResource("8_4kpeb")
-mActiveEnemyCharacter = ExtResource("4_idfla")
 metadata/_custom_type_script = "uid://dlkijgainja7j"
 
 [node name="CombatManager" type="Node" parent="."]

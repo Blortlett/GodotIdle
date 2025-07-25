@@ -27,6 +27,7 @@ func ChangeState(new_state: GameState) -> void:
 	# Emit signal with state type enum
 	state_changed.emit(new_state.state_type)
 
+
 # Simplified state implementations
 class HomeState extends GameState:
 	func _init(manager: GameStateManager):
