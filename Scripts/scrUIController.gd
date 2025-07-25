@@ -5,6 +5,7 @@ extends Node
 @onready var DestinationUI: Control = get_node("../InventoryUI/BookLeftPageSprite/DestinationMenuUI")
 @onready var EnemyCharacterUI: Control = get_node("../InventoryUI/BookLeftPageSprite/CharacterDisplay")
 
+
 func _ready():
 	# Connect to state manager signals
 	var state_manager = get_node("../GameStateManager")
@@ -14,23 +15,24 @@ func _ready():
 	hide_all_uis()
 	HomeUI.visible = true;
 
+
 func hide_all_uis():
 	HomeUI.visible = false
 	DestinationUI.visible = false
 	EnemyCharacterUI.visible = false
 
-func _on_state_changed(state_name: String):
-	hide_all_uis()  # Hide all first
-	print_debug(state_name);
-	match state_name:
-		"HomeState":
+
+func _on_state_changed(state_type: GameState.StateType):
+	# Hide all first
+	hide_all_uis();
+	
+	# Turn on active UI determined by active state
+	match state_type:
+		GameState.StateType.HOME:
 			HomeUI.visible = true
-			print_debug("Showing Home Menu");
-		"DestinationMenuState":
+		GameState.StateType.DESTINATION_MENU:
 			DestinationUI.visible = true
-			print_debug("Showing Destination Menu");
-		"ExploringState":
+		GameState.StateType.EXPLORING:
 			EnemyCharacterUI.visible = true
-			print_debug("Showing Combat Zone");
-		_:
+		_: # default case (Means shit's broken)
 			print_debug("Broke ass broken state fuck")

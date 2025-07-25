@@ -16,6 +16,7 @@ func _ready() -> void:
 		var new_button: Button = mButton.instantiate();
 		ButtonParent.add_child(new_button);
 		new_button.text = Destinations[i].Name;
+		ImplementButton(new_button, i);
 
 # -= Button Pressed Functions =-
 func OnButtonMeadows():
