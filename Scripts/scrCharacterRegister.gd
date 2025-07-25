@@ -35,7 +35,7 @@ func RespawnEnemy() -> void:
 	# Setup EnemyStats / Display
 	mActiveEnemyCharacter.InitCharacter();
 	mInventoryUI.SetEnemyUI(mActiveEnemyCharacter);
-	
+	# engage combat
 	NewEnemySpawn.emit();
 	mCombatManager.BeginCombat();
 
