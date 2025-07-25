@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3bd2ccqkh00a"]
+[gd_scene load_steps=10 format=3 uid="uid://b3bd2ccqkh00a"]
 
 [ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_dhcfh"]
 [ext_resource type="Texture2D" uid="uid://cwn4h5cyakgm7" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookCover01a.png" id="2_il5vc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://so2dglihxik1" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookPageLeft01a.png" id="5_kydoc"]
 [ext_resource type="PackedScene" uid="uid://ei8qtpsb0tex" path="res://Inventory/UI/DebugUI/nDebugMenu.tscn" id="7_e8s8e"]
 [ext_resource type="PackedScene" uid="uid://c8aw6sgpiap08" path="res://UI/ActionUI/nActionUI.tscn" id="8_20xsb"]
+[ext_resource type="PackedScene" uid="uid://dv0y07r2i4vmd" path="res://UI/HomeMenuUI/nHomeMenuUI.tscn" id="9_2bf1r"]
 [ext_resource type="PackedScene" uid="uid://2nnh4f80nnll" path="res://UI/DestinationMenuUI/nDestinationMenuUI.tscn" id="9_sfvvv"]
 
 [node name="InventoryUI" type="Control"]
@@ -150,7 +151,11 @@ offset_right = 0.256119
 offset_bottom = 1.48781
 
 [node name="CharacterDisplay" parent="BookLeftPageSprite" instance=ExtResource("8_20xsb")]
+visible = false
 offset_left = 87.805
 offset_top = 88.0
 offset_right = 127.805
 offset_bottom = 128.0
+
+[node name="HomeMenuUI" parent="BookLeftPageSprite" instance=ExtResource("9_2bf1r")]
+layout_mode = 1
