@@ -17,6 +17,7 @@ func _ready() -> void:
 		ButtonParent.add_child(new_button);
 		new_button.text = Destinations[i].Name;
 
+# -= Button Pressed Functions =-
 func OnButtonMeadows():
 	mGameStateManager.SwapToExploringState();
 
@@ -26,3 +27,11 @@ func OnButtonGraveyard():
 func OnButtonCanyon():
 	mGameStateManager.SwapToExploringState();
 	
+# -= Assign button press to function switch =-
+func ImplementButton(_Button: Button, _ButtonIndex: int):
+	if (_ButtonIndex == 0):
+		_Button.pressed.connect(OnButtonMeadows);
+	elif (_ButtonIndex == 1):
+		_Button.pressed.connect(OnButtonGraveyard);
+	elif (_ButtonIndex == 2):
+		_Button.pressed.connect(OnButtonCanyon);
