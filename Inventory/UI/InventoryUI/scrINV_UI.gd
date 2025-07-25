@@ -28,16 +28,3 @@ func close():
 
 func GetInventorty() -> Inv:
 	return inv;
-
-
-
-# -= Character Displays =-
-func SetPlayerUI(_Character: Character):
-	PlayerDisplay.SetCharacter(_Character);
-
-func SetEnemyUI(_Character: Character):
-	EnemyDisplay.SetCharacter(_Character);
-
-func UpdateCharacterHealthVisuals(_PlayerHealthPercent: float, _EnemyHealthPercent: float):
-	PlayerDisplay.UpdateHealth(_PlayerHealthPercent);
-	EnemyDisplay.UpdateHealth(_EnemyHealthPercent);

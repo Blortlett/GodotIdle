@@ -9,12 +9,13 @@ var mActiveEnemyCharacter: Character;
 
 @onready var mInventoryUI: InventoryUI = get_node("../InventoryUI");
 @onready var mCombatManager: CombatManager = get_node("../CombatManager");
+@onready var mCharacterDisplayController: CharacterDisplayController = get_node("../InventoryUI/CharacterDisplayController");
 
 signal NewEnemySpawn;
 
 func _ready() -> void:
 	mActiveCharacter.InitCharacter();
-	mInventoryUI.SetPlayerUI(mActiveCharacter);
+	mCharacterDisplayController.SetPlayerUI(mActiveCharacter);
 
 
 func KillEnemy() -> InvItem:
@@ -34,7 +35,7 @@ func RespawnEnemy() -> void:
 	mActiveEnemyCharacter = mSpawnableEnemies[RandomEnemyInt];
 	# Setup EnemyStats / Display
 	mActiveEnemyCharacter.InitCharacter();
-	mInventoryUI.SetEnemyUI(mActiveEnemyCharacter);
+	mCharacterDisplayController.SetEnemyUI(mActiveEnemyCharacter);
 	# engage combat
 	NewEnemySpawn.emit();
 	mCombatManager.BeginCombat();

@@ -2,8 +2,14 @@ extends Node
 
 class_name CombatManager;
 
+# Player healing
+var CharacterHealValue: float = 1;
+var CharacterHealTimerMax: float = 1;
+var CharacterHealCurrentTimer: float = CharacterHealTimerMax;
+
 @onready var mCharacterRegister: CharacterRegister = get_node("../CharacterRegister");
 @onready var mInventoryUI: InventoryUI = get_node("../InventoryUI");
+@onready var mCharacterDisplayController: CharacterDisplayController = get_node("../InventoryUI/CharacterDisplayController");
 
 var IsCombatActive: bool = false;
 # Attack cooldown
@@ -12,6 +18,21 @@ var EnemyAttackTimer: float;
 
 # On tick
 func _process(delta):
+	# Heal player timer always runs
+	CharacterHealCurrentTimer -= delta;
+	if CharacterHealCurrentTimer <= 0:
+		# Heal player & apply health cap
+		var PlayerCharacter = mCharacterRegister.mActiveCharacter;
+		PlayerCharacter.CurrentHealth += CharacterHealValue;
+		if (PlayerCharacter.CurrentHealth > PlayerCharacter.Health):
+			PlayerCharacter.CurrentHealth = PlayerCharacter.Health;
+		#update health visual
+		mCharacterDisplayController.UpdatePlayerHealthVisual();
+
+		#reset timer
+		CharacterHealCurrentTimer = CharacterHealTimerMax;
+	
+	# Run combat loop if combat is active
 	if IsCombatActive:
 		PlayerAttackTimer -= delta
 		EnemyAttackTimer -= delta
@@ -42,7 +63,7 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 	#Update Health UI
 	var PlayerHealthPercent = (mCharacterRegister.mActiveCharacter.CurrentHealth / mCharacterRegister.mActiveCharacter.Health) * 100;
 	var EnemyHealthPercent = (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth / mCharacterRegister.mActiveEnemyCharacter.Health) * 100;
-	mInventoryUI.UpdateCharacterHealthVisuals(PlayerHealthPercent, EnemyHealthPercent);
+	mCharacterDisplayController.UpdateCharacterHealthVisuals();
 	
 	if (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth <= 0):
 		var Loot: InvItem = mCharacterRegister.KillEnemy();
