@@ -21,7 +21,6 @@ func OnItemDragged(_Slot: InvSlot):
 	mItemSlot.amount = _Slot.amount;
 	_Slot.item = null;
 	_Slot.amount = 0;
-	
 	# If we took anything, update our drag GFX
 	if mItemSlot.item:
 		mItemSlotUI.update(mItemSlot)

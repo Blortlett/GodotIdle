@@ -1,9 +1,9 @@
 class_name UIController
 extends Node
 
-@onready var HomeUI: Control = get_node("../InventoryUI/BookLeftPageSprite/HomeMenuUI")
-@onready var DestinationUI: Control = get_node("../InventoryUI/BookLeftPageSprite/DestinationMenuUI")
-@onready var EnemyCharacterUI: Control = get_node("../InventoryUI/BookLeftPageSprite/CombatMenuUI")
+@onready var HomeUI: Control = get_node("../GameUI/SystemUI/HomeMenuUI")
+@onready var DestinationUI: Control = get_node("../GameUI/SystemUI/DestinationMenuUI")
+@onready var EnemyCharacterUI: Control = get_node("../GameUI/SystemUI/CombatMenuUI")
 
 
 func _ready():

@@ -14,7 +14,7 @@
 
 [node name="Node" type="Node"]
 
-[node name="InventoryUI" parent="." instance=ExtResource("1_x6p71")]
+[node name="GameUI" parent="." instance=ExtResource("1_x6p71")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0

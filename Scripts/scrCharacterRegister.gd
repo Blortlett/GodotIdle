@@ -4,9 +4,9 @@ class_name CharacterRegister
 @export var mActiveCharacter: Character;
 var mActiveEnemyCharacter: Character;
 
-@onready var mInventoryUI: InventoryUI = get_node("../InventoryUI");
+@onready var mInventoryUI: InventoryUI = get_node("../GameUI");
 @onready var mCombatManager: CombatManager = get_node("../CombatManager");
-@onready var mCharacterDisplayController: CharacterDisplayController = get_node("../InventoryUI/CharacterDisplayController");
+@onready var mCharacterDisplayController: CharacterDisplayController = get_node("../GameUI/CharacterDisplayController");
 @onready var mAreaManager: AreaManager = get_node("../AreaManager");
 
 signal NewEnemySpawn;

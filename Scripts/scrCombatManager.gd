@@ -8,8 +8,8 @@ var CharacterHealTimerMax: float = 1;
 var CharacterHealCurrentTimer: float = CharacterHealTimerMax;
 
 @onready var mCharacterRegister: CharacterRegister = get_node("../CharacterRegister");
-@onready var mInventoryUI: InventoryUI = get_node("../InventoryUI");
-@onready var mCharacterDisplayController: CharacterDisplayController = get_node("../InventoryUI/CharacterDisplayController");
+@onready var mInventoryUI: InventoryUI = get_node("../GameUI");
+@onready var mCharacterDisplayController: CharacterDisplayController = get_node("../GameUI/CharacterDisplayController");
 
 var IsCombatActive: bool = false;
 # Attack cooldown
