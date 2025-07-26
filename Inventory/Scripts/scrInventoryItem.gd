@@ -1,7 +1,17 @@
 extends Resource
 
 class_name InvItem
+enum ItemType
+{
+	ARMOR, WEAPON, CONSUMABLE, QUEST, MATERIAL
+}
+enum ArmorSlot
+{
+	NONE, HELMET, CHEST, LEG, BOOTS, ACCESSORY
+}
 
 @export var name: String = "";
 @export var texture: Texture2D;
 @export var ItemID: int;
+@export var mItemType: ItemType;
+@export var mArmorSlot: ArmorSlot;

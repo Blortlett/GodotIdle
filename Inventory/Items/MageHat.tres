@@ -8,4 +8,6 @@ script = ExtResource("1_s8m0u")
 name = "Mage's Hat"
 texture = ExtResource("2_72a0a")
 ItemID = 1841
+mItemType = 0
+mArmorSlot = 1
 metadata/_custom_type_script = "uid://c7op3b5r7t54q"

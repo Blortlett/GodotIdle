@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3bd2ccqkh00a"]
+[gd_scene load_steps=14 format=3 uid="uid://b3bd2ccqkh00a"]
 
 [ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_dhcfh"]
 [ext_resource type="Texture2D" uid="uid://cwn4h5cyakgm7" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookCover01a.png" id="2_il5vc"]
 [ext_resource type="Texture2D" uid="uid://csfcknshv14od" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookPageRight01a.png" id="3_pct40"]
 [ext_resource type="PackedScene" uid="uid://0luyfwm87ckl" path="res://Inventory/UI/InventoryUI/nInvSlotUI.tscn" id="4_keych"]
 [ext_resource type="Texture2D" uid="uid://so2dglihxik1" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookPageLeft01a.png" id="5_kydoc"]
+[ext_resource type="Script" uid="uid://cdw22kry0gbwn" path="res://Inventory/Scripts/scrEquipmentManager.gd" id="6_6j3o5"]
 [ext_resource type="PackedScene" uid="uid://c8aw6sgpiap08" path="res://UI/ActionUI/nActionUI.tscn" id="8_20xsb"]
 [ext_resource type="PackedScene" uid="uid://dv0y07r2i4vmd" path="res://UI/HomeMenuUI/nHomeMenuUI.tscn" id="9_2bf1r"]
 [ext_resource type="PackedScene" uid="uid://2nnh4f80nnll" path="res://UI/DestinationMenuUI/nDestinationMenuUI.tscn" id="9_sfvvv"]
@@ -105,13 +106,13 @@ grow_vertical = 2
 
 [node name="CharacterDisplay" parent="SystemUI/CharacterUI" instance=ExtResource("8_20xsb")]
 layout_mode = 1
-offset_left = 0.0
-offset_top = -42.5
-offset_right = 0.0
-offset_bottom = -42.5
+offset_left = 2.0
+offset_top = -41.71
+offset_right = 2.0
+offset_bottom = -41.71
 IsPlayerDisplay = true
 
-[node name="EquipmentUI" type="Control" parent="SystemUI/CharacterUI"]
+[node name="EquipmentUI" type="Control" parent="SystemUI/CharacterUI" node_paths=PackedStringArray("mArmorSlotsUI", "mWeaponSlotUI", "mAccessorySlotUI")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -124,6 +125,10 @@ offset_right = 85.0
 offset_bottom = 26.29
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("6_6j3o5")
+mArmorSlotsUI = [NodePath("Slots/HelmetSlot"), NodePath("Slots/ChestplateSlot"), NodePath("Slots/LegsSlot"), NodePath("Slots/BootSlot")]
+mWeaponSlotUI = NodePath("Slots/WeaponSlot")
+mAccessorySlotUI = NodePath("Slots/AccessorySlot")
 
 [node name="Slots" type="Control" parent="SystemUI/CharacterUI/EquipmentUI"]
 layout_mode = 1
@@ -133,44 +138,52 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InvSlotUI" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+[node name="HelmetSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0
-offset_left = 143.81
+offset_left = 17.0
 offset_top = 8.99999
-offset_right = 173.81
+offset_right = 47.0
 offset_bottom = 39.0
 scale = Vector2(0.8, 0.8)
 
-[node name="InvSlotUI2" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+[node name="ChestplateSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0
-offset_left = 143.81
+offset_left = 158.0
+offset_top = 8.99999
+offset_right = 188.0
+offset_bottom = 39.0
+scale = Vector2(0.8, 0.8)
+
+[node name="LegsSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+layout_mode = 0
+offset_left = 158.0
 offset_top = 34.0
-offset_right = 173.81
+offset_right = 188.0
 offset_bottom = 64.0
 scale = Vector2(0.8, 0.8)
 
-[node name="InvSlotUI3" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+[node name="BootSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0
-offset_left = 143.81
+offset_left = 158.0
 offset_top = 59.0
-offset_right = 173.81
+offset_right = 188.0
 offset_bottom = 89.0
 scale = Vector2(0.8, 0.8)
 
-[node name="InvSlotUI4" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+[node name="WeaponSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0
-offset_left = 33.81
-offset_top = 19.0
-offset_right = 63.81
-offset_bottom = 49.0
+offset_left = 17.0
+offset_top = 34.0
+offset_right = 47.0
+offset_bottom = 64.0
 scale = Vector2(0.8, 0.8)
 
-[node name="InvSlotUI5" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+[node name="AccessorySlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0
-offset_left = 33.81
-offset_top = 49.0
-offset_right = 63.81
-offset_bottom = 79.0
+offset_left = 17.0
+offset_top = 59.0
+offset_right = 47.0
+offset_bottom = 89.0
 scale = Vector2(0.8, 0.8)
 
 [node name="InventoryUI" type="Control" parent="SystemUI"]
@@ -214,9 +227,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 25.5
+offset_left = 24.5
 offset_top = 48.5
-offset_right = 225.5
+offset_right = 224.5
 offset_bottom = 112.5
 grow_horizontal = 2
 grow_vertical = 2

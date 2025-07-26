@@ -8,4 +8,5 @@ script = ExtResource("1_wnjex")
 name = "Iron Ore"
 texture = ExtResource("2_ed2nm")
 ItemID = 216
+mItemType = 4
 metadata/_custom_type_script = "uid://c7op3b5r7t54q"

@@ -8,4 +8,5 @@ script = ExtResource("1_3xg7p")
 name = "Apple"
 texture = ExtResource("2_xp421")
 ItemID = 435
+mItemType = 4
 metadata/_custom_type_script = "uid://c7op3b5r7t54q"
