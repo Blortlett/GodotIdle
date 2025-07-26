@@ -34,10 +34,33 @@ func close():
 func GetInventory() -> Inv:
 	return mInventory;
 
-func GetUISlots() -> Array[SlotUI]:
+func GetEquipmentModifiers() -> CombatModifiers:
+	var EquipmentModifiers: CombatModifiers = CombatModifiers.new();
+	if GetWeaponItem():
+		EquipmentModifiers.DamageModifier += GetWeaponItem().DamageModifier;
+		EquipmentModifiers.MagicDamageModifier += GetWeaponItem().MagicDamageModifier;
+	if GetHelmetItem():
+		EquipmentModifiers.MagicDefenseModifier += GetHelmetItem().MagicDefenseModifier;
+		EquipmentModifiers.DefenseModifier += GetHelmetItem().DefenseModifier;
+	return EquipmentModifiers;
+
+func GetUISlots() -> Array[SlotUI]: # Get all slots
 	var EquipmentSlots: Array[SlotUI];
 	for slot: SlotUI in mArmorSlotsUI:
 		EquipmentSlots.append(slot);
 	EquipmentSlots.append(mWeaponSlotUI)
 	EquipmentSlots.append(mAccessorySlotUI)
 	return EquipmentSlots;
+# Get Specific Slots
+func GetHelmetItem() -> InvItem:
+	return mInventory.slots[0].item;
+func GetChestItem() -> InvItem:
+	return mInventory.slots[1].item;
+func GetLegItem() -> InvItem:
+	return mInventory.slots[2].item;
+func GetBootItem() -> InvItem:
+	return mInventory.slots[3].item;
+func GetWeaponItem() -> InvItem:
+	return mInventory.slots[4].item;
+func GetAccessoryItem() -> InvItem:
+	return mInventory.slots[5].item;

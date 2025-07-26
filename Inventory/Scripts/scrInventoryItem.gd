@@ -15,3 +15,7 @@ enum ArmorSlot
 @export var ItemID: int;
 @export var mItemType: ItemType;
 @export var mArmorSlot: ArmorSlot;
+@export var DamageModifier: float;
+@export var MagicDamageModifier: float;
+@export var DefenseModifier: float;
+@export var MagicDefenseModifier: float;

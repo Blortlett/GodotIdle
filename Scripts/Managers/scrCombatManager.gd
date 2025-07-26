@@ -10,6 +10,7 @@ var CharacterHealCurrentTimer: float = CharacterHealTimerMax;
 @onready var mCharacterRegister: CharacterRegister = get_node("../CharacterRegister");
 @onready var mInventoryUI: InventoryUI = get_node("../GameUI");
 @onready var mCharacterDisplayController: CharacterDisplayController = get_node("../GameUI/CharacterDisplayController");
+@onready var mPlayerEquipmentManager: EquipmentManager = get_node("../GameUI/SystemUI/CharacterUI/EquipmentUI");
 
 var IsCombatActive: bool = false;
 # Attack cooldown
@@ -83,28 +84,22 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 	
 	#Update Health UI
 	mCharacterDisplayController.UpdateCharacterHealthVisuals();
-	
-	# Enemy Death
-	if (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth <= 0):
-		var Loot: InvItem = mCharacterRegister.KillEnemy();
-		mInventoryUI.inv.insert(Loot); # Drop Loot
-		mCharacterDisplayController.EnemyDisplay.PlayDeathAnimation();
-		EndCombat();
-	# Player Death
-	if (mCharacterRegister.mActiveCharacter.CurrentHealth <= 0):
-		mCharacterDisplayController.PlayerDisplay.PlayDeathAnimation();
-		EndCombat();
+	# Check if anyone died
+	HandleCharacterDeath();
 
 func _GetPlayerDamageOutput(Player: Character) -> DamageHit:
 	var TotalDamage: DamageHit = DamageHit.new();
-	TotalDamage.PhysicalDamage += Player.Damage;
-	TotalDamage.MagicDamage += Player.MagicDamage;
+	var combatModifiers: CombatModifiers = mPlayerEquipmentManager.GetEquipmentModifiers(); # Bad code this runs twice: see _GetPlayerDefense
+	TotalDamage.PhysicalDamage += Player.Damage + combatModifiers.DamageModifier;
+	TotalDamage.MagicDamage += Player.MagicDamage + combatModifiers.MagicDamageModifier;
 	return TotalDamage;
 
 func _GetPlayerDefense(Player: Character) -> DefendPower:
 	var TotalDefense: DefendPower = DefendPower.new();
-	TotalDefense.PhysicalDefense += Player.Defense;
-	TotalDefense.MagicDefense += Player.MagicDefense;
+	var combatModifiers: CombatModifiers = mPlayerEquipmentManager.GetEquipmentModifiers(); # Bad code this runs twice: see _GetPlayerDamageOutput
+	TotalDefense.PhysicalDefense += Player.Defense + combatModifiers.DefenseModifier;
+	TotalDefense.MagicDefense += Player.MagicDefense + combatModifiers.MagicDefenseModifier;
+	print_debug("Player gear defense: " + str(combatModifiers.DefenseModifier) + "    Magic Defense: " + str(combatModifiers.MagicDefenseModifier))
 	return TotalDefense;
 
 func _GetNPCDamageOutput(NPC: Character) -> DamageHit:
@@ -124,3 +119,15 @@ func BeginCombat():
 
 func EndCombat():
 	IsCombatActive = false;
+
+func HandleCharacterDeath():
+	# Enemy Death
+	if (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth <= 0):
+		var Loot: InvItem = mCharacterRegister.KillEnemy();
+		mInventoryUI.inv.insert(Loot); # Drop Loot
+		mCharacterDisplayController.EnemyDisplay.PlayDeathAnimation();
+		EndCombat();
+	# Player Death
+	if (mCharacterRegister.mActiveCharacter.CurrentHealth <= 0):
+		mCharacterDisplayController.PlayerDisplay.PlayDeathAnimation();
+		EndCombat();

@@ -7,6 +7,11 @@
 script = ExtResource("1_0vl77")
 name = "Iron Sword"
 texture = ExtResource("2_cju1o")
-ItemID = 251
+ItemID = 1607
 mItemType = 1
+mArmorSlot = 0
+DamageModifier = 100.0
+MagicDamageModifier = 100.0
+DefenseModifier = 0.0
+MagicDefenseModifier = 0.0
 metadata/_custom_type_script = "uid://c7op3b5r7t54q"
