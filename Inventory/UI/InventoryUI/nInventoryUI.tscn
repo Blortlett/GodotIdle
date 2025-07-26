@@ -205,3 +205,8 @@ script = ExtResource("11_kbc3c")
 PlayerDisplay = NodePath("../BookRightPageSprite/CharacterUI/CharacterDisplay")
 EnemyDisplay = NodePath("../BookLeftPageSprite/CombatMenuUI/CharacterDisplay")
 metadata/_custom_type_script = "uid://cgimejhachxg6"
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

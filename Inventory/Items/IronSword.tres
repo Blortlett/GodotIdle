@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_0vl77")
-name = "Logs"
+name = "Iron Sword"
 texture = ExtResource("2_cju1o")
 ItemID = 251
 metadata/_custom_type_script = "uid://c7op3b5r7t54q"

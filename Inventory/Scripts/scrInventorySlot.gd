@@ -4,7 +4,21 @@ class_name InvSlot extends Resource;
 @export var amount: int;
 
 # slot functions
-#func PickFromSlot():
-	#remove_child(item);
-	#var inventoryNode = find_parent("Inventory");
-	
+func PickFromSlot():
+	print_debug("Item Dragged from slot")
+
+func DropToSlot():
+	print_debug("Item dropped into slot")
+
+func Use():
+	# Return if no item
+	if (item == null || amount == 0):
+		return
+	# If last item of stack, empty the stack
+	if (amount == 1):
+		item = null
+	# If multiple items in stack, remove one item
+	elif (amount > 1):
+		amount -= 1;
+	# Use Item here
+	print_debug("Item Used!")
