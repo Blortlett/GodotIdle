@@ -1,4 +1,4 @@
-class_name EquipmentManager extends Node
+class_name EquipmentManager extends Control
 # Inventory Component
 @onready var mInventory: Inv = preload("res://Inventory/PlayerEquipmentInventory.tres");
 var isOpen = true;
@@ -33,3 +33,11 @@ func close():
 
 func GetInventory() -> Inv:
 	return mInventory;
+
+func GetUISlots() -> Array[SlotUI]:
+	var EquipmentSlots: Array[SlotUI];
+	for slot: SlotUI in mArmorSlotsUI:
+		EquipmentSlots.append(slot);
+	EquipmentSlots.append(mWeaponSlotUI)
+	EquipmentSlots.append(mAccessorySlotUI)
+	return EquipmentSlots;

@@ -1,6 +1,4 @@
-extends Control;
-
-class_name InventoryUI;
+class_name InventoryUI extends Control;
 @onready var inv: Inv = preload("res://Inventory/PlayerInventory.tres");
 @onready var slots: Array = $SystemUI/InventoryUI/InventoryGrid.get_children();
 var isOpen = false;

@@ -6,16 +6,24 @@ class_name InventoryActions extends Control
 @onready var mInventorySlots: Array[Node] = mInventoryGrid.get_children();
 # Inventory Object
 @onready var mInventoryUI: InventoryUI = get_node("../../..")
+@onready var mEquipmentUI: EquipmentManager = get_node("../../CharacterUI/EquipmentUI")
 @onready var mInventory: Inv = mInventoryUI.GetInventory();
 
 var mIsItemHeld: bool = false;
 
 func _ready() -> void:
+	# Sign up to InventoryUI interaction signals
 	for i in mInventorySlots.size():
 		var slot = mInventorySlots[i]
 		var button := slot.get_node("CenterContainer/Button")
 		button.pressed.connect(func(): OnClicked(i))
-
+	# Sign up to EquipmentUI interaction signals
+	var EquipmentSlots: Array[SlotUI] = mEquipmentUI.GetUISlots()
+	print_debug("EquipmentSlots size: " + str(EquipmentSlots.size()))
+	for i in EquipmentSlots.size():
+		var slot = EquipmentSlots[i]
+		var button := slot.get_node("CenterContainer/Button")
+		button.pressed.connect(func(): OnClicked(i))
 
 func OnClicked(slot_index: int):
 	# Debug
