@@ -1,4 +1,4 @@
-extends Panel
+class_name SlotUI extends Panel
 
 @onready var mItemVisual: Sprite2D = $CenterContainer/Panel/ItemDisplaySprite;
 @onready var mAmountText: Label = $CenterContainer/Panel/Label;

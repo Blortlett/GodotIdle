@@ -38,13 +38,13 @@ func _process(delta):
 		EnemyAttackTimer -= delta
 		if PlayerAttackTimer <= 0:
 			# Player attack here
-			mInventoryUI.PlayerDisplay.PlayAttackAnimation();
+			mCharacterDisplayController.PlayerDisplay.PlayAttackAnimation();
 			ApplyAttackDamage(mCharacterRegister.mActiveCharacter, mCharacterRegister.mActiveEnemyCharacter)
 			# Reset Player attack timer
 			PlayerAttackTimer = mCharacterRegister.mActiveCharacter.AttackSpeed;
 		if EnemyAttackTimer <= 0:
 			#Enemy attack here
-			mInventoryUI.EnemyDisplay.PlayAttackAnimation();
+			mCharacterDisplayController.EnemyDisplay.PlayAttackAnimation();
 			ApplyAttackDamage(mCharacterRegister.mActiveEnemyCharacter, mCharacterRegister.mActiveCharacter)
 			# Reset Enemy attack timer
 			EnemyAttackTimer = mCharacterRegister.mActiveEnemyCharacter.AttackSpeed;
@@ -66,11 +66,11 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 	if (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth <= 0):
 		var Loot: InvItem = mCharacterRegister.KillEnemy();
 		mInventoryUI.inv.insert(Loot);
-		mInventoryUI.EnemyDisplay.PlayDeathAnimation();
+		mCharacterDisplayController.EnemyDisplay.PlayDeathAnimation();
 		EndCombat();
 	
 	if (mCharacterRegister.mActiveCharacter.CurrentHealth <= 0):
-		mInventoryUI.PlayerDisplay.PlayDeathAnimation();
+		mCharacterDisplayController.PlayerDisplay.PlayDeathAnimation();
 		EndCombat();
 
 

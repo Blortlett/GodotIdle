@@ -8,6 +8,7 @@ var Buttons: Array[Button];
 @onready var mButton: PackedScene = preload("res://UI/ButtonUI/nButtonUI.tscn");
 
 # Gamestate Manager
+@onready var mAreaManager: AreaManager = get_tree().get_root().get_node("Node/AreaManager");
 @onready var mGameStateManager: GameStateManager = get_tree().get_root().get_node("Node/GameStateManager")
 @onready var mCharacterRegister: CharacterRegister = get_tree().get_root().get_node("Node/CharacterRegister")
 
@@ -21,14 +22,17 @@ func _ready() -> void:
 
 # -= Button Pressed Functions =-
 func OnButtonMeadows():
+	mAreaManager.SwapArea(AreaManager.AreaType.Field)
 	mGameStateManager.SwapToExploringState();
 	mCharacterRegister.RespawnEnemy();
 
 func OnButtonGraveyard():
+	mAreaManager.SwapArea(AreaManager.AreaType.Graveyard)
 	mGameStateManager.SwapToExploringState();
 	mCharacterRegister.RespawnEnemy();
 	
 func OnButtonCanyon():
+	mAreaManager.SwapArea(AreaManager.AreaType.Canyon)
 	mGameStateManager.SwapToExploringState();
 	mCharacterRegister.RespawnEnemy();
 	

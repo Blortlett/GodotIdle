@@ -12,6 +12,7 @@ var Buttons: Array[Button];
 # Gamestate Manager
 @onready var mGameStateManager: GameStateManager = get_tree().get_root().get_node("Node/GameStateManager")
 @onready var mCharacterRegister: CharacterRegister = get_tree().get_root().get_node("Node/CharacterRegister")
+@onready var mAreaManager: AreaManager = get_tree().get_root().get_node("Node/AreaManager");
 
 # create buttons on start
 func _ready() -> void:

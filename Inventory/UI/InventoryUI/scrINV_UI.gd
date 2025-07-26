@@ -3,9 +3,7 @@ extends Control;
 class_name InventoryUI;
 
 @onready var inv: Inv = preload("res://Inventory/PlayerInventory.tres");
-@onready var slots: Array = $BookRightPageSprite/CharacterUI/InventoryGrid.get_children();
-@onready var PlayerDisplay: CharacterDisplay = $BookRightPageSprite/CharacterUI/CharacterDisplay;
-@onready var EnemyDisplay: CharacterDisplay = $BookLeftPageSprite/CombatMenuUI/CharacterDisplay;
+@onready var slots: Array = $BookRightPageSprite/InventoryUI/InventoryGrid.get_children();
 
 var isOpen = false;
 

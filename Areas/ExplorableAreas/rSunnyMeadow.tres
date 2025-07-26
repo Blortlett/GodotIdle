@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="ExplorableArea" load_steps=5 format=3 uid="uid://c3swi46siy438"]
+[gd_resource type="Resource" script_class="ExplorableArea" load_steps=4 format=3 uid="uid://c3swi46siy438"]
 
 [ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="1_5n2wi"]
 [ext_resource type="Resource" uid="uid://bhdvldq5o1m0l" path="res://Character/Characters/rSlime.tres" id="2_npi8l"]
-[ext_resource type="Resource" uid="uid://swafbebokb5g" path="res://Character/Characters/rOrc.tres" id="3_5gu8s"]
 [ext_resource type="Script" uid="uid://bpiip7dmpkbh8" path="res://Areas/scrArea.gd" id="4_0udrt"]
 
 [resource]
 script = ExtResource("4_0udrt")
 Name = "Sunny Meadow"
-SpawnableEnemies = Array[ExtResource("1_5n2wi")]([ExtResource("2_npi8l"), ExtResource("3_5gu8s")])
+SpawnableEnemies = Array[ExtResource("1_5n2wi")]([ExtResource("2_npi8l")])
 metadata/_custom_type_script = "uid://bpiip7dmpkbh8"

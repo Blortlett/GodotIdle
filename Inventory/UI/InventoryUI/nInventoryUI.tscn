@@ -125,58 +125,6 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InventoryGrid" type="GridContainer" parent="BookRightPageSprite/CharacterUI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -65.013
-offset_top = 40.437
-offset_right = 134.987
-offset_bottom = 104.437
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.77, 0.77)
-columns = 6
-
-[node name="InvSlotUI" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI2" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI3" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI4" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI5" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI6" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI7" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI8" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI9" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI10" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI11" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
-[node name="InvSlotUI12" parent="BookRightPageSprite/CharacterUI/InventoryGrid" instance=ExtResource("4_keych")]
-layout_mode = 2
-
 [node name="CharacterDisplay" parent="BookRightPageSprite/CharacterUI" instance=ExtResource("8_20xsb")]
 layout_mode = 1
 offset_left = 0.0
@@ -199,6 +147,66 @@ offset_right = 163.78
 offset_bottom = 40.3049
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="InventoryUI" type="Control" parent="BookRightPageSprite"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InventoryGrid" type="GridContainer" parent="BookRightPageSprite/InventoryUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.013
+offset_top = 40.437
+offset_right = 134.987
+offset_bottom = 104.437
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.77, 0.77)
+columns = 6
+
+[node name="InvSlotUI" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI2" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI3" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI4" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI5" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI6" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI7" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI8" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI9" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI10" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI11" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
+
+[node name="InvSlotUI12" parent="BookRightPageSprite/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
+layout_mode = 2
 
 [node name="CharacterDisplayController" type="Node" parent="." node_paths=PackedStringArray("PlayerDisplay", "EnemyDisplay")]
 script = ExtResource("11_kbc3c")

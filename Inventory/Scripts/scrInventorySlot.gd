@@ -1,5 +1,6 @@
 class_name InvSlot extends Resource;
 # stored item data
+var SlotID: int;
 @export var item: InvItem;
 @export var amount: int;
 

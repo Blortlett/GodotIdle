@@ -1,15 +1,13 @@
 extends Node
 
 class_name CharacterRegister
-
-@export var mSpawnableEnemies: Array[Character];
-
 @export var mActiveCharacter: Character;
 var mActiveEnemyCharacter: Character;
 
 @onready var mInventoryUI: InventoryUI = get_node("../InventoryUI");
 @onready var mCombatManager: CombatManager = get_node("../CombatManager");
 @onready var mCharacterDisplayController: CharacterDisplayController = get_node("../InventoryUI/CharacterDisplayController");
+@onready var mAreaManager: AreaManager = get_node("../AreaManager");
 
 signal NewEnemySpawn;
 
@@ -30,9 +28,11 @@ func StartRespawnDelay(delay: float = 3.0) -> void:
 	RespawnEnemy();
 
 func RespawnEnemy() -> void:
+	var spawnableEnemies = mAreaManager.mCurrentArea.SpawnableEnemies
+	
 	# Pick Random Enemy
-	var RandomEnemyInt = randi_range(0, mSpawnableEnemies.size() - 1);
-	mActiveEnemyCharacter = mSpawnableEnemies[RandomEnemyInt];
+	var RandomEnemyInt = randi_range(0, spawnableEnemies.size() - 1);
+	mActiveEnemyCharacter = spawnableEnemies[RandomEnemyInt];
 	# Setup EnemyStats / Display
 	mActiveEnemyCharacter.InitCharacter();
 	mCharacterDisplayController.SetEnemyUI(mActiveEnemyCharacter);
