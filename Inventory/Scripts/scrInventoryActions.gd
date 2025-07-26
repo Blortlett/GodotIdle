@@ -16,18 +16,18 @@ func _ready() -> void:
 	for i in mInventorySlots.size():
 		var slot = mInventorySlots[i]
 		var button := slot.get_node("CenterContainer/Button")
-		button.pressed.connect(func(): OnClicked(i))
+		button.pressed.connect(func(): OnInventoryClicked(i))
 	# Sign up to EquipmentUI interaction signals
 	var EquipmentSlots: Array[SlotUI] = mEquipmentUI.GetUISlots()
 	print_debug("EquipmentSlots size: " + str(EquipmentSlots.size()))
 	for i in EquipmentSlots.size():
 		var slot = EquipmentSlots[i]
 		var button := slot.get_node("CenterContainer/Button")
-		button.pressed.connect(func(): OnClicked(i))
+		button.pressed.connect(func(): OnEquipmentClicked(i))
 
-func OnClicked(slot_index: int):
+func OnInventoryClicked(slot_index: int):
 	# Debug
-	print_debug("Clicked slot index: %d" % slot_index)
+	print_debug("Clicked inventory slot index: %d" % slot_index)
 	
 	# Drop held Item to slot
 	if mIsItemHeld:
@@ -41,4 +41,22 @@ func OnClicked(slot_index: int):
 			return
 		mDragHandler.OnItemDragged(slot)
 		mInventoryUI.UpdateSlots(); # Update Inventory UI
+		mIsItemHeld = true;
+
+func OnEquipmentClicked(slot_index: int):
+	# Debug
+	print_debug("Clicked equipment slot index: %d" % slot_index)
+	
+	# Drop held Item to slot
+	if mIsItemHeld:
+		mDragHandler.OnItemDropped(mEquipmentUI.GetInventory().slots[slot_index])
+		mEquipmentUI.UpdateSlots(); # Update Inventory UI
+		mIsItemHeld = false;
+	# Try Pickup item from slot
+	else:
+		var slot = mEquipmentUI.GetInventory().slots[slot_index]
+		if slot.amount == 0 or !slot.item:
+			return
+		mDragHandler.OnItemDragged(slot)
+		mEquipmentUI.UpdateSlots(); # Update Inventory UI
 		mIsItemHeld = true;
