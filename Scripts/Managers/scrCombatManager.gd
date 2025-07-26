@@ -58,8 +58,8 @@ func HealPlayerTick():
 		CharacterHealCurrentTimer = CharacterHealTimerMax;
 
 func ApplyAttackDamage(Attacker: Character, Defender: Character):
-	var AttackerDamage: float;
-	var DefenderPower: float;
+	var AttackerDamage: DamageHit = DamageHit.new();
+	var DefenderPower: DefendPower = DefendPower.new();
 	# Get Attack Power
 	if Attacker.mPlayerType == Character.PlayerType.PLAYER:
 		AttackerDamage = _GetPlayerDamageOutput(Attacker);
@@ -72,8 +72,8 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 		DefenderPower = _GetNPCDefense(Defender);
 		
 	#Calculate Damage
-	var AttackDamage = Attacker.Damage - Defender.Defense;
-	var MagicDamage = Attacker.MagicDamage - Defender.MagicDefense;
+	var AttackDamage = AttackerDamage.PhysicalDamage - DefenderPower.PhysicalDefense;
+	var MagicDamage = AttackerDamage.MagicDamage - DefenderPower.MagicDefense;
 	
 	#Apply Damage
 	if AttackDamage > 0:
@@ -95,21 +95,28 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 		mCharacterDisplayController.PlayerDisplay.PlayDeathAnimation();
 		EndCombat();
 
-func _GetPlayerDamageOutput(Player: Character) -> float:
-	var TotalDamage: float = 0;
-	TotalDamage += Player.Damage;
+func _GetPlayerDamageOutput(Player: Character) -> DamageHit:
+	var TotalDamage: DamageHit = DamageHit.new();
+	TotalDamage.PhysicalDamage += Player.Damage;
+	TotalDamage.MagicDamage += Player.MagicDamage;
 	return TotalDamage;
 
-func _GetPlayerDefense(Player: Character) -> float:
-	var TotalDefense: float = 0;
+func _GetPlayerDefense(Player: Character) -> DefendPower:
+	var TotalDefense: DefendPower = DefendPower.new();
+	TotalDefense.PhysicalDefense += Player.Defense;
+	TotalDefense.MagicDefense += Player.MagicDefense;
 	return TotalDefense;
 
-func _GetNPCDamageOutput(NPC: Character) -> float:
-		var TotalDamage: float = 0;
-		return TotalDamage;
+func _GetNPCDamageOutput(NPC: Character) -> DamageHit:
+	var TotalDamage: DamageHit = DamageHit.new();
+	TotalDamage.PhysicalDamage += NPC.Damage;
+	TotalDamage.MagicDamage += NPC.MagicDamage;
+	return TotalDamage;
 
-func _GetNPCDefense(NPC: Character) -> float:
-	var TotalDefense: float = 0;
+func _GetNPCDefense(NPC: Character) -> DefendPower:
+	var TotalDefense: DefendPower = DefendPower.new();
+	TotalDefense.PhysicalDefense += NPC.Defense;
+	TotalDefense.MagicDefense += NPC.MagicDefense;
 	return TotalDefense;
 
 func BeginCombat():
