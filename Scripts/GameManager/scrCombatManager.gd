@@ -62,14 +62,14 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 	var DefenderPower: float;
 	# Get Attack Power
 	if Attacker.mPlayerType == Character.PlayerType.PLAYER:
-		AttackerDamage = _GetPlayerDamageOutput();
+		AttackerDamage = _GetPlayerDamageOutput(Attacker);
 	else:
-		AttackerDamage = _GetNPCDamageOutput();
+		AttackerDamage = _GetNPCDamageOutput(Attacker);
 	#Get Defense Power
 	if Defender.mPlayerType == Character.PlayerType.PLAYER:
-		DefenderPower = _GetPlayerDefense();
+		DefenderPower = _GetPlayerDefense(Defender);
 	else:
-		DefenderPower = _GetNPCDefense();
+		DefenderPower = _GetNPCDefense(Defender);
 		
 	#Calculate Damage
 	var AttackDamage = Attacker.Damage - Defender.Defense;
@@ -95,19 +95,20 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 		mCharacterDisplayController.PlayerDisplay.PlayDeathAnimation();
 		EndCombat();
 
-func _GetPlayerDamageOutput() -> float:
+func _GetPlayerDamageOutput(Player: Character) -> float:
 	var TotalDamage: float = 0;
+	TotalDamage += Player.Damage;
 	return TotalDamage;
 
-func _GetPlayerDefense() -> float:
+func _GetPlayerDefense(Player: Character) -> float:
 	var TotalDefense: float = 0;
 	return TotalDefense;
-	
-func _GetNPCDamageOutput() -> float:
+
+func _GetNPCDamageOutput(NPC: Character) -> float:
 		var TotalDamage: float = 0;
 		return TotalDamage;
 
-func _GetNPCDefense() -> float:
+func _GetNPCDefense(NPC: Character) -> float:
 	var TotalDefense: float = 0;
 	return TotalDefense;
 

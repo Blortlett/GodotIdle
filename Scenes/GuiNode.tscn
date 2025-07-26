@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://8vyvaxykm4g4"]
 
 [ext_resource type="PackedScene" uid="uid://b3bd2ccqkh00a" path="res://Inventory/UI/InventoryUI/nInventoryUI.tscn" id="1_x6p71"]
-[ext_resource type="Script" uid="uid://dlkijgainja7j" path="res://Scripts/scrCharacterRegister.gd" id="2_cbp6g"]
-[ext_resource type="Script" uid="uid://dtbqlt8shj24b" path="res://Scripts/scrCombatManager.gd" id="5_idfla"]
+[ext_resource type="Script" uid="uid://dlkijgainja7j" path="res://Scripts/GameManager/scrCharacterRegister.gd" id="2_cbp6g"]
+[ext_resource type="Script" uid="uid://dtbqlt8shj24b" path="res://Scripts/GameManager/scrCombatManager.gd" id="5_idfla"]
 [ext_resource type="Script" uid="uid://bpiip7dmpkbh8" path="res://Areas/scrArea.gd" id="8_0l2m4"]
 [ext_resource type="Resource" uid="uid://croc7fprjc5ic" path="res://Character/Characters/rMage.tres" id="8_gc5i1"]
 [ext_resource type="Resource" uid="uid://c3swi46siy438" path="res://Areas/ExplorableAreas/rSunnyMeadow.tres" id="9_xnu72"]
 [ext_resource type="Script" uid="uid://bg0uiysd0i8ja" path="res://Scripts/GameManager/scrGameManager.gd" id="10_4kpeb"]
 [ext_resource type="Resource" uid="uid://g6wywgfjtwwu" path="res://Areas/ExplorableAreas/rDecreptGraveyard.tres" id="10_yplc7"]
 [ext_resource type="Resource" uid="uid://cgdt811iygfxe" path="res://Areas/ExplorableAreas/rBottomlessCanyon.tres" id="11_5su4m"]
-[ext_resource type="Script" uid="uid://dho7oenng3gns" path="res://Scripts/scrUIController.gd" id="11_gc5i1"]
+[ext_resource type="Script" uid="uid://dho7oenng3gns" path="res://Scripts/GameManager/scrUIController.gd" id="11_gc5i1"]
 [ext_resource type="Script" uid="uid://daodhq5dbe7" path="res://Areas/scrAreaManager.gd" id="12_0l2m4"]
 
 [node name="Node" type="Node"]
