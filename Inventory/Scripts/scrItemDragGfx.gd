@@ -1,4 +1,5 @@
 class_name ItemDragGfxHandler extends Control
+@export var DraggedItemUIOffset: Vector2;
 @onready var mItemSlot: InvSlot = InvSlot.new(); 
 @onready var mItemSlotUI: SlotUI = $InvSlotUI
 var mIsItemHeld: bool = false;
@@ -11,7 +12,7 @@ func _process(delta: float) -> void:
 	if mIsItemHeld:
 		var mouse_pos = get_viewport().get_mouse_position()
 		var transformed_pos = get_viewport_transform().affine_inverse() * mouse_pos
-		mItemSlotUI.position = transformed_pos
+		mItemSlotUI.position = transformed_pos + DraggedItemUIOffset;
 		print_debug("Viewport Mouse: ", mouse_pos, " | Transformed: ", transformed_pos)
 
 func OnItemDragged(_Slot: InvSlot):

@@ -1,10 +1,8 @@
 extends Control;
 
 class_name InventoryUI;
-
 @onready var inv: Inv = preload("res://Inventory/PlayerInventory.tres");
-@onready var slots: Array = $BookRightPageSprite/InventoryUI/InventoryGrid.get_children();
-
+@onready var slots: Array = $RightPageUI/InventoryUI/InventoryGrid.get_children();
 var isOpen = false;
 
 func _ready() -> void:
