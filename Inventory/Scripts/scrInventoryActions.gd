@@ -16,6 +16,7 @@ func _ready() -> void:
 		var button := slot.get_node("CenterContainer/Button")
 		button.pressed.connect(func(): OnClicked(i))
 
+
 func OnClicked(slot_index: int):
 	# Debug
 	print_debug("Clicked slot index: %d" % slot_index)

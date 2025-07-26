@@ -7,6 +7,13 @@ func _ready() -> void:
 	mItemSlotUI.update(mItemSlot)
 	mItemSlotUI.visible = false;
 
+func _process(delta: float) -> void:
+	if mIsItemHeld:
+		var mouse_pos = get_viewport().get_mouse_position()
+		var transformed_pos = get_viewport_transform().affine_inverse() * mouse_pos
+		mItemSlotUI.position = transformed_pos
+		print_debug("Viewport Mouse: ", mouse_pos, " | Transformed: ", transformed_pos)
+
 func OnItemDragged(_Slot: InvSlot):
 	# Take item from Inventory
 	mItemSlot.item = _Slot.item;

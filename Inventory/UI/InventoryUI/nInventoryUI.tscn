@@ -108,6 +108,8 @@ anchor_left = 0.5
 anchor_top = 0.03
 anchor_right = 0.97
 anchor_bottom = 0.97
+offset_top = 0.21
+offset_bottom = 0.210007
 grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("3_pct40")
@@ -212,19 +214,13 @@ layout_mode = 2
 
 [node name="InventoryActions" type="Control" parent="BookRightPageSprite/InventoryUI"]
 anchors_preset = 0
-offset_left = 28.0
-offset_top = 115.21
-offset_right = 28.0
-offset_bottom = 115.21
 script = ExtResource("11_2xcof")
 metadata/_custom_type_script = "uid://0k82eyh0nyh7"
 
 [node name="ItemDragGfxHandler" type="Control" parent="BookRightPageSprite/InventoryUI/InventoryActions"]
 anchors_preset = 0
-offset_left = -56.0
-offset_top = 19.0
-offset_right = -16.0
-offset_bottom = 59.0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("12_6j3o5")
 metadata/_custom_type_script = "uid://7jr5oueo8fsy"
 
