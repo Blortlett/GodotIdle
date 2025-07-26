@@ -1,7 +1,35 @@
 class_name InventoryActions extends Control
-@onready var InventoryGrid: GridContainer = get_node("../InventoryGrid");
-@onready var InventorySlots: Array[SlotUI] = InventoryGrid.get_children();
+# Item drag graphics
+@onready var mDragHandler: ItemDragGfxHandler = get_node("ItemDragGfxHandler");
+# Inventory UI
+@onready var mInventoryGrid: GridContainer = get_node("../InventoryGrid");
+@onready var mInventorySlots: Array[Node] = mInventoryGrid.get_children();
+# Inventory Object
+@onready var mInventoryUI: InventoryUI = get_node("../../..")
+@onready var mInventory: Inv = mInventoryUI.GetInventory();
+
+var mIsItemHeld: bool = false;
 
 func _ready() -> void:
-	for Slot in InventorySlots:
-		#subscribe to signal here
+	for i in mInventorySlots.size():
+		var slot = mInventorySlots[i]
+		var button := slot.get_node("CenterContainer/Button")
+		button.pressed.connect(func(): OnClicked(i))
+
+func OnClicked(slot_index: int):
+	# Debug
+	print_debug("Clicked slot index: %d" % slot_index)
+	
+	# Drop held Item to slot
+	if mIsItemHeld:
+		mDragHandler.OnItemDropped(mInventoryUI.GetInventory().slots[slot_index])
+		mInventoryUI.UpdateSlots(); # Update Inventory UI
+		mIsItemHeld = false;
+	# Try Pickup item from slot
+	else:
+		var slot = mInventoryUI.GetInventory().slots[slot_index]
+		if slot.amount == 0 or !slot.item:
+			return
+		mDragHandler.OnItemDragged(slot)
+		mInventoryUI.UpdateSlots(); # Update Inventory UI
+		mIsItemHeld = true;

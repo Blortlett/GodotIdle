@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3bd2ccqkh00a"]
+[gd_scene load_steps=15 format=3 uid="uid://b3bd2ccqkh00a"]
 
 [ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_dhcfh"]
 [ext_resource type="Texture2D" uid="uid://cwn4h5cyakgm7" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookCover01a.png" id="2_il5vc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://0k82eyh0nyh7" path="res://Inventory/Scripts/scrInventoryActions.gd" id="11_2xcof"]
 [ext_resource type="Script" uid="uid://cgimejhachxg6" path="res://Character/UI/scrCharacterDisplayController.gd" id="11_kbc3c"]
 [ext_resource type="Script" uid="uid://7jr5oueo8fsy" path="res://Inventory/Scripts/scrItemDragGfx.gd" id="12_6j3o5"]
+[ext_resource type="Texture2D" uid="uid://cj3s6gf7cewsn" path="res://Art/Items/Items32x32.png" id="13_l8g2t"]
 
 [node name="InventoryUI" type="Control"]
 layout_mode = 3
@@ -212,24 +213,26 @@ layout_mode = 2
 
 [node name="InventoryActions" type="Control" parent="BookRightPageSprite/InventoryUI"]
 anchors_preset = 0
-offset_left = 28.0
-offset_top = 115.21
-offset_right = 28.0
-offset_bottom = 115.21
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("11_2xcof")
 metadata/_custom_type_script = "uid://0k82eyh0nyh7"
 
-[node name="ItemDragGfxHandler" type="Control" parent="BookRightPageSprite/InventoryUI/InventoryActions"]
+[node name="DragableIcon" type="Control" parent="BookRightPageSprite/InventoryUI/InventoryActions"]
 anchors_preset = 0
-offset_left = -56.0
-offset_top = 19.0
-offset_right = -16.0
-offset_bottom = 59.0
+offset_left = 21.0
+offset_top = -40.79
+offset_right = 61.0
+offset_bottom = -0.790001
 script = ExtResource("12_6j3o5")
-metadata/_custom_type_script = "uid://7jr5oueo8fsy"
 
-[node name="InvSlotUI" parent="BookRightPageSprite/InventoryUI/InventoryActions/ItemDragGfxHandler" instance=ExtResource("4_keych")]
+[node name="DragableGfx" type="Sprite2D" parent="BookRightPageSprite/InventoryUI/InventoryActions/DragableIcon"]
+texture = ExtResource("13_l8g2t")
+
+[node name="AmountText" type="Label" parent="BookRightPageSprite/InventoryUI/InventoryActions/DragableIcon"]
 layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="CharacterDisplayController" type="Node" parent="." node_paths=PackedStringArray("PlayerDisplay", "EnemyDisplay")]
 script = ExtResource("11_kbc3c")

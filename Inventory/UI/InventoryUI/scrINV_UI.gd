@@ -24,5 +24,5 @@ func close():
 	visible = false;
 	isOpen = false;
 
-func GetInventorty() -> Inv:
+func GetInventory() -> Inv:
 	return inv;
