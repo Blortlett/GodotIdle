@@ -9,7 +9,36 @@ var isOpen = true;
 @export var mWeaponSlotUI: SlotUI
 @export var mAccessorySlotUI: SlotUI
 
+func _PrepAllSlotVisuals():
+	# Load empty Helmet slot decal 
+	var texture: Resource = load("res://Art/Items/EquipmentShadows/Helmet.png");
+	_PrepSlotVisual(texture, mArmorSlotsUI[0]);
+	# Load empty Chestplate slot decal 
+	texture = load("res://Art/Items/EquipmentShadows/Chestplate.png");
+	_PrepSlotVisual(texture, mArmorSlotsUI[1]);
+	# Load empty Legs slot decal 
+	texture = load("res://Art/Items/EquipmentShadows/Legs.png");
+	_PrepSlotVisual(texture, mArmorSlotsUI[2]);
+	# Load empty Boots slot decal 
+	texture = load("res://Art/Items/EquipmentShadows/Boots.png");
+	_PrepSlotVisual(texture, mArmorSlotsUI[3]);
+	# Load empty weapon slot decal
+	texture = load("res://Art/Items/EquipmentShadows/Sword.png");
+	_PrepSlotVisual(texture, mWeaponSlotUI);
+	# Load empty Accessory slot decal
+	texture = load("res://Art/Items/EquipmentShadows/Accessory.png");
+	_PrepSlotVisual(texture, mAccessorySlotUI);
+
+func _PrepSlotVisual(_IconTexture: Resource, _SlotUI: Node):
+	var SlotIcon = Sprite2D.new();
+	SlotIcon.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST;
+	SlotIcon.texture = _IconTexture;
+	_SlotUI.add_child(SlotIcon);
+	SlotIcon.position = Vector2(0, 0);
+	SlotIcon.scale = Vector2(.8,.8);
+
 func _ready() -> void:
+	_PrepAllSlotVisuals();
 	mInventory.update.connect(UpdateSlots);
 	UpdateSlots();
 	open();

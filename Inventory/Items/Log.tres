@@ -7,6 +7,11 @@
 script = ExtResource("1_3xg7p")
 name = "Apple"
 texture = ExtResource("2_xp421")
-ItemID = 435
+ItemID = 251
 mItemType = 4
+mArmorSlot = 0
+DamageModifier = 0.0
+MagicDamageModifier = 0.0
+DefenseModifier = 0.0
+MagicDefenseModifier = 0.0
 metadata/_custom_type_script = "uid://c7op3b5r7t54q"
