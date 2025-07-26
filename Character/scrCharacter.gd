@@ -1,6 +1,11 @@
 extends Resource
 
 class_name Character
+enum PlayerType
+{
+	NPC,
+	PLAYER
+}
 enum AllianceType
 {
 	Alliance,
@@ -9,6 +14,7 @@ enum AllianceType
 
 # Name and Descriptions
 @export var Name: String = "";
+@export var mPlayerType: PlayerType;
 @export var Alliance: AllianceType;
 @export var Sprite: SpriteFrames;
 

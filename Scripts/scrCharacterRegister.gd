@@ -12,6 +12,7 @@ var mActiveEnemyCharacter: Character;
 signal NewEnemySpawn;
 
 func _ready() -> void:
+	mActiveCharacter.mPlayerType = Character.PlayerType.PLAYER;
 	mActiveCharacter.InitCharacter();
 	mCharacterDisplayController.SetPlayerUI(mActiveCharacter);
 
