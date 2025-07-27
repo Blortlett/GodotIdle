@@ -1,96 +1,112 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=19 format=3 uid="uid://cwb7toopm58yt"]
+[gd_resource type="Resource" script_class="Inv" load_steps=27 format=3 uid="uid://cwb7toopm58yt"]
 
 [ext_resource type="Script" uid="uid://dvu0cvlyuscvd" path="res://Inventory/Scripts/scrInventory.gd" id="1_aul01"]
 [ext_resource type="Script" uid="uid://bx52jjxmfncpj" path="res://Inventory/Scripts/scrInventorySlot.gd" id="2_78geo"]
-[ext_resource type="Resource" uid="uid://doustx23vjpfp" path="res://Inventory/Items/Consumables/BerryPie.tres" id="3_1mxdw"]
-[ext_resource type="Resource" uid="uid://b1hc8degw40i8" path="res://Inventory/Items/Consumables/Apple.tres" id="3_pm4uy"]
+[ext_resource type="Resource" uid="uid://dpqlcxrpw6bix" path="res://Inventory/Items/Armor/RogueArmor/LeatherBoots.tres" id="3_8hcb5"]
+[ext_resource type="Resource" uid="uid://cqom7wo4tt51e" path="res://Inventory/Items/Armor/RogueArmor/LeatherHood.tres" id="4_fgcbg"]
 [ext_resource type="Resource" uid="uid://cn252xcinp5o2" path="res://Inventory/Items/Consumables/Crayfish.tres" id="4_pm4uy"]
-[ext_resource type="Resource" uid="uid://cdfggvlofqmnp" path="res://Inventory/Items/Consumables/Porkchop.tres" id="5_nc7e1"]
+[ext_resource type="Resource" uid="uid://byld46hssut13" path="res://Inventory/Items/Armor/RogueArmor/LeatherJacket.tres" id="5_meg4k"]
+[ext_resource type="Resource" uid="uid://cugn7yeevb57f" path="res://Inventory/Items/Armor/WarriorArmor/IronHelmet.tres" id="6_s46l5"]
+[ext_resource type="Resource" uid="uid://ba42g2aej6g5o" path="res://Inventory/Items/Armor/WarriorArmor/IronChest.tres" id="7_3gyla"]
+[ext_resource type="Resource" uid="uid://4h3sqil4kbib" path="res://Inventory/Items/Armor/WarriorArmor/IronBoots.tres" id="8_gv1yk"]
+[ext_resource type="Resource" uid="uid://yp75vovbnunj" path="res://Inventory/Items/Weapons/Iron/IronDagger.tres" id="9_orw0x"]
+[ext_resource type="Resource" uid="uid://cp0dxq8tn2c3v" path="res://Inventory/Items/Weapons/Iron/IronLongsword.tres" id="10_n61dj"]
+[ext_resource type="Resource" uid="uid://bp27r6cvvahdy" path="res://Inventory/Items/Weapons/Iron/IronSword.tres" id="11_h1xql"]
+[ext_resource type="Resource" uid="uid://bv1j2jwn1815p" path="res://Inventory/Items/Weapons/Iron/IronWand.tres" id="12_5gvyd"]
+[ext_resource type="Resource" uid="uid://mqpj8hw2uhxd" path="res://Inventory/Items/Weapons/Iron/WoodenStaff.tres" id="13_8ya6i"]
 
 [sub_resource type="Resource" id="Resource_4jx6n"]
 script = ExtResource("2_78geo")
-item = ExtResource("3_pm4uy")
-amount = 3
+item = ExtResource("3_8hcb5")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_1mxdw"]
 script = ExtResource("2_78geo")
-item = ExtResource("3_1mxdw")
-amount = 4
+item = ExtResource("4_fgcbg")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_pm4uy"]
 script = ExtResource("2_78geo")
-item = ExtResource("4_pm4uy")
-amount = 4
+item = ExtResource("5_meg4k")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_nc7e1"]
 script = ExtResource("2_78geo")
-item = ExtResource("5_nc7e1")
-amount = 4
+item = ExtResource("6_s46l5")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_hpwqo"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("7_3gyla")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_swd8f"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("8_gv1yk")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_auakg"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("9_orw0x")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_1xknk"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("10_n61dj")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_7fkab"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("11_h1xql")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_pqwnt"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("12_5gvyd")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_8hcb5"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("13_8ya6i")
+amount = 1
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_fgcbg"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("4_pm4uy")
+amount = 64
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://yp75vovbnunj"]
+
+[ext_resource type="Script" uid="uid://c7op3b5r7t54q" path="res://Inventory/Scripts/scrInventoryItem.gd" id="1_pvbvq"]
+[ext_resource type="Texture2D" uid="uid://cj3s6gf7cewsn" path="res://Art/Items/Items32x32.png" id="2_5ccyk"]
+
+[resource]
+script = ExtResource("1_pvbvq")
+name = "Iron Dagger"
+texture = ExtResource("2_5ccyk")
+ItemID = 1624
+mItemType = 1
+mArmorSlot = 6
+DamageModifier = 4.0
+MagicDamageModifier = 0.0
+DefenseModifier = 0.0
+MagicDefenseModifier = 0.0
+HealAmount = 0.0
+metadata/_custom_type_script = "uid://c7op3b5r7t54q"

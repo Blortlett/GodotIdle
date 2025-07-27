@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Character" load_steps=4 format=3 uid="uid://cthf622hxw7xg"]
 
-[ext_resource type="Resource" uid="uid://cowt4to4mem15" path="res://Inventory/Items/Armor/MageHat.tres" id="1_x5yvg"]
+[ext_resource type="Resource" uid="uid://cowt4to4mem15" path="res://Inventory/Items/Armor/MageArmor/MageHat.tres" id="1_x5yvg"]
 [ext_resource type="SpriteFrames" uid="uid://dm2w2d2vhjx6c" path="res://Character/Sprites/BadGuys/sprfWolf.tres" id="2_fkpck"]
 [ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="2_x5yvg"]
 
