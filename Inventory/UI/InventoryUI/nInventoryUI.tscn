@@ -133,7 +133,6 @@ metadata/_custom_type_script = "uid://7jr5oueo8fsy"
 [node name="InvSlotUI" parent="SystemUI/InventoryUI/InventoryActions/ItemDragGfxHandler" instance=ExtResource("4_keych")]
 layout_mode = 0
 scale = Vector2(0.7, 0.7)
-mouse_filter = 2
 
 [node name="InventoryGrid" type="GridContainer" parent="SystemUI/InventoryUI"]
 layout_mode = 1

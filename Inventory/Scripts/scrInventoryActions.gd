@@ -3,6 +3,7 @@ class_name InventoryActions extends Control
 @onready var mDragHandler: ItemDragGfxHandler = get_node("ItemDragGfxHandler");
 var mLastHoveredInvUI: InventoryUI;
 var mLastHoveredID: int;
+var mIsHoveringInv: bool = false;
 var mLastAccessedInvUI: InventoryUI;
 var mLastAccessedID: int;
 # Inventory UI
@@ -20,35 +21,28 @@ func _ready() -> void:
 	var EquipmentSlots: Array[SlotUI] = mEquipmentUI.GetUISlots()
 	for i in EquipmentSlots.size():
 		var slot = EquipmentSlots[i]
-		var button: Button = slot.get_node("CenterContainer/Button")
+		var button: Control = slot.get_node("CenterContainer")
 		button.mouse_entered.connect(func(): OnInventoryHovered(mEquipmentUI.GetUI(), i))
 		button.mouse_exited.connect(func(): OnInventoryUnhovered(mEquipmentUI.GetUI(), i))
 	# Sign up to InventoryUI interaction signals
 	for i in mInventorySlots.size():
 		var slot = mInventorySlots[i]
-		var button: Button = slot.get_node("CenterContainer/Button")
+		var button: Control = slot.get_node("CenterContainer")
 		button.mouse_entered.connect(func(): OnInventoryHovered(mInventoryUI, i))
 		button.mouse_exited.connect(func(): OnInventoryUnhovered(mInventoryUI, i))
 
 func OnInventoryHovered(inventoryUI: InventoryUI, slot_index: int):
 	mLastHoveredInvUI = inventoryUI;
 	mLastHoveredID = slot_index;
+	mIsHoveringInv = true;
+	print_debug("HoveredInv: " + mLastHoveredInvUI.name + "  HoveredID: " + str(mLastHoveredID))
 
 func OnInventoryUnhovered(inventoryUI: InventoryUI, slot_index: int):
 	if mLastHoveredInvUI == inventoryUI:
 		mLastHoveredInvUI = null;
 	if mLastHoveredID == slot_index:
 		mLastHoveredID = -1;
-
-func OnInventoryClicked(slot_index: int):
-	# Debug
-	print_debug("Clicked inventory slot index: %d" % slot_index)
-	OnSlotClicked(mInventoryUI, slot_index)
-
-func OnEquipmentClicked(slot_index: int):
-	# Debug
-	print_debug("Clicked equipment slot index: %d" % slot_index)
-	OnSlotClicked(mEquipmentUI.GetUI(), slot_index)
+	mIsHoveringInv = false;
 
 # Left Mouse click/release input here
 func _unhandled_input(event: InputEvent):
@@ -59,24 +53,20 @@ func _unhandled_input(event: InputEvent):
 		elif event.is_released():
 			OnLeftMouseButtonReleased()
 
-#Called by both OnInventoryClicked & OnEquipmentClicked
-func OnSlotClicked(inventoryUI: InventoryUI, slot_index: int):
-	# Drop held Item to slot
-	if mIsItemHeld:
-		DropDraggedItem(inventoryUI, slot_index)
-	# Try Pickup item from slot
-	else:
-		DragItem(inventoryUI, slot_index)
-
 func OnLeftMouseButtonPressed():
-	print_debug("Grab Item here :)")
-	DragItem(mLastHoveredInvUI, mLastHoveredID);
+	if mIsHoveringInv:
+		print_debug("Try grab from " + mLastHoveredInvUI.name)
+		DragItem(mLastHoveredInvUI, mLastHoveredID);
 
 func OnLeftMouseButtonReleased():
 	print_debug("Drop Item here :)")
-	DropDraggedItem(mLastAccessedInvUI, mLastAccessedID);
+	if mIsHoveringInv:
+		DropDraggedItem(mLastHoveredInvUI, mLastHoveredID);
+	else:
+		DropDraggedItem(mLastAccessedInvUI, mLastAccessedID);
 
 func DragItem(inventoryUI: InventoryUI, slot_index: int):
+	print_debug("Pressed: " + inventoryUI.name)
 	# track where item came from incase want to cancel
 	mLastAccessedInvUI = inventoryUI;
 	mLastAccessedID = slot_index
@@ -89,6 +79,10 @@ func DragItem(inventoryUI: InventoryUI, slot_index: int):
 	mIsItemHeld = true;
 
 func DropDraggedItem(inventoryUI: InventoryUI, slot_index: int):
+	if !inventoryUI:
+		return;
 	mDragHandler.OnItemDropped(inventoryUI.GetInventory().slots[slot_index])
 	inventoryUI.UpdateSlots(); # Update Inventory UI
 	mIsItemHeld = false;
+	mLastAccessedInvUI = null;
+	mLastAccessedID = -1;
