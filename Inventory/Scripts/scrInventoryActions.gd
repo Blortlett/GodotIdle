@@ -60,9 +60,13 @@ func OnLeftMouseButtonPressed():
 
 func OnLeftMouseButtonReleased():
 	print_debug("Drop Item here :)")
-	if mIsHoveringInv:
-		DropDraggedItem(mLastHoveredInvUI, mLastHoveredID);
-	else:
+	if mIsHoveringInv: # Player Suggests to move item
+		if mLastHoveredID == mLastAccessedID: # Dropped item at same location
+			# Assuming click/use slot
+			
+		else: # Move item/stack to new location
+			DropDraggedItem(mLastHoveredInvUI, mLastHoveredID);
+	else: # invalid move, return item to original slot
 		DropDraggedItem(mLastAccessedInvUI, mLastAccessedID);
 
 func DragItem(inventoryUI: InventoryUI, slot_index: int):
