@@ -23,14 +23,12 @@ func _ready() -> void:
 		var button: Button = slot.get_node("CenterContainer/Button")
 		button.mouse_entered.connect(func(): OnInventoryHovered(mEquipmentUI.GetUI(), i))
 		button.mouse_exited.connect(func(): OnInventoryUnhovered(mEquipmentUI.GetUI(), i))
-		button.pressed.connect(func(): OnEquipmentClicked(i))
 	# Sign up to InventoryUI interaction signals
 	for i in mInventorySlots.size():
 		var slot = mInventorySlots[i]
 		var button: Button = slot.get_node("CenterContainer/Button")
 		button.mouse_entered.connect(func(): OnInventoryHovered(mInventoryUI, i))
 		button.mouse_exited.connect(func(): OnInventoryUnhovered(mInventoryUI, i))
-		button.pressed.connect(func(): OnInventoryClicked(i))
 
 func OnInventoryHovered(inventoryUI: InventoryUI, slot_index: int):
 	mLastHoveredInvUI = inventoryUI;
@@ -52,10 +50,13 @@ func OnEquipmentClicked(slot_index: int):
 	print_debug("Clicked equipment slot index: %d" % slot_index)
 	OnSlotClicked(mEquipmentUI.GetUI(), slot_index)
 
-# Left Mouse Unclicked input here
+# Left Mouse click/release input here
 func _unhandled_input(event: InputEvent):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
+	# LeftMouse release
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.is_pressed():
+			OnLeftMouseButtonPressed()
+		elif event.is_released():
 			OnLeftMouseButtonReleased()
 
 #Called by both OnInventoryClicked & OnEquipmentClicked
@@ -65,20 +66,27 @@ func OnSlotClicked(inventoryUI: InventoryUI, slot_index: int):
 		DropDraggedItem(inventoryUI, slot_index)
 	# Try Pickup item from slot
 	else:
-		# track where item came from incase want to cancel
-		mLastAccessedInvUI = inventoryUI;
-		mLastAccessedID = slot_index
-		# Get Slot
-		var slot = inventoryUI.GetInventory().slots[slot_index]
-		if slot.amount == 0 or !slot.item:
-			return
-		mDragHandler.OnItemDragged(slot)
-		inventoryUI.UpdateSlots(); # Update Inventory UI
-		mIsItemHeld = true;
+		DragItem(inventoryUI, slot_index)
+
+func OnLeftMouseButtonPressed():
+	print_debug("Grab Item here :)")
+	DragItem(mLastHoveredInvUI, mLastHoveredID);
 
 func OnLeftMouseButtonReleased():
 	print_debug("Drop Item here :)")
 	DropDraggedItem(mLastAccessedInvUI, mLastAccessedID);
+
+func DragItem(inventoryUI: InventoryUI, slot_index: int):
+	# track where item came from incase want to cancel
+	mLastAccessedInvUI = inventoryUI;
+	mLastAccessedID = slot_index
+	# Get Slot
+	var slot = inventoryUI.GetInventory().slots[slot_index]
+	if slot.amount == 0 or !slot.item:
+		return
+	mDragHandler.OnItemDragged(slot)
+	inventoryUI.UpdateSlots(); # Update Inventory UI
+	mIsItemHeld = true;
 
 func DropDraggedItem(inventoryUI: InventoryUI, slot_index: int):
 	mDragHandler.OnItemDropped(inventoryUI.GetInventory().slots[slot_index])
