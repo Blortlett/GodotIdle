@@ -1,6 +1,8 @@
 class_name InventoryActions extends Control
 # Item drag graphics
 @onready var mDragHandler: ItemDragGfxHandler = get_node("ItemDragGfxHandler");
+var mLastHoveredInvUI: InventoryUI;
+var mLastHoveredID: int;
 var mLastAccessedInvUI: InventoryUI;
 var mLastAccessedID: int;
 # Inventory UI
@@ -14,18 +16,31 @@ var mLastAccessedID: int;
 var mIsItemHeld: bool = false;
 
 func _ready() -> void:
+	# Sign up to EquipmentUI interaction signals
+	var EquipmentSlots: Array[SlotUI] = mEquipmentUI.GetUISlots()
+	for i in EquipmentSlots.size():
+		var slot = EquipmentSlots[i]
+		var button: Button = slot.get_node("CenterContainer/Button")
+		button.mouse_entered.connect(func(): OnInventoryHovered(mEquipmentUI.GetUI(), i))
+		button.mouse_exited.connect(func(): OnInventoryUnhovered(mEquipmentUI.GetUI(), i))
+		button.pressed.connect(func(): OnEquipmentClicked(i))
 	# Sign up to InventoryUI interaction signals
 	for i in mInventorySlots.size():
 		var slot = mInventorySlots[i]
-		var button := slot.get_node("CenterContainer/Button")
+		var button: Button = slot.get_node("CenterContainer/Button")
+		button.mouse_entered.connect(func(): OnInventoryHovered(mInventoryUI, i))
+		button.mouse_exited.connect(func(): OnInventoryUnhovered(mInventoryUI, i))
 		button.pressed.connect(func(): OnInventoryClicked(i))
-	# Sign up to EquipmentUI interaction signals
-	var EquipmentSlots: Array[SlotUI] = mEquipmentUI.GetUISlots()
-	print_debug("EquipmentSlots size: " + str(EquipmentSlots.size()))
-	for i in EquipmentSlots.size():
-		var slot = EquipmentSlots[i]
-		var button := slot.get_node("CenterContainer/Button")
-		button.pressed.connect(func(): OnEquipmentClicked(i))
+
+func OnInventoryHovered(inventoryUI: InventoryUI, slot_index: int):
+	mLastHoveredInvUI = inventoryUI;
+	mLastHoveredID = slot_index;
+
+func OnInventoryUnhovered(inventoryUI: InventoryUI, slot_index: int):
+	if mLastHoveredInvUI == inventoryUI:
+		mLastHoveredInvUI = null;
+	if mLastHoveredID == slot_index:
+		mLastHoveredID = -1;
 
 func OnInventoryClicked(slot_index: int):
 	# Debug
