@@ -1,10 +1,6 @@
-extends Resource
-
-class_name Inv
-
-signal update;
-
+class_name Inv extends Resource
 @export var slots: Array[InvSlot];
+signal update;
 
 #insert item into first spot in inventory. will stack
 func insert(item: InvItem):

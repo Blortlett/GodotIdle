@@ -13,6 +13,8 @@ var mLastAccessedID: int;
 @onready var mInventoryUI: InventoryUI = get_node("../../..")
 @onready var mEquipmentUI: EquipmentManager = get_node("../../CharacterUI/EquipmentUI")
 @onready var mInventory: Inv = mInventoryUI.GetInventory();
+# Consumable Helper
+@onready var mConsumableManager: ConsumableManager = get_tree().get_root().get_node("Node/ConsumableManager")
 
 var mIsItemHeld: bool = false;
 
@@ -55,19 +57,38 @@ func _unhandled_input(event: InputEvent):
 
 func OnLeftMouseButtonPressed():
 	if mIsHoveringInv:
-		print_debug("Try grab from " + mLastHoveredInvUI.name)
+		print_debug("Try grab from: " + mLastHoveredInvUI.name)
 		DragItem(mLastHoveredInvUI, mLastHoveredID);
 
 func OnLeftMouseButtonReleased():
-	print_debug("Drop Item here :)")
 	if mIsHoveringInv: # Player Suggests to move item
-		if mLastHoveredID == mLastAccessedID: # Dropped item at same location
+		if mLastHoveredID == mLastAccessedID && mLastHoveredInvUI == mLastAccessedInvUI: 
+			# Dropped item at same location
 			# Assuming click/use slot
-			
+			print_debug("Attempting Consume on Item")
+			ConsumeItem();
+			DropDraggedItem(mLastHoveredInvUI, mLastHoveredID);
 		else: # Move item/stack to new location
 			DropDraggedItem(mLastHoveredInvUI, mLastHoveredID);
 	else: # invalid move, return item to original slot
 		DropDraggedItem(mLastAccessedInvUI, mLastAccessedID);
+
+func ConsumeItem():
+	if !mDragHandler.mIsItemHeld:
+		return; # No item program might crash, so abort
+	var slot: InvSlot = mDragHandler.mItemSlot
+	mConsumableManager.ProcessConsume(slot.item);
+	# Consuming last item of stack
+	if slot.amount <= 1:
+		slot.item = null;
+		slot.amount = 0;
+	else: # Consume one item
+		slot.amount -= 1;
+	# Update UI
+	mLastAccessedInvUI.UpdateSlots();
+	# Reset variables
+	mLastAccessedInvUI = null;
+	mLastAccessedID = -1;
 
 func DragItem(inventoryUI: InventoryUI, slot_index: int):
 	print_debug("Pressed: " + inventoryUI.name)
