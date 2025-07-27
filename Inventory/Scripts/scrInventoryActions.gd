@@ -60,3 +60,19 @@ func OnEquipmentClicked(slot_index: int):
 		mDragHandler.OnItemDragged(slot)
 		mEquipmentUI.UpdateSlots(); # Update Inventory UI
 		mIsItemHeld = true;
+
+
+func OnSlotClicked(inventory: Inv, slot_index: int):
+	# Drop held Item to slot
+	if mIsItemHeld:
+		mDragHandler.OnItemDropped(mEquipmentUI.GetInventory().slots[slot_index])
+		mEquipmentUI.UpdateSlots(); # Update Inventory UI
+		mIsItemHeld = false;
+	# Try Pickup item from slot
+	else:
+		var slot = mEquipmentUI.GetInventory().slots[slot_index]
+		if slot.amount == 0 or !slot.item:
+			return
+		mDragHandler.OnItemDragged(slot)
+		mEquipmentUI.UpdateSlots(); # Update Inventory UI
+		mIsItemHeld = true;
