@@ -76,6 +76,8 @@ func OnLeftMouseButtonReleased():
 func ConsumeItem():
 	if !mDragHandler.mIsItemHeld:
 		return; # No item program might crash, so abort
+	if !mDragHandler.mItemSlot.item.mItemType == InvItem.ItemType.CONSUMABLE:
+		return;
 	var slot: InvSlot = mDragHandler.mItemSlot
 	mConsumableManager.ProcessConsume(slot.item);
 	# Consuming last item of stack
@@ -86,9 +88,7 @@ func ConsumeItem():
 		slot.amount -= 1;
 	# Update UI
 	mLastAccessedInvUI.UpdateSlots();
-	# Reset variables
-	mLastAccessedInvUI = null;
-	mLastAccessedID = -1;
+	ClearHeldItemVars()
 
 func DragItem(inventoryUI: InventoryUI, slot_index: int):
 	print_debug("Pressed: " + inventoryUI.name)
@@ -105,9 +105,28 @@ func DragItem(inventoryUI: InventoryUI, slot_index: int):
 
 func DropDraggedItem(inventoryUI: InventoryUI, slot_index: int):
 	if !inventoryUI:
-		return;
-	mDragHandler.OnItemDropped(inventoryUI.GetInventory().slots[slot_index])
-	inventoryUI.UpdateSlots(); # Update Inventory UI
+		return; # invalid operation, no drop spot found
+	# Get destination slot
+	var slotToDropItem: InvSlot = inventoryUI.GetInventory().slots[slot_index];
+	var originalSlot: InvSlot = mLastAccessedInvUI.GetInventory().slots[mLastAccessedID];
+	# Check if slot is occupied
+	if slotToDropItem.item && slotToDropItem.amount > 0:
+		# Inv Slot already has item, swap with other slot
+		originalSlot.item = slotToDropItem.item
+		originalSlot.amount = slotToDropItem.amount
+		mDragHandler.OnItemDropped(slotToDropItem)
+		mLastAccessedInvUI.UpdateSlots();
+		mLastHoveredInvUI.UpdateSlots();
+		ClearHeldItemVars()
+	else:
+		# Empty slot: Drop Item
+		mDragHandler.OnItemDropped(slotToDropItem)
+		#Update UI with new drop position
+		inventoryUI.UpdateSlots(); # Update Inventory UI
+		# Update held item variables to reflect no item held
+		ClearHeldItemVars()
+
+func ClearHeldItemVars():
 	mIsItemHeld = false;
 	mLastAccessedInvUI = null;
 	mLastAccessedID = -1;
