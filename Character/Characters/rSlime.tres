@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Character" load_steps=4 format=3 uid="uid://bhdvldq5o1m0l"]
 
 [ext_resource type="SpriteFrames" uid="uid://ck6sjg3apgjg1" path="res://Character/Sprites/BadGuys/sprfSlime.tres" id="1_6jh3b"]
-[ext_resource type="Resource" uid="uid://b1hc8degw40i8" path="res://Inventory/Items/apple.tres" id="1_uoh5h"]
+[ext_resource type="Resource" uid="uid://b1hc8degw40i8" path="res://Inventory/Items/Consumables/Apple.tres" id="1_uoh5h"]
 [ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="2_uoh5h"]
 
 [resource]

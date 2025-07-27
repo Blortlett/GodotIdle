@@ -11,7 +11,7 @@ enum ArmorSlot
 }
 
 @export var name: String = "";
-@export var texture: Texture2D;
+@export var texture: Texture2D = preload("res://Art/Items/Items32x32.png");
 @export var ItemID: int;
 @export var mItemType: ItemType;
 @export var mArmorSlot: ArmorSlot;

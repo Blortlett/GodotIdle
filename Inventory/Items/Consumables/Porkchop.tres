@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cdfggvlofqmnp"]
+
+[ext_resource type="Script" uid="uid://c7op3b5r7t54q" path="res://Inventory/Scripts/scrInventoryItem.gd" id="1_icrtp"]
+[ext_resource type="Texture2D" uid="uid://cj3s6gf7cewsn" path="res://Art/Items/Items32x32.png" id="2_hh01p"]
+
+[resource]
+script = ExtResource("1_icrtp")
+name = "Porkchop"
+texture = ExtResource("2_hh01p")
+ItemID = 488
+mItemType = 2
+mArmorSlot = 0
+DamageModifier = 0.0
+MagicDamageModifier = 0.0
+DefenseModifier = 0.0
+MagicDefenseModifier = 0.0
+HealAmount = 13.0
+metadata/_custom_type_script = "uid://c7op3b5r7t54q"

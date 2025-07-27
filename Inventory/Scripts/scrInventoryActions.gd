@@ -114,11 +114,12 @@ func ConsumeItem():
 	if slot.amount <= 1:
 		slot.item = null;
 		slot.amount = 0;
+		
 	else: # Consume one item
 		slot.amount -= 1;
 	# Update UI
 	mLastAccessedInvUI.UpdateSlots();
-	ClearHeldItemVars()
+	#ClearHeldItemVars()
 
 func DragItem(inventoryUI: InventoryUI, slot_index: int):
 	print_debug("Pressed: " + inventoryUI.name)

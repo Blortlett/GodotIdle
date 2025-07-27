@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ei8qtpsb0tex"]
 
 [ext_resource type="Script" uid="uid://bxbbabyp5fysh" path="res://Inventory/UI/DebugUI/scrDebugMenu.gd" id="1_fead5"]
-[ext_resource type="Resource" uid="uid://b1hc8degw40i8" path="res://Inventory/Items/apple.tres" id="2_ihfgy"]
+[ext_resource type="Resource" uid="uid://b1hc8degw40i8" path="res://Inventory/Items/Consumables/Apple.tres" id="2_ihfgy"]
 [ext_resource type="Texture2D" uid="uid://coevcludfskv0" path="res://Art/TravelBookUI/AnimatedSprites/Button/UI_TravelBook_Button01a_1.png" id="2_t2lyf"]
 [ext_resource type="Texture2D" uid="uid://cj3s6gf7cewsn" path="res://Art/Items/Items32x32.png" id="3_ihfgy"]
 

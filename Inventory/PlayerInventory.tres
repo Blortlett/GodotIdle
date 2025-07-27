@@ -1,76 +1,98 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=20 format=3 uid="uid://cwb7toopm58yt"]
+[gd_resource type="Resource" script_class="Inv" load_steps=19 format=3 uid="uid://cwb7toopm58yt"]
 
 [ext_resource type="Script" uid="uid://dvu0cvlyuscvd" path="res://Inventory/Scripts/scrInventory.gd" id="1_aul01"]
 [ext_resource type="Script" uid="uid://bx52jjxmfncpj" path="res://Inventory/Scripts/scrInventorySlot.gd" id="2_78geo"]
-[ext_resource type="Resource" uid="uid://b1hc8degw40i8" path="res://Inventory/Items/apple.tres" id="3_pm4uy"]
-[ext_resource type="Resource" uid="uid://bhhf6eaywlnjv" path="res://Inventory/Items/Bones.tres" id="4_nc7e1"]
-[ext_resource type="Resource" uid="uid://cowt4to4mem15" path="res://Inventory/Items/MageHat.tres" id="5_hpwqo"]
-[ext_resource type="Resource" uid="uid://bp27r6cvvahdy" path="res://Inventory/Items/IronSword.tres" id="6_swd8f"]
-[ext_resource type="Resource" uid="uid://ula6287t5uj7" path="res://Inventory/Items/Log.tres" id="7_nc7e1"]
+[ext_resource type="Resource" uid="uid://doustx23vjpfp" path="res://Inventory/Items/Consumables/BerryPie.tres" id="3_1mxdw"]
+[ext_resource type="Resource" uid="uid://b1hc8degw40i8" path="res://Inventory/Items/Consumables/Apple.tres" id="3_pm4uy"]
+[ext_resource type="Resource" uid="uid://cn252xcinp5o2" path="res://Inventory/Items/Consumables/Crayfish.tres" id="4_pm4uy"]
+[ext_resource type="Resource" uid="uid://cdfggvlofqmnp" path="res://Inventory/Items/Consumables/Porkchop.tres" id="5_nc7e1"]
 
 [sub_resource type="Resource" id="Resource_4jx6n"]
 script = ExtResource("2_78geo")
 item = ExtResource("3_pm4uy")
-amount = 6
+amount = 3
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_1mxdw"]
 script = ExtResource("2_78geo")
-item = ExtResource("4_nc7e1")
-amount = 5
+item = ExtResource("3_1mxdw")
+amount = 4
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_pm4uy"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("4_pm4uy")
+amount = 4
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_nc7e1"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("5_nc7e1")
+amount = 4
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_hpwqo"]
 script = ExtResource("2_78geo")
-item = ExtResource("5_hpwqo")
-amount = 1
+amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_swd8f"]
 script = ExtResource("2_78geo")
 amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_auakg"]
 script = ExtResource("2_78geo")
 amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_1xknk"]
 script = ExtResource("2_78geo")
 amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_7fkab"]
 script = ExtResource("2_78geo")
-item = ExtResource("6_swd8f")
-amount = 1
+amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_pqwnt"]
 script = ExtResource("2_78geo")
 amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_8hcb5"]
 script = ExtResource("2_78geo")
 amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_fgcbg"]
 script = ExtResource("2_78geo")
-item = ExtResource("7_nc7e1")
-amount = 3
+amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [resource]
