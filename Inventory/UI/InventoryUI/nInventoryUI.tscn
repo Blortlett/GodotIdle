@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3bd2ccqkh00a"]
+[gd_scene load_steps=16 format=3 uid="uid://b3bd2ccqkh00a"]
 
 [ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_dhcfh"]
 [ext_resource type="Texture2D" uid="uid://cwn4h5cyakgm7" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookCover01a.png" id="2_il5vc"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dv0y07r2i4vmd" path="res://UI/HomeMenuUI/nHomeMenuUI.tscn" id="9_2bf1r"]
 [ext_resource type="PackedScene" uid="uid://2nnh4f80nnll" path="res://UI/DestinationMenuUI/nDestinationMenuUI.tscn" id="9_sfvvv"]
 [ext_resource type="Script" uid="uid://h20ddr8cjwko" path="res://UI/CombatMenuUI/scrCombatMenuUI.gd" id="10_2bf1r"]
+[ext_resource type="Resource" uid="uid://chhe8648spgs7" path="res://Inventory/PlayerEquipmentInventory.tres" id="11_2hnsh"]
 [ext_resource type="Script" uid="uid://0k82eyh0nyh7" path="res://Inventory/Scripts/scrInventoryActions.gd" id="11_2xcof"]
 [ext_resource type="Script" uid="uid://cgimejhachxg6" path="res://Character/UI/scrCharacterDisplayController.gd" id="11_kbc3c"]
 [ext_resource type="Script" uid="uid://7jr5oueo8fsy" path="res://Inventory/Scripts/scrItemDragGfx.gd" id="12_6j3o5"]
@@ -217,13 +218,16 @@ grow_vertical = 2
 script = ExtResource("6_6j3o5")
 mEquipmentSlotsUI = [NodePath("Slots/HelmetSlot"), NodePath("Slots/ChestplateSlot"), NodePath("Slots/LegsSlot"), NodePath("Slots/BootSlot"), NodePath("Slots/WeaponSlot"), NodePath("Slots/AccessorySlot")]
 
-[node name="Slots" type="Control" parent="SystemUI/CharacterUI/EquipmentUI"]
+[node name="Slots" type="Control" parent="SystemUI/CharacterUI/EquipmentUI" node_paths=PackedStringArray("mSlotParent")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dhcfh")
+mInv = ExtResource("11_2hnsh")
+mSlotParent = NodePath(".")
 
 [node name="HelmetSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0

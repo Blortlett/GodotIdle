@@ -28,51 +28,24 @@ func _ready() -> void:
 func OnInventoryClicked(slot_index: int):
 	# Debug
 	print_debug("Clicked inventory slot index: %d" % slot_index)
-	
-	# Drop held Item to slot
-	if mIsItemHeld:
-		mDragHandler.OnItemDropped(mInventoryUI.GetInventory().slots[slot_index])
-		mInventoryUI.UpdateSlots(); # Update Inventory UI
-		mIsItemHeld = false;
-	# Try Pickup item from slot
-	else:
-		var slot = mInventoryUI.GetInventory().slots[slot_index]
-		if slot.amount == 0 or !slot.item:
-			return
-		mDragHandler.OnItemDragged(slot)
-		mInventoryUI.UpdateSlots(); # Update Inventory UI
-		mIsItemHeld = true;
+	OnSlotClicked(mInventoryUI, slot_index)
 
 func OnEquipmentClicked(slot_index: int):
 	# Debug
 	print_debug("Clicked equipment slot index: %d" % slot_index)
-	
+	OnSlotClicked(mEquipmentUI.GetUI(), slot_index)
+#Called by both OnInventoryClicked & OnEquipmentClicked
+func OnSlotClicked(inventoryUI: InventoryUI, slot_index: int):
 	# Drop held Item to slot
 	if mIsItemHeld:
-		mDragHandler.OnItemDropped(mEquipmentUI.GetInventory().slots[slot_index])
-		mEquipmentUI.UpdateSlots(); # Update Inventory UI
+		mDragHandler.OnItemDropped(inventoryUI.GetInventory().slots[slot_index])
+		inventoryUI.UpdateSlots(); # Update Inventory UI
 		mIsItemHeld = false;
 	# Try Pickup item from slot
 	else:
-		var slot = mEquipmentUI.GetInventory().slots[slot_index]
+		var slot = inventoryUI.GetInventory().slots[slot_index]
 		if slot.amount == 0 or !slot.item:
 			return
 		mDragHandler.OnItemDragged(slot)
-		mEquipmentUI.UpdateSlots(); # Update Inventory UI
-		mIsItemHeld = true;
-
-
-func OnSlotClicked(inventory: Inv, slot_index: int):
-	# Drop held Item to slot
-	if mIsItemHeld:
-		mDragHandler.OnItemDropped(mEquipmentUI.GetInventory().slots[slot_index])
-		mEquipmentUI.UpdateSlots(); # Update Inventory UI
-		mIsItemHeld = false;
-	# Try Pickup item from slot
-	else:
-		var slot = mEquipmentUI.GetInventory().slots[slot_index]
-		if slot.amount == 0 or !slot.item:
-			return
-		mDragHandler.OnItemDragged(slot)
-		mEquipmentUI.UpdateSlots(); # Update Inventory UI
+		inventoryUI.UpdateSlots(); # Update Inventory UI
 		mIsItemHeld = true;

@@ -1,9 +1,8 @@
 class_name EquipmentManager extends Control
 # Inventory Component
-@onready var mInventory: Inv = preload("res://Inventory/PlayerEquipmentInventory.tres");
-var isOpen = true;
 
 # Inventory UI
+@onready var mInventoryUIController: InventoryUI = $Slots
 @onready var mSlotContainer: Control = $Slots
 @export var mEquipmentSlotsUI: Array[SlotUI]
 
@@ -38,26 +37,14 @@ func _PrepSlotVisual(_IconTexture: Resource, _SlotUI: Node):
 
 func _ready() -> void:
 	_PrepAllSlotVisuals();
-	mInventory.update.connect(UpdateSlots);
-	UpdateSlots();
-	open();
+
+func GetUI() -> InventoryUI:
+	return mInventoryUIController;
+func GetInventory() -> Inv:
+	return mInventoryUIController.GetInventory();
 
 func UpdateSlots():
-	print_debug(mInventory.slots.size())
-	# Update Armor Slots
-	for i in range(6):
-		mEquipmentSlotsUI[i].update(mInventory.slots[i])
-
-func open():
-	mSlotContainer.visible = true;
-	isOpen = true;
-
-func close():
-	mSlotContainer.visible = false;
-	isOpen = false;
-
-func GetInventory() -> Inv:
-	return mInventory;
+	mInventoryUIController.UpdateSlots();
 
 func GetEquipmentModifiers() -> CombatModifiers:
 	var EquipmentModifiers: CombatModifiers = CombatModifiers.new();
@@ -69,21 +56,22 @@ func GetEquipmentModifiers() -> CombatModifiers:
 		EquipmentModifiers.DefenseModifier += GetHelmetItem().DefenseModifier;
 	return EquipmentModifiers;
 
-func GetUISlots() -> Array[SlotUI]: # Get all slots
+# Get all slots as slots
+func GetUISlots() -> Array[SlotUI]: 
 	var EquipmentSlots: Array[SlotUI];
 	for slot: SlotUI in mEquipmentSlotsUI:
 		EquipmentSlots.append(slot);
 	return EquipmentSlots;
-# Get Specific Slots
+# Get item from Specific Slots
 func GetHelmetItem() -> InvItem:
-	return mInventory.slots[0].item;
+	return GetInventory().slots[0].item;
 func GetChestItem() -> InvItem:
-	return mInventory.slots[1].item;
+	return GetInventory().slots[1].item;
 func GetLegItem() -> InvItem:
-	return mInventory.slots[2].item;
+	return GetInventory().slots[2].item;
 func GetBootItem() -> InvItem:
-	return mInventory.slots[3].item;
+	return GetInventory().slots[3].item;
 func GetWeaponItem() -> InvItem:
-	return mInventory.slots[4].item;
+	return GetInventory().slots[4].item;
 func GetAccessoryItem() -> InvItem:
-	return mInventory.slots[5].item;
+	return GetInventory().slots[5].item;
