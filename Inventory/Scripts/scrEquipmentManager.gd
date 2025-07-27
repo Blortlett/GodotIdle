@@ -26,7 +26,6 @@ func _PrepAllSlotVisuals():
 	# Load empty Accessory slot decal
 	texture = load("res://Art/Items/EquipmentShadows/Accessory.png");
 	_PrepSlotVisual(texture, mEquipmentSlotsUI[5]);
-
 func _PrepSlotVisual(_IconTexture: Resource, _SlotUI: Node):
 	var SlotIcon = Sprite2D.new();
 	SlotIcon.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST;
@@ -38,10 +37,7 @@ func _PrepSlotVisual(_IconTexture: Resource, _SlotUI: Node):
 func _ready() -> void:
 	_PrepAllSlotVisuals();
 
-func GetUI() -> InventoryUI:
-	return mInventoryUIController;
-func GetInventory() -> Inv:
-	return mInventoryUIController.GetInventory();
+
 
 func UpdateSlots():
 	mInventoryUIController.UpdateSlots();
@@ -75,3 +71,10 @@ func GetWeaponItem() -> InvItem:
 	return GetInventory().slots[4].item;
 func GetAccessoryItem() -> InvItem:
 	return GetInventory().slots[5].item;
+
+
+# -= GETTERS =-
+func GetUI() -> InventoryUI:
+	return mInventoryUIController;
+func GetInventory() -> Inv:
+	return mInventoryUIController.GetInventory();

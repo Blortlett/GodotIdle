@@ -244,6 +244,8 @@ offset_top = 8.99999
 offset_right = 47.0
 offset_bottom = 39.0
 scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 1
 
 [node name="ChestplateSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0
@@ -252,6 +254,8 @@ offset_top = 8.99999
 offset_right = 188.0
 offset_bottom = 39.0
 scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 2
 
 [node name="LegsSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0
@@ -260,6 +264,8 @@ offset_top = 34.0
 offset_right = 188.0
 offset_bottom = 64.0
 scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 3
 
 [node name="BootSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0
@@ -268,6 +274,8 @@ offset_top = 59.0
 offset_right = 188.0
 offset_bottom = 89.0
 scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 4
 
 [node name="WeaponSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0
@@ -276,6 +284,8 @@ offset_top = 34.0
 offset_right = 47.0
 offset_bottom = 64.0
 scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 6
 
 [node name="AccessorySlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
 layout_mode = 0
@@ -284,6 +294,8 @@ offset_top = 59.0
 offset_right = 47.0
 offset_bottom = 89.0
 scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 5
 
 [node name="DestinationMenuUI" parent="SystemUI" instance=ExtResource("9_sfvvv")]
 layout_mode = 1

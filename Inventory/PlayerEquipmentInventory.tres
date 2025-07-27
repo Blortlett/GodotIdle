@@ -6,31 +6,43 @@
 [sub_resource type="Resource" id="Resource_dogxb"]
 script = ExtResource("2_yrcx4")
 amount = 0
+mIsEquipmentSlot = true
+mEquipmentType = 1
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_yrcx4"]
 script = ExtResource("2_yrcx4")
 amount = 0
+mIsEquipmentSlot = true
+mEquipmentType = 2
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_7yvec"]
 script = ExtResource("2_yrcx4")
 amount = 0
+mIsEquipmentSlot = true
+mEquipmentType = 3
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_xfq58"]
 script = ExtResource("2_yrcx4")
 amount = 0
+mIsEquipmentSlot = true
+mEquipmentType = 4
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_6leo4"]
 script = ExtResource("2_yrcx4")
 amount = 0
+mIsEquipmentSlot = true
+mEquipmentType = 6
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_6qxmg"]
 script = ExtResource("2_yrcx4")
 amount = 0
+mIsEquipmentSlot = true
+mEquipmentType = 5
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [resource]

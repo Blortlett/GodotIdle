@@ -3,6 +3,8 @@ class_name InvSlot extends Resource;
 var SlotID: int;
 @export var item: InvItem;
 @export var amount: int;
+@export var mIsEquipmentSlot: bool;
+@export var mEquipmentType: InvItem.ArmorSlot;
 
 # slot functions
 func PickFromSlot():

@@ -7,7 +7,7 @@ enum ItemType
 }
 enum ArmorSlot
 {
-	NONE, HELMET, CHEST, LEG, BOOTS, ACCESSORY
+	NONE, HELMET, CHEST, LEG, BOOTS, ACCESSORY, WEAPON
 }
 
 @export var name: String = "";

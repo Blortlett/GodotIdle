@@ -66,12 +66,42 @@ func OnLeftMouseButtonReleased():
 			# Dropped item at same location
 			# Assuming click/use slot
 			print_debug("Attempting Consume on Item")
-			ConsumeItem();
+			ConsumeItem(); # Use 1 item
+			# Drop remaining stack back where it was
 			DropDraggedItem(mLastHoveredInvUI, mLastHoveredID);
 		else: # Move item/stack to new location
+			if (CheckEquipmentSlotOnDrop()):
+				return; # CheckEquipmentSlotOnDrop() will handle moving the item
 			DropDraggedItem(mLastHoveredInvUI, mLastHoveredID);
 	else: # invalid move, return item to original slot
 		DropDraggedItem(mLastAccessedInvUI, mLastAccessedID);
+
+# Returns true if item move has been handled - false if it still needs to be handled
+func CheckEquipmentSlotOnDrop() -> bool:
+	# Check if player is dropping item to equipment
+	if (mLastHoveredInvUI != mEquipmentUI.GetUI()):
+		return false; # All clear to return if not dropping on an equipment slot
+	# Check if dragged item is null - that would result in errors
+	if (!mDragHandler.mItemSlot.item):
+		return true; # Blank item dragged to slot... return true as nothing to do here
+	# Check if Item is an armor or a weapon
+	var draggedItemType: InvItem.ItemType = mDragHandler.mItemSlot.item.mItemType;
+	if (draggedItemType != InvItem.ItemType.ARMOR and draggedItemType != InvItem.ItemType.WEAPON):
+		# Item is not an Armor or a Weapon. Move item/stack back to original location it came from
+		DropDraggedItem(mLastAccessedInvUI, mLastAccessedID);
+		return true; 
+	
+	# Check if dragged item is of the allowed item type
+	var equipmentSlot: InvSlot = mLastHoveredInvUI.GetInventory().slots[mLastHoveredID];
+	var draggedEquipmentType: InvItem.ArmorSlot = mDragHandler.mItemSlot.item.mArmorSlot;
+	if (equipmentSlot.mEquipmentType == draggedEquipmentType):
+		# Move item/stack to new location
+		DropDraggedItem(mLastHoveredInvUI, mLastHoveredID);
+		return true;
+	else: # Move item/stack back to original location it came from
+		DropDraggedItem(mLastAccessedInvUI, mLastAccessedID);
+		return true;
+
 
 func ConsumeItem():
 	if !mDragHandler.mIsItemHeld:

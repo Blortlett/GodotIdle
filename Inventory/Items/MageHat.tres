@@ -14,4 +14,5 @@ DamageModifier = 0.0
 MagicDamageModifier = 0.0
 DefenseModifier = 100.0
 MagicDefenseModifier = 100.0
+HealAmount = 0.0
 metadata/_custom_type_script = "uid://c7op3b5r7t54q"
