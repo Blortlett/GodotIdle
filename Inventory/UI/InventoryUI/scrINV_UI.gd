@@ -1,16 +1,18 @@
 class_name InventoryUI extends Control;
-@onready var inv: Inv = preload("res://Inventory/PlayerInventory.tres");
-@onready var slots: Array = $SystemUI/InventoryUI/InventoryGrid.get_children();
+@export var mInv: Resource;
+@export var mSlotParent: Node;
+var mSlots: Array[Node];
 var isOpen = false;
 
 func _ready() -> void:
-	inv.update.connect(UpdateSlots);
+	mSlots = mSlotParent.get_children();
+	mInv.update.connect(UpdateSlots);
 	UpdateSlots();
 	open();
 
 func UpdateSlots():
-	for i in range(min(inv.slots.size(), slots.size())):
-		slots[i].update(inv.slots[i])
+	for i in range(min(mInv.slots.size(), mSlots.size())):
+		mSlots[i].update(mInv.slots[i])
 
 func open():
 	visible = true;
@@ -21,4 +23,4 @@ func close():
 	isOpen = false;
 
 func GetInventory() -> Inv:
-	return inv;
+	return mInv;
