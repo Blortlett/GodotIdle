@@ -5,29 +5,28 @@ var isOpen = true;
 
 # Inventory UI
 @onready var mSlotContainer: Control = $Slots
-@export var mArmorSlotsUI: Array[SlotUI]
-@export var mWeaponSlotUI: SlotUI
-@export var mAccessorySlotUI: SlotUI
+@export var mEquipmentSlotsUI: Array[SlotUI]
 
+# Prep the visual to describe equipment slot item type
 func _PrepAllSlotVisuals():
 	# Load empty Helmet slot decal 
 	var texture: Resource = load("res://Art/Items/EquipmentShadows/Helmet.png");
-	_PrepSlotVisual(texture, mArmorSlotsUI[0]);
+	_PrepSlotVisual(texture, mEquipmentSlotsUI[0]);
 	# Load empty Chestplate slot decal 
 	texture = load("res://Art/Items/EquipmentShadows/Chestplate.png");
-	_PrepSlotVisual(texture, mArmorSlotsUI[1]);
+	_PrepSlotVisual(texture, mEquipmentSlotsUI[1]);
 	# Load empty Legs slot decal 
 	texture = load("res://Art/Items/EquipmentShadows/Legs.png");
-	_PrepSlotVisual(texture, mArmorSlotsUI[2]);
+	_PrepSlotVisual(texture, mEquipmentSlotsUI[2]);
 	# Load empty Boots slot decal 
 	texture = load("res://Art/Items/EquipmentShadows/Boots.png");
-	_PrepSlotVisual(texture, mArmorSlotsUI[3]);
+	_PrepSlotVisual(texture, mEquipmentSlotsUI[3]);
 	# Load empty weapon slot decal
 	texture = load("res://Art/Items/EquipmentShadows/Sword.png");
-	_PrepSlotVisual(texture, mWeaponSlotUI);
+	_PrepSlotVisual(texture, mEquipmentSlotsUI[4]);
 	# Load empty Accessory slot decal
 	texture = load("res://Art/Items/EquipmentShadows/Accessory.png");
-	_PrepSlotVisual(texture, mAccessorySlotUI);
+	_PrepSlotVisual(texture, mEquipmentSlotsUI[5]);
 
 func _PrepSlotVisual(_IconTexture: Resource, _SlotUI: Node):
 	var SlotIcon = Sprite2D.new();
@@ -46,11 +45,8 @@ func _ready() -> void:
 func UpdateSlots():
 	print_debug(mInventory.slots.size())
 	# Update Armor Slots
-	for i in range(4):
-		mArmorSlotsUI[i].update(mInventory.slots[i])
-	# Update other slots
-	mWeaponSlotUI.update(mInventory.slots[4])
-	mAccessorySlotUI.update(mInventory.slots[5])
+	for i in range(6):
+		mEquipmentSlotsUI[i].update(mInventory.slots[i])
 
 func open():
 	mSlotContainer.visible = true;
@@ -75,10 +71,8 @@ func GetEquipmentModifiers() -> CombatModifiers:
 
 func GetUISlots() -> Array[SlotUI]: # Get all slots
 	var EquipmentSlots: Array[SlotUI];
-	for slot: SlotUI in mArmorSlotsUI:
+	for slot: SlotUI in mEquipmentSlotsUI:
 		EquipmentSlots.append(slot);
-	EquipmentSlots.append(mWeaponSlotUI)
-	EquipmentSlots.append(mAccessorySlotUI)
 	return EquipmentSlots;
 # Get Specific Slots
 func GetHelmetItem() -> InvItem:

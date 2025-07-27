@@ -6,6 +6,7 @@ signal update;
 
 @export var slots: Array[InvSlot];
 
+#insert item into first spot in inventory. will stack
 func insert(item: InvItem):
 	var itemSlots = slots.filter(func(slot): return slot.item == item)
 	if !itemSlots.is_empty():

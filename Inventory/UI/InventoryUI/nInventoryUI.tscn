@@ -201,7 +201,7 @@ offset_right = 2.0
 offset_bottom = -41.71
 IsPlayerDisplay = true
 
-[node name="EquipmentUI" type="Control" parent="SystemUI/CharacterUI" node_paths=PackedStringArray("mArmorSlotsUI", "mWeaponSlotUI", "mAccessorySlotUI")]
+[node name="EquipmentUI" type="Control" parent="SystemUI/CharacterUI" node_paths=PackedStringArray("mEquipmentSlotsUI")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -215,9 +215,7 @@ offset_bottom = 26.29
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_6j3o5")
-mArmorSlotsUI = [NodePath("Slots/HelmetSlot"), NodePath("Slots/ChestplateSlot"), NodePath("Slots/LegsSlot"), NodePath("Slots/BootSlot")]
-mWeaponSlotUI = NodePath("Slots/WeaponSlot")
-mAccessorySlotUI = NodePath("Slots/AccessorySlot")
+mEquipmentSlotsUI = [NodePath("Slots/HelmetSlot"), NodePath("Slots/ChestplateSlot"), NodePath("Slots/LegsSlot"), NodePath("Slots/BootSlot"), NodePath("Slots/WeaponSlot"), NodePath("Slots/AccessorySlot")]
 
 [node name="Slots" type="Control" parent="SystemUI/CharacterUI/EquipmentUI"]
 layout_mode = 1

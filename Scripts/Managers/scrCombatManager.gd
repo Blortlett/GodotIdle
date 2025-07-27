@@ -124,7 +124,7 @@ func HandleCharacterDeath():
 	# Enemy Death
 	if (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth <= 0):
 		var Loot: InvItem = mCharacterRegister.KillEnemy();
-		mInventoryUI.inv.insert(Loot); # Drop Loot
+		mInventoryUI.GetInventory().insert(Loot); # Drop Loot
 		mCharacterDisplayController.EnemyDisplay.PlayDeathAnimation();
 		EndCombat();
 	# Player Death
