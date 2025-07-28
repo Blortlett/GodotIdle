@@ -50,6 +50,9 @@ func SwapToIdleAnimation():
 	if (DisplaySprite.animation != "Die"):
 		DisplaySprite.play("Idle");
 
+func OnPlayerArriveHome():
+	DisplaySprite.play("Idle");
+	
 func OnEnemyRespawn():
 	DisplaySprite.sprite_frames = mCharacterRegister.mActiveEnemyCharacter.Sprite;
 	CreatureNameDisplay.text = mCharacterRegister.mActiveEnemyCharacter.Name;

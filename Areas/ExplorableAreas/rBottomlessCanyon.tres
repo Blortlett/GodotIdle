@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="ExplorableArea" load_steps=5 format=3 uid="uid://cgdt811iygfxe"]
+[gd_resource type="Resource" script_class="ExplorableArea" load_steps=4 format=3 uid="uid://cgdt811iygfxe"]
 
 [ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="1_bcqnn"]
 [ext_resource type="Resource" uid="uid://swafbebokb5g" path="res://Character/Characters/Monsters/rOrc.tres" id="2_q60rp"]
-[ext_resource type="Resource" uid="uid://cthf622hxw7xg" path="res://Character/Characters/Monsters/rWolf.tres" id="3_28omx"]
 [ext_resource type="Script" uid="uid://bpiip7dmpkbh8" path="res://Areas/scrArea.gd" id="4_qhx4j"]
 
 [resource]
 script = ExtResource("4_qhx4j")
 Name = "Botomless Canyon"
-SpawnableEnemies = Array[ExtResource("1_bcqnn")]([ExtResource("2_q60rp"), ExtResource("3_28omx")])
+SpawnableEnemies = Array[ExtResource("1_bcqnn")]([ExtResource("2_q60rp")])
 metadata/_custom_type_script = "uid://bpiip7dmpkbh8"

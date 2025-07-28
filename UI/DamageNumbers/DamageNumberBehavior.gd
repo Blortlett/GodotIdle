@@ -9,7 +9,7 @@ var time_elapsed: float = 0.0
 
 func _ready() -> void:
 	mVelocity = mMaxSpeed;
-	if randi_range(0,2) == 0:
+	if randi_range(0,1) == 0:
 		mIsMovingRight = true;
 		mVelocity.x *= -1;
 		rotation_degrees = 15

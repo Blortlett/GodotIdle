@@ -48,7 +48,7 @@ func OnInventoryUnhovered(inventoryUI: InventoryUI, slot_index: int):
 	mIsHoveringInv = false;
 
 # Left Mouse click/release input here
-func _unhandled_input(event: InputEvent):
+func _input(event: InputEvent): # would be nice to change back to _unhandled_input
 	# LeftMouse release
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():

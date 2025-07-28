@@ -34,6 +34,7 @@ func ChangeState(new_state: GameState) -> void:
 # Simplified state implementations
 class HomeState extends GameState:
 	@onready var mCombatManager: CombatManager = get_tree().get_root().get_node("Node/CombatManager")
+	@onready var mDisplayController: CharacterDisplayController = get_tree().get_root().get_node("Node/GameUI/CharacterDisplayController")
 	func _init(manager: GameStateManager):
 		super(manager)
 		state_type = StateType.HOME
@@ -42,6 +43,7 @@ class HomeState extends GameState:
 		print("Entered Home State")
 		# UI is handled by signal system
 		mCombatManager.IsHome = true;
+		mDisplayController.PlayerDisplay.OnPlayerArriveHome()
 		
 	func ExitState() -> void:
 		print("Exited Home State")
