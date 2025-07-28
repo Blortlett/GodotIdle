@@ -94,7 +94,10 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 	
 	#Update Health UI
 	mCharacterDisplayController.UpdateCharacterHealthVisuals();
-	mCharacterDisplayController.mEnemyDmgNumCtrl.TriggerDamageNumber(AttackDamage + MagicDamage)
+	if Defender.Alliance == Character.AllianceType.Horde:
+		mCharacterDisplayController.mEnemyDmgNumCtrl.TriggerDamageNumber(AttackDamage + MagicDamage)
+	else:
+		mCharacterDisplayController.mPlayerDmgNumCtrl.TriggerDamageNumber(AttackDamage + MagicDamage)
 	# Check if anyone died
 	HandleCharacterDeath();
 

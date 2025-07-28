@@ -7,3 +7,4 @@ func ProcessConsume(item: InvItem):
 		return;
 	mCharacterRegister.mActiveCharacter.CurrentHealth += item.HealAmount;
 	mDisplayManager.UpdatePlayerHealthVisual();
+	mDisplayManager.mPlayerDmgNumCtrl.TriggerDamageNumber(-item.HealAmount)

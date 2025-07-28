@@ -16,6 +16,7 @@ var mLastAccessedID: int;
 # Consumable Helper
 @onready var mConsumableManager: ConsumableManager = get_tree().get_root().get_node("Node/ConsumableManager")
 
+
 var mIsItemHeld: bool = false;
 
 func _ready() -> void:
