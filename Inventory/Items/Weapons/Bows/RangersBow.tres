@@ -10,6 +10,7 @@ texture = ExtResource("2_lokox")
 ItemID = 1804
 mItemType = 4
 mArmorSlot = 6
+mCombatType = 2
 DamageModifier = 18.0
 MagicDamageModifier = 4.0
 DefenseModifier = 0.0

@@ -10,6 +10,7 @@ texture = ExtResource("2_mico2")
 ItemID = 1607
 mItemType = 1
 mArmorSlot = 6
+mCombatType = 3
 DamageModifier = 18.0
 MagicDamageModifier = 0.0
 DefenseModifier = 0.0

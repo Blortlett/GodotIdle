@@ -10,6 +10,7 @@ texture = ExtResource("2_cboht")
 ItemID = 1750
 mItemType = 1
 mArmorSlot = 6
+mCombatType = 2
 DamageModifier = 4.0
 MagicDamageModifier = 15.0
 DefenseModifier = 0.0

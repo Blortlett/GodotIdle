@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://ckcfd0biiasvc"]
 
-[ext_resource type="SpriteFrames" uid="uid://bqcrmjx5wggrq" path="res://Character/Sprites/GoodGuys/sprfWarrior.tres" id="1_fggq8"]
+[ext_resource type="SpriteFrames" uid="uid://bq0mjbyc7t1an" path="res://Character/Sprites/GoodGuys/sprfWarrior.tres" id="1_fggq8"]
 [ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="2_qd3sn"]
 
 [resource]

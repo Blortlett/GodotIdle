@@ -1,10 +1,10 @@
 class_name EquipmentManager extends Control
-# Inventory Component
-
 # Inventory UI
 @onready var mInventoryUIController: InventoryUI = $Slots
 @onready var mSlotContainer: Control = $Slots
 @export var mEquipmentSlotsUI: Array[SlotUI]
+#Player Character Animated Graphics
+@onready var mPlayerCharacterDisplay: CharacterDisplayController = get_node("../../../CharacterDisplayController")
 
 # Prep the visual to describe equipment slot item type
 func _PrepAllSlotVisuals():
@@ -35,9 +35,12 @@ func _PrepSlotVisual(_IconTexture: Resource, _SlotUI: Node):
 	SlotIcon.scale = Vector2(.8,.8);
 
 func _ready() -> void:
+	GetInventory().slots[4].ItemUpdated.connect(OnWeaponSlotUpdated)
 	_PrepAllSlotVisuals();
 
-
+func OnWeaponSlotUpdated(item: InvItem):
+	if item:
+		mPlayerCharacterDisplay.SetPlayerCharacterSpriteFromWeaponType(item.mCombatType)
 
 func UpdateSlots():
 	mInventoryUIController.UpdateSlots();

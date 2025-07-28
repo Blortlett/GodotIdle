@@ -5,6 +5,10 @@ enum ItemType
 {
 	ARMOR, WEAPON, CONSUMABLE, QUEST, MATERIAL
 }
+enum CombatType
+{
+	NONE, MAGIC, RANGED, MELEE
+}
 enum ArmorSlot
 {
 	NONE, HELMET, CHEST, LEG, BOOTS, ACCESSORY, WEAPON
@@ -15,6 +19,7 @@ enum ArmorSlot
 @export var ItemID: int;
 @export var mItemType: ItemType;
 @export var mArmorSlot: ArmorSlot;
+@export var mCombatType: CombatType;
 @export var DamageModifier: float;
 @export var MagicDamageModifier: float;
 @export var DefenseModifier: float;

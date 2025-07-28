@@ -6,6 +6,8 @@ var SlotID: int;
 @export var mIsEquipmentSlot: bool;
 @export var mEquipmentType: InvItem.ArmorSlot;
 
+signal ItemUpdated(item: InvItem);
+
 func _init(_item: InvItem = null, _amount: int = 0) -> void:
 	item = _item;
 	amount = _amount;
@@ -16,6 +18,7 @@ func PickFromSlot():
 
 func DropToSlot():
 	print_debug("Item dropped into slot")
+	emit_signal("ItemUpdated", item)
 
 func Use():
 	# Return if no item

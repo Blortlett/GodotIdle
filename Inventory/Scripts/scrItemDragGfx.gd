@@ -30,6 +30,7 @@ func OnItemDropped(_Slot: InvSlot):
 	# Place Item into Inventory
 	_Slot.item = mItemSlot.item
 	_Slot.amount = mItemSlot.amount;
+	_Slot.DropToSlot()
 	mItemSlot.item = null;
 	mItemSlot.amount = 0;
 	#UpdateSlotGFX

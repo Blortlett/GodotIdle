@@ -10,6 +10,7 @@ texture = ExtResource("2_qhac5")
 ItemID = 1689
 mItemType = 1
 mArmorSlot = 6
+mCombatType = 1
 DamageModifier = 4.0
 MagicDamageModifier = 20.0
 DefenseModifier = 0.0

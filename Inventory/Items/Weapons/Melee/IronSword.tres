@@ -10,6 +10,7 @@ texture = ExtResource("2_w7x0e")
 ItemID = 1607
 mItemType = 1
 mArmorSlot = 6
+mCombatType = 3
 DamageModifier = 11.0
 MagicDamageModifier = 0.0
 DefenseModifier = 0.0

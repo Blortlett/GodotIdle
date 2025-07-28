@@ -5,12 +5,24 @@ class_name CharacterDisplayController extends Node;
 @onready var mPlayerDmgNumCtrl: DamageNumberController = PlayerDisplay.mDamageNumberControl;
 @onready var mEnemyDmgNumCtrl: DamageNumberController = EnemyDisplay.mDamageNumberControl;
 
+@export var mPlayerCharacterAnimations: Array[SpriteFrames];
+
 # -= Character Displays =-
 func SetPlayerUI(_Character: Character):
 	PlayerDisplay.SetCharacter(_Character);
 
 func SetEnemyUI(_Character: Character):
 	EnemyDisplay.SetCharacter(_Character);
+
+func SetPlayerCharacterSpriteFromWeaponType(_CombatType: InvItem.CombatType):
+	match _CombatType:
+		InvItem.CombatType.MAGIC:
+			PlayerDisplay.DisplaySprite.sprite_frames = mPlayerCharacterAnimations[0]
+		InvItem.CombatType.RANGED:
+			PlayerDisplay.DisplaySprite.sprite_frames = mPlayerCharacterAnimations[1]
+		InvItem.CombatType.MELEE:
+			PlayerDisplay.DisplaySprite.sprite_frames = mPlayerCharacterAnimations[2]
+	PlayerDisplay.OnPlayerArriveHome(); #Janky way to swap to idle
 
 func UpdateCharacterHealthVisuals():
 	UpdatePlayerHealthVisual();
