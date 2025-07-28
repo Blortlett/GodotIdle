@@ -14,8 +14,8 @@ var CharacterHealCurrentTimer: float = CharacterHealTimerMax;
 
 var IsCombatActive: bool = false;
 # Attack cooldown
-var PlayerAttackTimer: float;
-var EnemyAttackTimer: float;
+var PlayerAttackTimer: float = 1;
+var EnemyAttackTimer: float = 1;
 
 # On tick
 func _process(delta):
@@ -71,16 +71,24 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 		DefenderPower = _GetPlayerDefense(Defender);
 	else:
 		DefenderPower = _GetNPCDefense(Defender);
-		
+	
 	#Calculate Damage
-	var AttackDamage = AttackerDamage.PhysicalDamage - DefenderPower.PhysicalDefense;
-	var MagicDamage = AttackerDamage.MagicDamage - DefenderPower.MagicDefense;
+	# DMG = ATK/(2^(DEF/ATK))
+	var AttackDamage: float = AttackerDamage.PhysicalDamage/(pow(2, DefenderPower.PhysicalDefense/AttackerDamage.PhysicalDamage));
+	var MagicDamage: float = AttackerDamage.MagicDamage/(pow(2, DefenderPower.MagicDefense/AttackerDamage.MagicDamage));
+	
+	print_debug(Attacker.Name + " AtkDmg: " + str(AttackDamage) + "  MagicDmg: " + str(MagicDamage))
+	print_debug(Defender.Name + " Health: " + str(Defender.Health))
 	
 	#Apply Damage
 	if AttackDamage > 0:
-		Defender.CurrentHealth -= AttackDamage;
+		Defender.CurrentHealth -= AttackDamage * 3;
 	if MagicDamage > 0:
 		Defender.CurrentHealth -= MagicDamage;
+	
+	# Clamp defender health to min 0
+	if Defender.CurrentHealth < 0:
+		Defender.CurrentHealth = 0;
 	
 	#Update Health UI
 	mCharacterDisplayController.UpdateCharacterHealthVisuals();
@@ -99,7 +107,6 @@ func _GetPlayerDefense(Player: Character) -> DefendPower:
 	var combatModifiers: CombatModifiers = mPlayerEquipmentManager.GetEquipmentModifiers(); # Bad code this runs twice: see _GetPlayerDamageOutput
 	TotalDefense.PhysicalDefense += Player.Defense + combatModifiers.DefenseModifier;
 	TotalDefense.MagicDefense += Player.MagicDefense + combatModifiers.MagicDefenseModifier;
-	print_debug("Player gear defense: " + str(combatModifiers.DefenseModifier) + "    Magic Defense: " + str(combatModifiers.MagicDefenseModifier))
 	return TotalDefense;
 
 func _GetNPCDamageOutput(NPC: Character) -> DamageHit:

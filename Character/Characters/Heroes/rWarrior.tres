@@ -6,12 +6,13 @@
 [resource]
 script = ExtResource("2_qd3sn")
 Name = "WARRIOR"
+mPlayerType = 0
 Alliance = 0
 Sprite = ExtResource("1_fggq8")
 Health = 110.0
 Damage = 9.0
 MagicDamage = 0.0
-Defense = 11.0
+Defense = 5.0
 MagicDefense = 0.0
 AttackSpeed = 0.9
 metadata/_custom_type_script = "uid://dhdrxna4ooxij"

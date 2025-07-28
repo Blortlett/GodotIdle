@@ -16,5 +16,5 @@ MagicDamage = 0.0
 Defense = 8.0
 MagicDefense = 0.0
 AttackSpeed = 1.1
-LootTable = ExtResource("1_ak8jf")
+mLootTable = ExtResource("1_ak8jf")
 metadata/_custom_type_script = "uid://dhdrxna4ooxij"

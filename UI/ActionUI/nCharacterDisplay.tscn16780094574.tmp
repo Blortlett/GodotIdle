@@ -95,6 +95,8 @@ offset_top = 1.0
 offset_right = 71.0
 offset_bottom = 2.0
 scale = Vector2(1, 4)
+max_value = 1.0
+value = 1.0
 texture_progress = SubResource("GradientTexture1D_8w0gs")
 
 [node name="CreatureName" type="Label" parent="CreatureInfoDisplay"]

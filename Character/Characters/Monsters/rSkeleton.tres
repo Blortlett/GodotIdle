@@ -16,5 +16,5 @@ MagicDamage = 4.0
 Defense = 2.0
 MagicDefense = 3.0
 AttackSpeed = 1.4
-LootTable = ExtResource("1_ue78r")
+mLootTable = ExtResource("1_ue78r")
 metadata/_custom_type_script = "uid://dhdrxna4ooxij"

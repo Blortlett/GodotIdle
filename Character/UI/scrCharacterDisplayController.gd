@@ -13,10 +13,10 @@ func SetEnemyUI(_Character: Character):
 func UpdateCharacterHealthVisuals():
 	UpdatePlayerHealthVisual();
 	var EnemyHealthPercent: float;
-	EnemyHealthPercent = mCharacterRegister.mActiveEnemyCharacter.CurrentHealth / mCharacterRegister.mActiveEnemyCharacter.Health;
+	EnemyHealthPercent = (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth / mCharacterRegister.mActiveEnemyCharacter.Health) * 100;
 	EnemyDisplay.UpdateHealth(EnemyHealthPercent);
 
 func UpdatePlayerHealthVisual():
 	var PlayerHealthPercent: float;
-	PlayerHealthPercent = mCharacterRegister.mActiveCharacter.CurrentHealth / mCharacterRegister.mActiveCharacter.Health;
+	PlayerHealthPercent = (mCharacterRegister.mActiveCharacter.CurrentHealth / mCharacterRegister.mActiveCharacter.Health) * 100;
 	PlayerDisplay.UpdateHealth(PlayerHealthPercent);

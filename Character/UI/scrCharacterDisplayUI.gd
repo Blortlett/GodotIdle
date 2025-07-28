@@ -29,7 +29,7 @@ func SetCharacter(_Character: Character) -> void:
 	CreatureNameDisplay.text = _Character.Name;
 	CreatureHealthDisplay.value = (_Character.CurrentHealth / _Character.Health) * 100;
 
-func UpdateHealth(_PercentValue: float): # (0 to 1)
+func UpdateHealth(_PercentValue: float): # (0 to 100)
 	CreatureHealthDisplay.value = _PercentValue;
 
 func PlayAttackAnimation():
