@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_fpt2l")
 Loot = ExtResource("1_hs2ps")
-ChanceToSpawn = 1.0
+ChanceToSpawn = 100.0
 MinAmount = 1
 MaxAmount = 2
 metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"

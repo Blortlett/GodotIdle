@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://8vyvaxykm4g4"]
+[gd_scene load_steps=14 format=3 uid="uid://8vyvaxykm4g4"]
 
 [ext_resource type="PackedScene" uid="uid://b3bd2ccqkh00a" path="res://Inventory/UI/InventoryUI/nInventoryUI.tscn" id="1_x6p71"]
+[ext_resource type="Texture2D" uid="uid://cwvgpea6e7h8g" path="res://Art/wood_texture_full_screen.png" id="1_xnu72"]
 [ext_resource type="Script" uid="uid://dlkijgainja7j" path="res://Scripts/Managers/scrCharacterRegister.gd" id="2_cbp6g"]
 [ext_resource type="Script" uid="uid://dtbqlt8shj24b" path="res://Scripts/Managers/scrCombatManager.gd" id="5_idfla"]
 [ext_resource type="Script" uid="uid://bpiip7dmpkbh8" path="res://Areas/scrArea.gd" id="8_0l2m4"]
@@ -14,6 +15,16 @@
 [ext_resource type="Script" uid="uid://8dyup1wg1q7x" path="res://Scripts/Managers/scrConsumableManager.gd" id="12_xnu72"]
 
 [node name="Node" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 581.0
+offset_top = -36.0
+offset_right = 837.0
+offset_bottom = 566.0
+rotation = 1.5708
+texture = ExtResource("1_xnu72")
+stretch_mode = 1
 
 [node name="GameUI" parent="." instance=ExtResource("1_x6p71")]
 anchors_preset = 0
