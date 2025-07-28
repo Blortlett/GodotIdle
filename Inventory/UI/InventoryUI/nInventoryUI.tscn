@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://0luyfwm87ckl" path="res://Inventory/UI/InventoryUI/nInvSlotUI.tscn" id="4_keych"]
 [ext_resource type="Texture2D" uid="uid://so2dglihxik1" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookPageLeft01a.png" id="5_kydoc"]
 [ext_resource type="Script" uid="uid://cdw22kry0gbwn" path="res://Inventory/Scripts/scrEquipmentManager.gd" id="6_6j3o5"]
-[ext_resource type="PackedScene" uid="uid://c8aw6sgpiap08" path="res://UI/ActionUI/nActionUI.tscn" id="8_20xsb"]
+[ext_resource type="PackedScene" uid="uid://c8aw6sgpiap08" path="res://UI/ActionUI/nCharacterDisplay.tscn" id="8_20xsb"]
 [ext_resource type="PackedScene" uid="uid://dv0y07r2i4vmd" path="res://UI/HomeMenuUI/nHomeMenuUI.tscn" id="9_2bf1r"]
 [ext_resource type="PackedScene" uid="uid://2nnh4f80nnll" path="res://UI/DestinationMenuUI/nDestinationMenuUI.tscn" id="9_sfvvv"]
 [ext_resource type="Script" uid="uid://h20ddr8cjwko" path="res://UI/CombatMenuUI/scrCombatMenuUI.gd" id="10_2bf1r"]
