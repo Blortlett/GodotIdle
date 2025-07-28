@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LootTableEntry" load_steps=3 format=3 uid="uid://ds5onkjqgfghy"]
+
+[ext_resource type="Resource" uid="uid://cvla0mf74k7nu" path="res://Inventory/Items/Materials/IronOre.tres" id="1_06dmt"]
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="1_al55f"]
+
+[resource]
+script = ExtResource("1_al55f")
+Loot = ExtResource("1_06dmt")
+ChanceToSpawn = 1.0
+MinAmount = 1
+MaxAmount = 2
+metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"

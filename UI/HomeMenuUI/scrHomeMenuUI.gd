@@ -1,6 +1,6 @@
 class_name HomeMenu extends Control;
 # Button name list
-var ButtonNames: Array[String] = ["Craft", "Store", "Explore"]
+var ButtonNames: Array[String] = ["Explore"]#["Craft", "Store", "Explore"]
 # Button storage
 @export var ButtonParent: GridContainer;
 var Buttons: Array[Button];
@@ -24,7 +24,4 @@ func OnButtonExplore():
 
 # -= Assign button press to function switch =-
 func ImplementButton(_Button: Button, _ButtonIndex: int):
-	#if (ButtonIndex = 0):
-	#elif (ButtonIndex = 1):
-	if (_ButtonIndex == 2):
-		_Button.pressed.connect(OnButtonExplore);
+	_Button.pressed.connect(OnButtonExplore);

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=10 format=3 uid="uid://d3iv0qktchgy3"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=11 format=3 uid="uid://d3iv0qktchgy3"]
 
 [ext_resource type="Script" uid="uid://dvq8lrpbj70g8" path="res://Inventory/LootTable/scrLootTable.gd" id="1_1fylr"]
 [ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="1_3my5i"]
@@ -9,8 +9,9 @@
 [ext_resource type="Resource" uid="uid://dkfkstf6in2t3" path="res://Inventory/LootTable/Drops/Weapons/Staves/IronWandDrop.tres" id="6_xtx8k"]
 [ext_resource type="Resource" uid="uid://bvwbun720ynag" path="res://Inventory/LootTable/Drops/Armor/LeatherHoodDrop.tres" id="7_x0c6g"]
 [ext_resource type="Resource" uid="uid://c4ra5vlnuhkj7" path="res://Inventory/LootTable/Drops/Weapons/Bows/BowDrop.tres" id="8_hvkwx"]
+[ext_resource type="Resource" uid="uid://1ccovdlqw3" path="res://Inventory/LootTable/Drops/Materials/LogDrop.tres" id="9_ubll6"]
 
 [resource]
 script = ExtResource("1_1fylr")
-mLootTable = Array[ExtResource("1_3my5i")]([ExtResource("2_15asq"), ExtResource("3_ubll6"), ExtResource("4_x6gwm"), ExtResource("5_ihal8"), ExtResource("6_xtx8k"), ExtResource("7_x0c6g"), ExtResource("8_hvkwx")])
+mLootTable = Array[ExtResource("1_3my5i")]([ExtResource("2_15asq"), ExtResource("3_ubll6"), ExtResource("4_x6gwm"), ExtResource("5_ihal8"), ExtResource("6_xtx8k"), ExtResource("7_x0c6g"), ExtResource("8_hvkwx"), ExtResource("9_ubll6")])
 metadata/_custom_type_script = "uid://dvq8lrpbj70g8"

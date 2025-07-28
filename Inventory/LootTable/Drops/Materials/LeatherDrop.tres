@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LootTableEntry" load_steps=3 format=3 uid="uid://b23l4eevnysas"]
+
+[ext_resource type="Resource" uid="uid://njxfj7xqjjmt" path="res://Inventory/Items/Materials/Leather.tres" id="1_1tx4d"]
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="2_mu27x"]
+
+[resource]
+script = ExtResource("2_mu27x")
+Loot = ExtResource("1_1tx4d")
+ChanceToSpawn = 1.0
+MinAmount = 1
+MaxAmount = 2
+metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"
