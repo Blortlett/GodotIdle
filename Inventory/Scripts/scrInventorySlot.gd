@@ -6,6 +6,10 @@ var SlotID: int;
 @export var mIsEquipmentSlot: bool;
 @export var mEquipmentType: InvItem.ArmorSlot;
 
+func _init(_item: InvItem = null, _amount: int = 0) -> void:
+	item = _item;
+	amount = _amount;
+
 # slot functions
 func PickFromSlot():
 	print_debug("Item Dragged from slot")
