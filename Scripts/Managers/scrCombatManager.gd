@@ -1,8 +1,9 @@
 extends Node
 
 class_name CombatManager;
-
 # Player healing
+@export var HomeHealMult: float = 5;
+var IsHome: bool = true;
 var CharacterHealValue: float = 1;
 var CharacterHealTimerMax: float = 1;
 var CharacterHealCurrentTimer: float = CharacterHealTimerMax;
@@ -50,7 +51,11 @@ func HealPlayerTick():
 	if CharacterHealCurrentTimer <= 0:
 		# Heal player & apply health cap
 		var PlayerCharacter = mCharacterRegister.mActiveCharacter;
-		PlayerCharacter.CurrentHealth += CharacterHealValue;
+		if IsHome:
+			PlayerCharacter.CurrentHealth += CharacterHealValue * HomeHealMult;
+		else:
+			PlayerCharacter.CurrentHealth += CharacterHealValue;
+		# Clamp Character Health to max
 		if (PlayerCharacter.CurrentHealth > PlayerCharacter.Health):
 			PlayerCharacter.CurrentHealth = PlayerCharacter.Health;
 		#update health visual

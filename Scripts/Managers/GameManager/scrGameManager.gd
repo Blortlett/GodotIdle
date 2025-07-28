@@ -13,6 +13,9 @@ func _ready() -> void:
 		ExploringState.new(self)
 	]
 	
+	for state in gameStates:
+		self.add_child(state)
+	
 	ChangeState(gameStates[0])
 
 func ChangeState(new_state: GameState) -> void:
@@ -30,6 +33,7 @@ func ChangeState(new_state: GameState) -> void:
 
 # Simplified state implementations
 class HomeState extends GameState:
+	@onready var mCombatManager: CombatManager = get_tree().get_root().get_node("Node/CombatManager")
 	func _init(manager: GameStateManager):
 		super(manager)
 		state_type = StateType.HOME
@@ -37,9 +41,11 @@ class HomeState extends GameState:
 	func EnterState() -> void:
 		print("Entered Home State")
 		# UI is handled by signal system
+		mCombatManager.IsHome = true;
 		
 	func ExitState() -> void:
 		print("Exited Home State")
+		mCombatManager.IsHome = false;
 
 class DestinationMenuState extends GameState:
 	func _init(manager: GameStateManager):
