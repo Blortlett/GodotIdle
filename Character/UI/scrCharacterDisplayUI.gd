@@ -51,7 +51,8 @@ func SwapToIdleAnimation():
 		DisplaySprite.play("Idle");
 
 func OnPlayerArriveHome():
-	DisplaySprite.play("Idle");
+	if IsPlayerDisplay:
+		DisplaySprite.play("Idle");
 	
 func OnEnemyRespawn():
 	DisplaySprite.sprite_frames = mCharacterRegister.mActiveEnemyCharacter.Sprite;
