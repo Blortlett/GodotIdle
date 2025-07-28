@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8aw6sgpiap08"]
+[gd_scene load_steps=12 format=3 uid="uid://c8aw6sgpiap08"]
 
 [ext_resource type="Script" uid="uid://b8d1riuq4m3fn" path="res://Character/UI/scrCharacterDisplayUI.gd" id="1_vjeiu"]
 [ext_resource type="Texture2D" uid="uid://b3eswuyjyk6bx" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_Frame01a.png" id="2_cq7bf"]
 [ext_resource type="Texture2D" uid="uid://c1tfg1qrmh5f" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_Bar01a.png" id="3_mcttn"]
 [ext_resource type="FontFile" uid="uid://bhkd6t2hvac7k" path="res://Art/Fonts/PeaberryBase.ttf" id="4_acxql"]
 [ext_resource type="SpriteFrames" uid="uid://ck6sjg3apgjg1" path="res://Character/Sprites/BadGuys/sprfSlime.tres" id="5_25vls"]
+[ext_resource type="Script" uid="uid://dcd6ff85kotbe" path="res://UI/DamageNumbers/DamageNumberController.gd" id="6_cq7bf"]
+[ext_resource type="LabelSettings" uid="uid://brx41ctbqnjir" path="res://UI/DamageNumbers/DmgNumLabelSettings.tres" id="7_ctor0"]
+[ext_resource type="LabelSettings" uid="uid://bcggigd5pug7c" path="res://UI/DamageNumbers/HealNumLabelSettings.tres" id="8_qrdnq"]
 
 [sub_resource type="Gradient" id="Gradient_f38va"]
 colors = PackedColorArray(0.672305, 1.76881e-06, 6.257e-07, 1, 0.773856, 2.23808e-06, 9.62615e-07, 1)
@@ -141,3 +144,16 @@ scale = Vector2(2, 2)
 sprite_frames = ExtResource("5_25vls")
 animation = &"Attack2"
 autoplay = "Idle"
+
+[node name="DamageNumberController" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_cq7bf")
+NumberDamageColor = ExtResource("7_ctor0")
+NumberHealColor = ExtResource("8_qrdnq")
+metadata/_custom_type_script = "uid://dcd6ff85kotbe"

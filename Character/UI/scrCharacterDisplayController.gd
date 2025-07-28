@@ -2,6 +2,8 @@ class_name CharacterDisplayController extends Node;
 @export var PlayerDisplay: CharacterDisplay;
 @export var EnemyDisplay: CharacterDisplay;
 @onready var mCharacterRegister: CharacterRegister = get_tree().get_root().get_node("Node/CharacterRegister");
+@onready var mPlayerDmgNumCtrl: DamageNumberController = PlayerDisplay.mDamageNumberControl;
+@onready var mEnemyDmgNumCtrl: DamageNumberController = EnemyDisplay.mDamageNumberControl;
 
 # -= Character Displays =-
 func SetPlayerUI(_Character: Character):

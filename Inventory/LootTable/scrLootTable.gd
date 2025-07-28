@@ -2,6 +2,7 @@ class_name LootTable extends Resource
 @export var mLootTable: Array[LootTableEntry];
 
 func SpawnLootDrop() -> Array[InvSlot]:
+	print_debug("LOOTSPAWN!!!!!!!")
 	var LootPack: Array[InvSlot];
 	# Loop through Loot Table
 	for i in range(0, mLootTable.size()):

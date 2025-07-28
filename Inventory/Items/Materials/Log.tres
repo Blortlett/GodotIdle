@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_3xg7p")
-name = "Apple"
+name = "Log"
 texture = ExtResource("2_xp421")
 ItemID = 251
 mItemType = 4

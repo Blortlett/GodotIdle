@@ -13,6 +13,7 @@ var CurrentCharacter: Character;
 @export var IsPlayerDisplay: bool;
 
 @onready var mCharacterRegister: CharacterRegister = get_tree().get_root().get_node("Node/CharacterRegister") 
+@onready var mDamageNumberControl: DamageNumberController = $DamageNumberController
 
 func _ready() -> void:
 	if !IsPlayerDisplay:

@@ -1,10 +1,12 @@
-[gd_resource type="Resource" script_class="LootTableEntry" load_steps=2 format=3 uid="uid://c4ra5vlnuhkj7"]
+[gd_resource type="Resource" script_class="LootTableEntry" load_steps=3 format=3 uid="uid://c4ra5vlnuhkj7"]
 
+[ext_resource type="Resource" uid="uid://dt1v7votxud8i" path="res://Inventory/Items/Weapons/Bows/Bow.tres" id="1_6vdve"]
 [ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="1_b3chp"]
 
 [resource]
 script = ExtResource("1_b3chp")
-ChanceToSpawn = 0.0
-MinAmount = 0
-MaxAmount = 0
+Loot = ExtResource("1_6vdve")
+ChanceToSpawn = 10.0
+MinAmount = 1
+MaxAmount = 1
 metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"

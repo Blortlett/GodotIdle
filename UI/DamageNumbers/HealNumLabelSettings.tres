@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bcggigd5pug7c"]
+
+[ext_resource type="FontFile" uid="uid://n84lclh7eapu" path="res://Art/Fonts/PeaberryMono.ttf" id="1_7dp8l"]
+
+[resource]
+font = ExtResource("1_7dp8l")
+font_color = Color(0.17865, 0.606315, 1.92523e-07, 1)

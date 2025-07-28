@@ -7,7 +7,7 @@
 script = ExtResource("1_4p5jx")
 name = ""
 texture = ExtResource("2_ac66k")
-ItemID = 0
+ItemID = 1788
 mItemType = 0
 mArmorSlot = 0
 DamageModifier = 0.0

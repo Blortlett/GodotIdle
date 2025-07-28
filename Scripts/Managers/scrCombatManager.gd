@@ -78,13 +78,15 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 	var MagicDamage: float = AttackerDamage.MagicDamage/(pow(2, DefenderPower.MagicDefense/AttackerDamage.MagicDamage));
 	
 	print_debug(Attacker.Name + " AtkDmg: " + str(AttackDamage) + "  MagicDmg: " + str(MagicDamage))
-	print_debug(Defender.Name + " Health: " + str(Defender.Health))
+	print_debug(Defender.Name + " Old Health: " + str(Defender.CurrentHealth))
 	
 	#Apply Damage
 	if AttackDamage > 0:
 		Defender.CurrentHealth -= AttackDamage * 3;
 	if MagicDamage > 0:
 		Defender.CurrentHealth -= MagicDamage;
+	print_debug(Defender.Name + " New Health: " + str(Defender.CurrentHealth))
+	
 	
 	# Clamp defender health to min 0
 	if Defender.CurrentHealth < 0:
@@ -92,6 +94,7 @@ func ApplyAttackDamage(Attacker: Character, Defender: Character):
 	
 	#Update Health UI
 	mCharacterDisplayController.UpdateCharacterHealthVisuals();
+	mCharacterDisplayController.mEnemyDmgNumCtrl.TriggerDamageNumber(AttackDamage + MagicDamage)
 	# Check if anyone died
 	HandleCharacterDeath();
 

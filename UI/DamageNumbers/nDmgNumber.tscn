@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://tn4n252358m3"]
+
+[ext_resource type="FontFile" uid="uid://n84lclh7eapu" path="res://Art/Fonts/PeaberryMono.ttf" id="1_mrh0l"]
+[ext_resource type="Script" uid="uid://44p41xn8hkqb" path="res://UI/DamageNumbers/DamageNumberBehavior.gd" id="2_hq5i3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_25vls"]
+font = ExtResource("1_mrh0l")
+
+[node name="DamageNumberBehavior" type="Label"]
+z_index = 4
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00201217
+text = "+"
+label_settings = SubResource("LabelSettings_25vls")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_hq5i3")
+mMaxSpeed = Vector2(1, 1)
+metadata/_custom_type_script = "uid://44p41xn8hkqb"
