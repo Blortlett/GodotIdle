@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=8 format=3 uid="uid://3wjdn6or5fs"]
+
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="1_g61m1"]
+[ext_resource type="Script" uid="uid://dvq8lrpbj70g8" path="res://Inventory/LootTable/scrLootTable.gd" id="1_nfrxs"]
+[ext_resource type="Resource" uid="uid://b4atfi7tmmr7o" path="res://Inventory/LootTable/Drops/Armor/IronHelmDrop.tres" id="2_lj51l"]
+[ext_resource type="Resource" uid="uid://b4av0lrtoiuav" path="res://Inventory/LootTable/Drops/Armor/IronChestDrop.tres" id="3_rdgr6"]
+[ext_resource type="Resource" uid="uid://4s5yhbxdrenu" path="res://Inventory/LootTable/Drops/Armor/IronBootsDrop.tres" id="4_n41jv"]
+[ext_resource type="Resource" uid="uid://b30cpnj8i3fcy" path="res://Inventory/LootTable/Drops/Accessories/ShieldDrop.tres" id="5_rdgr6"]
+[ext_resource type="Resource" uid="uid://dlvs2ulw58jiu" path="res://Inventory/LootTable/Drops/Weapons/Melee/IronSwordDrop.tres" id="6_n41jv"]
+
+[resource]
+script = ExtResource("1_nfrxs")
+mLootTable = Array[ExtResource("1_g61m1")]([ExtResource("2_lj51l"), ExtResource("3_rdgr6"), ExtResource("4_n41jv"), ExtResource("5_rdgr6"), ExtResource("6_n41jv")])
+metadata/_custom_type_script = "uid://dvq8lrpbj70g8"

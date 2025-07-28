@@ -1,5 +1,5 @@
 class_name LootTableEntry extends Resource
-@export var LootList: Array[Resource];
-@export var ChanceToSpawn: Array[float];
+@export var Loot: InvItem;
+@export var ChanceToSpawn: float; # (0 - 100)
 @export var MinAmount: int;
 @export var MaxAmount: int;

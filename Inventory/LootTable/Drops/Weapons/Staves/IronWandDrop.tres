@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LootTableEntry" load_steps=3 format=3 uid="uid://dkfkstf6in2t3"]
+
+[ext_resource type="Resource" uid="uid://bv1j2jwn1815p" path="res://Inventory/Items/Weapons/Staves/IronWand.tres" id="1_5l18e"]
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="1_be0kv"]
+
+[resource]
+script = ExtResource("1_be0kv")
+Loot = ExtResource("1_5l18e")
+ChanceToSpawn = 10.0
+MinAmount = 1
+MaxAmount = 1
+metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"

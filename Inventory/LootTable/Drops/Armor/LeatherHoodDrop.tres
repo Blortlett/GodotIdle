@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LootTableEntry" load_steps=3 format=3 uid="uid://bvwbun720ynag"]
+
+[ext_resource type="Resource" uid="uid://cqom7wo4tt51e" path="res://Inventory/Items/Armor/RogueArmor/LeatherHood.tres" id="1_idpj5"]
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="2_luxsf"]
+
+[resource]
+script = ExtResource("2_luxsf")
+Loot = ExtResource("1_idpj5")
+ChanceToSpawn = 10.0
+MinAmount = 1
+MaxAmount = 1
+metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"

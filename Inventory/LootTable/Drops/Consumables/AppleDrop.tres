@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LootTableEntry" load_steps=3 format=3 uid="uid://bbj1732tdwiwv"]
+
+[ext_resource type="Resource" uid="uid://b1hc8degw40i8" path="res://Inventory/Items/Consumables/Apple.tres" id="1_vc1dc"]
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="2_jsg4h"]
+
+[resource]
+script = ExtResource("2_jsg4h")
+Loot = ExtResource("1_vc1dc")
+ChanceToSpawn = 100.0
+MinAmount = 1
+MaxAmount = 3
+metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"

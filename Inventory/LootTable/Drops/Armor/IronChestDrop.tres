@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LootTableEntry" load_steps=3 format=3 uid="uid://b4av0lrtoiuav"]
+
+[ext_resource type="Resource" uid="uid://ba42g2aej6g5o" path="res://Inventory/Items/Armor/WarriorArmor/IronChest.tres" id="1_vq2p2"]
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="2_qh4uu"]
+
+[resource]
+script = ExtResource("2_qh4uu")
+Loot = ExtResource("1_vq2p2")
+ChanceToSpawn = 10.0
+MinAmount = 1
+MaxAmount = 1
+metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"

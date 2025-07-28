@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=8 format=3 uid="uid://b3cu65phfuqve"]
+
+[ext_resource type="Script" uid="uid://dvq8lrpbj70g8" path="res://Inventory/LootTable/scrLootTable.gd" id="1_62epw"]
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="1_a1dj8"]
+[ext_resource type="Resource" uid="uid://bvwbun720ynag" path="res://Inventory/LootTable/Drops/Armor/LeatherHoodDrop.tres" id="2_driyu"]
+[ext_resource type="Resource" uid="uid://cfieytstcdvb5" path="res://Inventory/LootTable/Drops/Armor/LeatherChestDrop.tres" id="3_nhnni"]
+[ext_resource type="Resource" uid="uid://drw33ok61uc2l" path="res://Inventory/LootTable/Drops/Armor/LeatherBootsDrop.tres" id="4_g106p"]
+[ext_resource type="Resource" uid="uid://dlvs2ulw58jiu" path="res://Inventory/LootTable/Drops/Weapons/Melee/IronSwordDrop.tres" id="5_g106p"]
+[ext_resource type="Resource" uid="uid://6hcjshx71w6p" path="res://Inventory/LootTable/Drops/Accessories/AmuletOfStrengthDrop.tres" id="6_2kv2y"]
+
+[resource]
+script = ExtResource("1_62epw")
+mLootTable = Array[ExtResource("1_a1dj8")]([ExtResource("2_driyu"), ExtResource("3_nhnni"), ExtResource("4_g106p"), ExtResource("5_g106p"), ExtResource("6_2kv2y")])
+metadata/_custom_type_script = "uid://dvq8lrpbj70g8"

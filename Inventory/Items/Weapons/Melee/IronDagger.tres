@@ -7,7 +7,7 @@
 script = ExtResource("1_pvbvq")
 name = "Iron Dagger"
 texture = ExtResource("2_5ccyk")
-ItemID = 1624
+ItemID = 1600
 mItemType = 1
 mArmorSlot = 6
 DamageModifier = 4.0

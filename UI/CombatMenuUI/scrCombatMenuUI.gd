@@ -26,6 +26,7 @@ func _ready() -> void:
 func OnButtonHome():
 	mGameStateManager.SwapToHomeState();
 	mCharacterRegister.ClearEnemySlot();
+	mCharacterRegister.CancelRespawnDelay();
 
 # -= Assign button press to function switch =-
 func ImplementButton(_Button: Button, _ButtonIndex: int):

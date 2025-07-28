@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LootTableEntry" load_steps=3 format=3 uid="uid://drw33ok61uc2l"]
+
+[ext_resource type="Resource" uid="uid://dpqlcxrpw6bix" path="res://Inventory/Items/Armor/RogueArmor/LeatherBoots.tres" id="1_m0s0a"]
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="2_rolkj"]
+
+[resource]
+script = ExtResource("2_rolkj")
+Loot = ExtResource("1_m0s0a")
+ChanceToSpawn = 10.0
+MinAmount = 1
+MaxAmount = 1
+metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"

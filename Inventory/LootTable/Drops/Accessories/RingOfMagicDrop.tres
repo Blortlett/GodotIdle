@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LootTableEntry" load_steps=3 format=3 uid="uid://de5jvelhafv6b"]
+
+[ext_resource type="Resource" uid="uid://dtes6pykoo3km" path="res://Inventory/Items/Accessories/RingOfMagic.tres" id="1_i5h7l"]
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="2_sjvtd"]
+
+[resource]
+script = ExtResource("2_sjvtd")
+Loot = ExtResource("1_i5h7l")
+ChanceToSpawn = 5.0
+MinAmount = 1
+MaxAmount = 1
+metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"

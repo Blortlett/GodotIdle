@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bpqktidnpa23w"]
+
+[ext_resource type="Script" uid="uid://c7op3b5r7t54q" path="res://Inventory/Scripts/scrInventoryItem.gd" id="1_fhoml"]
+[ext_resource type="Texture2D" uid="uid://b2xvxvatdu37y" path="res://Art/Items/ItemAtlas.tres" id="2_1ay6r"]
+
+[resource]
+script = ExtResource("1_fhoml")
+name = "Mage Boots"
+texture = ExtResource("2_1ay6r")
+ItemID = 2165
+mItemType = 0
+mArmorSlot = 4
+DamageModifier = 0.0
+MagicDamageModifier = 0.0
+DefenseModifier = 1.0
+MagicDefenseModifier = 4.0
+HealAmount = 0.0
+metadata/_custom_type_script = "uid://c7op3b5r7t54q"

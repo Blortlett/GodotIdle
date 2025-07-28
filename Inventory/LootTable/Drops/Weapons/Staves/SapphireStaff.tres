@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="LootTableEntry" load_steps=3 format=3 uid="uid://dy0bfm08fvclf"]
+
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="1_6oidt"]
+[ext_resource type="Resource" uid="uid://dj4a03dlq14lk" path="res://Inventory/Items/Weapons/Staves/SapphireStaff.tres" id="1_7ikn3"]
+
+[resource]
+script = ExtResource("1_6oidt")
+Loot = ExtResource("1_7ikn3")
+ChanceToSpawn = 10.0
+MinAmount = 1
+MaxAmount = 1
+metadata/_custom_type_script = "uid://dlpa2k4sqe0y5"

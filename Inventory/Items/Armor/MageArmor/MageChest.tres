@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://b0bvnxqtqvxq2"]
+
+[ext_resource type="Script" uid="uid://c7op3b5r7t54q" path="res://Inventory/Scripts/scrInventoryItem.gd" id="1_gxqoe"]
+[ext_resource type="Texture2D" uid="uid://b2xvxvatdu37y" path="res://Art/Items/ItemAtlas.tres" id="2_iufn6"]
+
+[resource]
+script = ExtResource("1_gxqoe")
+name = "Mage's Hat"
+texture = ExtResource("2_iufn6")
+ItemID = 2082
+mItemType = 0
+mArmorSlot = 2
+DamageModifier = 0.0
+MagicDamageModifier = 0.0
+DefenseModifier = 3.0
+MagicDefenseModifier = 10.0
+HealAmount = 0.0
+metadata/_custom_type_script = "uid://c7op3b5r7t54q"

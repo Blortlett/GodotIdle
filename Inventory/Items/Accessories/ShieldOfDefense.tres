@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bo1ijuegg80qc"]
+
+[ext_resource type="Script" uid="uid://c7op3b5r7t54q" path="res://Inventory/Scripts/scrInventoryItem.gd" id="1_npo7w"]
+[ext_resource type="Texture2D" uid="uid://cj3s6gf7cewsn" path="res://Art/Items/Items32x32.png" id="2_qglt6"]
+
+[resource]
+script = ExtResource("1_npo7w")
+name = "Shield"
+texture = ExtResource("2_qglt6")
+ItemID = 2113
+mItemType = 0
+mArmorSlot = 5
+DamageModifier = 0.0
+MagicDamageModifier = 0.0
+DefenseModifier = 0.3
+MagicDefenseModifier = 0.0
+HealAmount = 0.0
+metadata/_custom_type_script = "uid://c7op3b5r7t54q"

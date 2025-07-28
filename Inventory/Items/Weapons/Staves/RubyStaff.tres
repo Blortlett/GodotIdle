@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://drj2gvti0jk3e"]
+
+[ext_resource type="Script" uid="uid://c7op3b5r7t54q" path="res://Inventory/Scripts/scrInventoryItem.gd" id="1_4djne"]
+[ext_resource type="Texture2D" uid="uid://cj3s6gf7cewsn" path="res://Art/Items/Items32x32.png" id="2_fjqwj"]
+
+[resource]
+script = ExtResource("1_4djne")
+name = "Ruby Staff"
+texture = ExtResource("2_fjqwj")
+ItemID = 1711
+mItemType = 1
+mArmorSlot = 6
+DamageModifier = 8.0
+MagicDamageModifier = 40.0
+DefenseModifier = 0.0
+MagicDefenseModifier = 0.0
+HealAmount = 0.0
+metadata/_custom_type_script = "uid://c7op3b5r7t54q"

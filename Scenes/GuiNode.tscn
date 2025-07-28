@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dlkijgainja7j" path="res://Scripts/Managers/scrCharacterRegister.gd" id="2_cbp6g"]
 [ext_resource type="Script" uid="uid://dtbqlt8shj24b" path="res://Scripts/Managers/scrCombatManager.gd" id="5_idfla"]
 [ext_resource type="Script" uid="uid://bpiip7dmpkbh8" path="res://Areas/scrArea.gd" id="8_0l2m4"]
-[ext_resource type="Resource" uid="uid://croc7fprjc5ic" path="res://Character/Characters/rMage.tres" id="8_gc5i1"]
+[ext_resource type="Resource" uid="uid://croc7fprjc5ic" path="res://Character/Characters/Heroes/rMage.tres" id="8_gc5i1"]
 [ext_resource type="Resource" uid="uid://c3swi46siy438" path="res://Areas/ExplorableAreas/rSunnyMeadow.tres" id="9_xnu72"]
 [ext_resource type="Script" uid="uid://bg0uiysd0i8ja" path="res://Scripts/Managers/GameManager/scrGameManager.gd" id="10_4kpeb"]
 [ext_resource type="Resource" uid="uid://g6wywgfjtwwu" path="res://Areas/ExplorableAreas/rDecreptGraveyard.tres" id="10_yplc7"]

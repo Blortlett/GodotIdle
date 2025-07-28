@@ -9,6 +9,7 @@ var mActiveEnemyCharacter: Character;
 @onready var mCharacterDisplayController: CharacterDisplayController = get_node("../GameUI/CharacterDisplayController");
 @onready var mAreaManager: AreaManager = get_node("../AreaManager");
 
+var RespawnTimer: Timer = null;
 signal NewEnemySpawn;
 
 func _ready() -> void:
@@ -16,21 +17,33 @@ func _ready() -> void:
 	mActiveCharacter.InitCharacter();
 	mCharacterDisplayController.SetPlayerUI(mActiveCharacter);
 
-
-func KillEnemy() -> InvItem:
+func KillEnemy() -> Array[InvSlot]:
 	StartRespawnDelay();
-	var ItemLoot: InvItem = mActiveEnemyCharacter.Die();
+	var ItemLoot: Array[InvSlot] = mActiveEnemyCharacter.Die();
 	mCombatManager.EndCombat();
 	return ItemLoot;
 
-
 func StartRespawnDelay(delay: float = 3.0) -> void:
-	await get_tree().create_timer(delay).timeout;
-	RespawnEnemy();
+	# If a timer already exists, cancel it
+	if RespawnTimer != null:
+		RespawnTimer.stop()
+		RespawnTimer.queue_free()
+	# Create and start new timer
+	RespawnTimer = Timer.new()
+	RespawnTimer.wait_time = delay
+	RespawnTimer.one_shot = true
+	add_child(RespawnTimer)
+	RespawnTimer.timeout.connect(RespawnEnemy)
+	RespawnTimer.start()
+
+func CancelRespawnDelay():
+	if RespawnTimer != null:
+		RespawnTimer.stop()
+		RespawnTimer.queue_free()
+		RespawnTimer = null
 
 func RespawnEnemy() -> void:
 	var spawnableEnemies = mAreaManager.mCurrentArea.SpawnableEnemies
-	
 	# Pick Random Enemy
 	var RandomEnemyInt = randi_range(0, spawnableEnemies.size() - 1);
 	mActiveEnemyCharacter = spawnableEnemies[RandomEnemyInt];

@@ -26,7 +26,7 @@ enum AllianceType
 @export var MagicDefense: float;
 @export var AttackSpeed: float;
 
-@export var LootDrop: InvItem;
+@export var LootTable: LootTable;
 
 var CharacterID: int;
 var CurrentHealth: float;
@@ -36,6 +36,7 @@ func InitCharacter() -> void:
 	CurrentHealth = Health;
 	print_debug(Name + " ready to go. Health: " + str(CurrentHealth));
 
-func Die() -> InvItem:
+func Die() -> Array[InvSlot]:
 	# return dropped loot
-	return LootDrop;
+	var DroppedLoot = LootTable.SpawnLootDrop()
+	return DroppedLoot;

@@ -123,11 +123,17 @@ func EndCombat():
 func HandleCharacterDeath():
 	# Enemy Death
 	if (mCharacterRegister.mActiveEnemyCharacter.CurrentHealth <= 0):
-		var Loot: InvItem = mCharacterRegister.KillEnemy();
-		mInventoryUI.GetInventory().insert(Loot); # Drop Loot
+		var LootDrop: Array[InvSlot] = mCharacterRegister.KillEnemy();
+		AddLootDropToInv(LootDrop); # Drop Loot
 		mCharacterDisplayController.EnemyDisplay.PlayDeathAnimation();
 		EndCombat();
 	# Player Death
 	if (mCharacterRegister.mActiveCharacter.CurrentHealth <= 0):
 		mCharacterDisplayController.PlayerDisplay.PlayDeathAnimation();
 		EndCombat();
+
+func AddLootDropToInv(lootDrop: Array[InvSlot]):
+	# foreach InventorySlot
+	for i in range(0, lootDrop.size()):
+		for n in range(0, lootDrop[i].amount):
+			mInventoryUI.GetInventory().insert(lootDrop[i].item); # Drop Loot

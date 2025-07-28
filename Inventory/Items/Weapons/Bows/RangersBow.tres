@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://c2isc0lbfkoj8"]
+
+[ext_resource type="Script" uid="uid://c7op3b5r7t54q" path="res://Inventory/Scripts/scrInventoryItem.gd" id="1_2a2ai"]
+[ext_resource type="Texture2D" uid="uid://cj3s6gf7cewsn" path="res://Art/Items/Items32x32.png" id="2_lokox"]
+
+[resource]
+script = ExtResource("1_2a2ai")
+name = "Ranger Bow"
+texture = ExtResource("2_lokox")
+ItemID = 1804
+mItemType = 4
+mArmorSlot = 6
+DamageModifier = 18.0
+MagicDamageModifier = 4.0
+DefenseModifier = 0.0
+MagicDefenseModifier = 0.0
+HealAmount = 0.0
+metadata/_custom_type_script = "uid://c7op3b5r7t54q"

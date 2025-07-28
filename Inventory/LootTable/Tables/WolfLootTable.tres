@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=8 format=3 uid="uid://d23ss2774chmo"]
+
+[ext_resource type="Script" uid="uid://dlpa2k4sqe0y5" path="res://Inventory/LootTable/scrLootTableEntry.gd" id="1_bh55j"]
+[ext_resource type="Script" uid="uid://dvq8lrpbj70g8" path="res://Inventory/LootTable/scrLootTable.gd" id="1_wa77o"]
+[ext_resource type="Resource" uid="uid://cix5axns50snh" path="res://Inventory/LootTable/Drops/Armor/MageHatDrop.tres" id="2_fjn1y"]
+[ext_resource type="Resource" uid="uid://gij2wjid5u6u" path="res://Inventory/LootTable/Drops/Armor/MageChestDrop.tres" id="3_xw1v7"]
+[ext_resource type="Resource" uid="uid://dca7edp1rdlpw" path="res://Inventory/LootTable/Drops/Armor/MageBootsDrop.tres" id="4_31eqi"]
+[ext_resource type="Resource" uid="uid://dav00rks88dwf" path="res://Inventory/LootTable/Drops/Weapons/Staves/WoodenStaff.tres" id="5_xw1v7"]
+[ext_resource type="Resource" uid="uid://de5jvelhafv6b" path="res://Inventory/LootTable/Drops/Accessories/RingOfMagicDrop.tres" id="6_31eqi"]
+
+[resource]
+script = ExtResource("1_wa77o")
+mLootTable = Array[ExtResource("1_bh55j")]([ExtResource("2_fjn1y"), ExtResource("3_xw1v7"), ExtResource("4_31eqi"), ExtResource("5_xw1v7"), ExtResource("6_31eqi")])
+metadata/_custom_type_script = "uid://dvq8lrpbj70g8"
