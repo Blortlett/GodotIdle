@@ -53,6 +53,20 @@ func GetEquipmentModifiers() -> CombatModifiers:
 	if GetHelmetItem():
 		EquipmentModifiers.MagicDefenseModifier += GetHelmetItem().MagicDefenseModifier;
 		EquipmentModifiers.DefenseModifier += GetHelmetItem().DefenseModifier;
+	if GetChestItem():
+		EquipmentModifiers.MagicDefenseModifier += GetChestItem().MagicDefenseModifier;
+		EquipmentModifiers.DefenseModifier += GetChestItem().DefenseModifier;
+	if GetLegItem():
+		EquipmentModifiers.MagicDefenseModifier += GetLegItem().MagicDefenseModifier;
+		EquipmentModifiers.DefenseModifier += GetLegItem().DefenseModifier;
+	if GetBootItem():
+		EquipmentModifiers.MagicDefenseModifier += GetBootItem().MagicDefenseModifier;
+		EquipmentModifiers.DefenseModifier += GetBootItem().DefenseModifier;
+	if GetAccessoryItem():
+		EquipmentModifiers.MagicDefenseModifier += GetAccessoryItem().MagicDefenseModifier;
+		EquipmentModifiers.DefenseModifier += GetAccessoryItem().DefenseModifier;
+		EquipmentModifiers.DamageModifier += GetAccessoryItem().DamageModifier;
+		EquipmentModifiers.MagicDamageModifier += GetAccessoryItem().MagicDamageModifier;
 	return EquipmentModifiers;
 
 # Get all slots as slots
