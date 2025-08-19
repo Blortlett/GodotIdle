@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://c8vl7lnluj162"]
+
+[ext_resource type="Script" uid="uid://buoykho0tx8hm" path="res://Inventory/Scripts/scrItemAmount.gd" id="1_aycpv"]
+[ext_resource type="Script" uid="uid://borwlqxwjdxm5" path="res://Inventory/Crafting/scrRecipie.gd" id="1_jbnof"]
+[ext_resource type="Resource" uid="uid://cvla0mf74k7nu" path="res://Inventory/Items/Materials/IronOre.tres" id="2_is16i"]
+[ext_resource type="Resource" uid="uid://bhhf6eaywlnjv" path="res://Inventory/Items/Materials/Bones.tres" id="3_cls05"]
+[ext_resource type="Resource" uid="uid://bv1j2jwn1815p" path="res://Inventory/Items/Weapons/Staves/IronWand.tres" id="4_w157r"]
+
+[sub_resource type="Resource" id="Resource_x5hl4"]
+script = ExtResource("1_aycpv")
+Item = ExtResource("2_is16i")
+Amount = 1
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[sub_resource type="Resource" id="Resource_wnhpq"]
+script = ExtResource("1_aycpv")
+Item = ExtResource("3_cls05")
+Amount = 2
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[sub_resource type="Resource" id="Resource_mpby0"]
+script = ExtResource("1_aycpv")
+Item = ExtResource("4_w157r")
+Amount = 1
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[resource]
+script = ExtResource("1_jbnof")
+RecipeName = "Iron Wand"
+Ingredients = Array[ExtResource("1_aycpv")]([SubResource("Resource_x5hl4"), SubResource("Resource_wnhpq")])
+Products = Array[ExtResource("1_aycpv")]([SubResource("Resource_mpby0")])
+metadata/_custom_type_script = "uid://borwlqxwjdxm5"

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://bnw8sof1fu5w8"]
+
+[ext_resource type="Script" uid="uid://buoykho0tx8hm" path="res://Inventory/Scripts/scrItemAmount.gd" id="1_5lk4q"]
+[ext_resource type="Script" uid="uid://borwlqxwjdxm5" path="res://Inventory/Crafting/scrRecipie.gd" id="1_r7s28"]
+[ext_resource type="Resource" uid="uid://ula6287t5uj7" path="res://Inventory/Items/Materials/Log.tres" id="2_36mg1"]
+[ext_resource type="Resource" uid="uid://cvla0mf74k7nu" path="res://Inventory/Items/Materials/IronOre.tres" id="3_8pcmj"]
+[ext_resource type="Resource" uid="uid://yp75vovbnunj" path="res://Inventory/Items/Weapons/Melee/IronDagger.tres" id="4_3l5x0"]
+
+[sub_resource type="Resource" id="Resource_lpdc2"]
+script = ExtResource("1_5lk4q")
+Item = ExtResource("2_36mg1")
+Amount = 1
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[sub_resource type="Resource" id="Resource_4c1h2"]
+script = ExtResource("1_5lk4q")
+Item = ExtResource("3_8pcmj")
+Amount = 1
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[sub_resource type="Resource" id="Resource_vvss0"]
+script = ExtResource("1_5lk4q")
+Item = ExtResource("4_3l5x0")
+Amount = 1
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[resource]
+script = ExtResource("1_r7s28")
+RecipeName = "Iron Dagger"
+Ingredients = Array[ExtResource("1_5lk4q")]([SubResource("Resource_lpdc2"), SubResource("Resource_4c1h2")])
+Products = Array[ExtResource("1_5lk4q")]([SubResource("Resource_vvss0")])
+metadata/_custom_type_script = "uid://borwlqxwjdxm5"

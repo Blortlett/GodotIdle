@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://dlg83yuxi8bak"]
+
+[ext_resource type="Script" uid="uid://buoykho0tx8hm" path="res://Inventory/Scripts/scrItemAmount.gd" id="1_fjwlq"]
+[ext_resource type="Script" uid="uid://borwlqxwjdxm5" path="res://Inventory/Crafting/scrRecipie.gd" id="1_wwdhd"]
+[ext_resource type="Resource" uid="uid://ula6287t5uj7" path="res://Inventory/Items/Materials/Log.tres" id="2_xwma8"]
+[ext_resource type="Resource" uid="uid://cvla0mf74k7nu" path="res://Inventory/Items/Materials/IronOre.tres" id="3_o6vse"]
+[ext_resource type="Resource" uid="uid://bp27r6cvvahdy" path="res://Inventory/Items/Weapons/Melee/IronSword.tres" id="4_co3c4"]
+
+[sub_resource type="Resource" id="Resource_wcavk"]
+script = ExtResource("1_fjwlq")
+Item = ExtResource("2_xwma8")
+Amount = 1
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[sub_resource type="Resource" id="Resource_yp5vg"]
+script = ExtResource("1_fjwlq")
+Item = ExtResource("3_o6vse")
+Amount = 2
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[sub_resource type="Resource" id="Resource_wqxow"]
+script = ExtResource("1_fjwlq")
+Item = ExtResource("4_co3c4")
+Amount = 1
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[resource]
+script = ExtResource("1_wwdhd")
+RecipeName = "Iron Sword"
+Ingredients = Array[ExtResource("1_fjwlq")]([SubResource("Resource_wcavk"), SubResource("Resource_yp5vg")])
+Products = Array[ExtResource("1_fjwlq")]([SubResource("Resource_wqxow")])
+metadata/_custom_type_script = "uid://borwlqxwjdxm5"

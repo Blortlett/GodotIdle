@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://ntdr5daviq10"]
+
+[ext_resource type="Script" uid="uid://borwlqxwjdxm5" path="res://Inventory/Crafting/scrRecipie.gd" id="1_lvsle"]
+[ext_resource type="Script" uid="uid://buoykho0tx8hm" path="res://Inventory/Scripts/scrItemAmount.gd" id="1_thscr"]
+[ext_resource type="Resource" uid="uid://ula6287t5uj7" path="res://Inventory/Items/Materials/Log.tres" id="2_hyj3h"]
+[ext_resource type="Resource" uid="uid://njxfj7xqjjmt" path="res://Inventory/Items/Materials/Leather.tres" id="3_vgcyu"]
+[ext_resource type="Resource" uid="uid://c2isc0lbfkoj8" path="res://Inventory/Items/Weapons/Bows/RangersBow.tres" id="4_0ywso"]
+
+[sub_resource type="Resource" id="Resource_mso0r"]
+script = ExtResource("1_thscr")
+Item = ExtResource("2_hyj3h")
+Amount = 2
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[sub_resource type="Resource" id="Resource_yh1ro"]
+script = ExtResource("1_thscr")
+Item = ExtResource("3_vgcyu")
+Amount = 2
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[sub_resource type="Resource" id="Resource_hfeyp"]
+script = ExtResource("1_thscr")
+Item = ExtResource("4_0ywso")
+Amount = 1
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[resource]
+script = ExtResource("1_lvsle")
+RecipeName = "Ranger Bow"
+Ingredients = Array[ExtResource("1_thscr")]([SubResource("Resource_mso0r"), SubResource("Resource_yh1ro")])
+Products = Array[ExtResource("1_thscr")]([SubResource("Resource_hfeyp")])
+metadata/_custom_type_script = "uid://borwlqxwjdxm5"

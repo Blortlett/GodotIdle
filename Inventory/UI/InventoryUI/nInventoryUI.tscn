@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b3bd2ccqkh00a"]
+[gd_scene load_steps=21 format=3 uid="uid://b3bd2ccqkh00a"]
 
 [ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_dhcfh"]
 [ext_resource type="Texture2D" uid="uid://cwn4h5cyakgm7" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookCover01a.png" id="2_il5vc"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" uid="uid://0k82eyh0nyh7" path="res://Inventory/Scripts/scrInventoryActions.gd" id="11_2xcof"]
 [ext_resource type="Script" uid="uid://cgimejhachxg6" path="res://Character/UI/scrCharacterDisplayController.gd" id="11_kbc3c"]
 [ext_resource type="Script" uid="uid://7jr5oueo8fsy" path="res://Inventory/Scripts/scrItemDragGfx.gd" id="12_6j3o5"]
+[ext_resource type="PackedScene" uid="uid://dovwwhvoh2cto" path="res://UI/CraftMenuUI/nCraftMenuUI.tscn" id="15_1n702"]
+[ext_resource type="PackedScene" uid="uid://ct41jicsdbydu" path="res://UI/ShopMenuUI/nShopMenuUI.tscn" id="16_5jg8s"]
 [ext_resource type="SpriteFrames" uid="uid://bq0mjbyc7t1an" path="res://Character/Sprites/GoodGuys/sprfWarrior.tres" id="16_ryt1w"]
 [ext_resource type="SpriteFrames" uid="uid://p1na7ynjh28j" path="res://Character/Sprites/GoodGuys/sprfMage.tres" id="17_1n702"]
 [ext_resource type="SpriteFrames" uid="uid://bqcrmjx5wggrq" path="res://Character/Sprites/GoodGuys/sprfRanger.tres" id="18_5jg8s"]
@@ -348,6 +350,12 @@ offset_right = 20.0
 offset_bottom = 86.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CraftMenuUI" parent="SystemUI" instance=ExtResource("15_1n702")]
+layout_mode = 1
+
+[node name="ShopMenuUI" parent="SystemUI" instance=ExtResource("16_5jg8s")]
+layout_mode = 1
 
 [node name="CharacterDisplayController" type="Node" parent="." node_paths=PackedStringArray("PlayerDisplay", "EnemyDisplay")]
 script = ExtResource("11_kbc3c")

@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=9 format=3 uid="uid://0fgbv1yjujgf"]
+
+[ext_resource type="Script" uid="uid://buoykho0tx8hm" path="res://Inventory/Scripts/scrItemAmount.gd" id="1_aqkbd"]
+[ext_resource type="Script" uid="uid://borwlqxwjdxm5" path="res://Inventory/Crafting/scrRecipie.gd" id="1_ldfra"]
+[ext_resource type="Resource" uid="uid://ula6287t5uj7" path="res://Inventory/Items/Materials/Log.tres" id="2_huiw3"]
+[ext_resource type="Resource" uid="uid://bhhf6eaywlnjv" path="res://Inventory/Items/Materials/Bones.tres" id="3_sks5r"]
+[ext_resource type="Resource" uid="uid://dwk4xmxiyavak" path="res://Inventory/Items/Weapons/Staves/WoodenStaff.tres" id="4_d5r8e"]
+
+[sub_resource type="Resource" id="Resource_yr3xa"]
+script = ExtResource("1_aqkbd")
+Item = ExtResource("2_huiw3")
+Amount = 2
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[sub_resource type="Resource" id="Resource_44w7b"]
+script = ExtResource("1_aqkbd")
+Item = ExtResource("3_sks5r")
+Amount = 2
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[sub_resource type="Resource" id="Resource_62fi4"]
+script = ExtResource("1_aqkbd")
+Item = ExtResource("4_d5r8e")
+Amount = 1
+metadata/_custom_type_script = "uid://buoykho0tx8hm"
+
+[resource]
+script = ExtResource("1_ldfra")
+RecipeName = "Wood Staff"
+Ingredients = Array[ExtResource("1_aqkbd")]([SubResource("Resource_yr3xa"), SubResource("Resource_44w7b")])
+Products = Array[ExtResource("1_aqkbd")]([SubResource("Resource_62fi4")])
+metadata/_custom_type_script = "uid://borwlqxwjdxm5"
