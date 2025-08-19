@@ -6,6 +6,7 @@ var ButtonNames: Array[String];
 var Buttons: Array[Button];
 # Button Spawnable
 @onready var mButton: PackedScene = preload("res://UI/ButtonUI/nButtonUI.tscn");
+@onready var mHomeButton: Control = get_node("Button");
 
 # Gamestate Manager
 @onready var mGameStateManager: GameStateManager = get_tree().get_root().get_node("Node/GameStateManager")
@@ -14,29 +15,12 @@ var Buttons: Array[Button];
 
 # create buttons on start
 func _ready() -> void:
-	var i = 0;
-	for recipe: Recipe in mCraftingDictionary.Craftables:
-		var new_button: Button = mButton.instantiate();
-		ButtonParent.add_child(new_button);
-		new_button.text = recipe.RecipeName;
-		ImplementButton(new_button, i);
-		i += 1;
+	mHomeButton.pressed.connect(ReturnHome)
 
-# -= Button Pressed Functions =-
-func OnButtonExplore():
-	mGameStateManager.SwapToDestinationMenuState();
-
-func OnButtonCraft():
-	print_debug("Craft Button Clicked")
-
-func OnButtonShop():
-	print_debug("Shop Button Clicked")
+func ReturnHome():
+	mGameStateManager.SwapToHomeState()
 
 # -= Assign button press to function switch =-
-func ImplementButton(_Button: Button, _ButtonIndex: int):
-	if (_ButtonIndex == 0):
-		_Button.pressed.connect(OnButtonCraft);
-	elif (_ButtonIndex == 1):
-		_Button.pressed.connect(OnButtonShop);
-	elif (_ButtonIndex == 2):
-		_Button.pressed.connect(OnButtonExplore);
+#func ImplementButton(_Button: Button, _ButtonIndex: int):
+	#if (_ButtonIndex == 0):
+	#	_Button.pressed.connect(OnButtonCraft);

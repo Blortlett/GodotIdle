@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dovwwhvoh2cto"]
+[gd_scene load_steps=11 format=3 uid="uid://dovwwhvoh2cto"]
 
 [ext_resource type="Script" uid="uid://bdwbouykgljvk" path="res://UI/CraftMenuUI/scrCraftMenuUI.gd" id="1_ywx8l"]
 [ext_resource type="Script" uid="uid://dv8hrvgbyh4mv" path="res://Inventory/Crafting/scrCraftingRecipies.gd" id="2_san1y"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://c8vl7lnluj162" path="res://Inventory/Crafting/Recipies/rIronWand_Recipe.tres" id="7_gmh66"]
 [ext_resource type="Resource" uid="uid://ntdr5daviq10" path="res://Inventory/Crafting/Recipies/rRangerBow_Recipe.tres" id="8_mv2kk"]
 [ext_resource type="Resource" uid="uid://0fgbv1yjujgf" path="res://Inventory/Crafting/Recipies/rWoodStaff_Recipe.tres" id="9_wupvi"]
+[ext_resource type="PackedScene" uid="uid://cw6wtuw8h4nqc" path="res://UI/ButtonUI/nButtonUI.tscn" id="10_m4j1o"]
 
 [node name="CraftMenuUI" type="Control"]
 layout_mode = 3
@@ -30,3 +31,18 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("2_san1y")
 Craftables = Array[ExtResource("3_m4j1o")]([ExtResource("4_bklte"), ExtResource("5_sakdj"), ExtResource("6_xr7df"), ExtResource("7_gmh66"), ExtResource("8_mv2kk"), ExtResource("9_wupvi")])
+
+[node name="Button" parent="." instance=ExtResource("10_m4j1o")]
+layout_mode = 1
+anchors_preset = 2
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = -45.0
+offset_right = 133.985
+offset_bottom = -18.0
+grow_horizontal = 1
+grow_vertical = 0
+text = "Home"

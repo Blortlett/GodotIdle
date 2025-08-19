@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct41jicsdbydu"]
+[gd_scene load_steps=8 format=3 uid="uid://ct41jicsdbydu"]
 
 [ext_resource type="Script" uid="uid://ihymf167e2dj" path="res://UI/ShopMenuUI/scrShopMenuUI.gd" id="1_3qap8"]
 [ext_resource type="PackedScene" uid="uid://0luyfwm87ckl" path="res://Inventory/UI/InventoryUI/nInvSlotUI.tscn" id="1_185nt"]
 [ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_jue5g"]
 [ext_resource type="FontFile" uid="uid://n84lclh7eapu" path="res://Art/Fonts/PeaberryMono.ttf" id="2_8jfxe"]
 [ext_resource type="Resource" uid="uid://csgm7e6002bnu" path="res://Inventory/GameInventorys/ShopInventory.tres" id="2_gy72q"]
+[ext_resource type="PackedScene" uid="uid://cw6wtuw8h4nqc" path="res://UI/ButtonUI/nButtonUI.tscn" id="6_oqxb0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jue5g"]
 font = ExtResource("2_8jfxe")
@@ -79,13 +80,17 @@ offset_bottom = 49.0
 text = "SELL ITEMS"
 label_settings = SubResource("LabelSettings_jue5g")
 
-[node name="ButtonParent" type="Control" parent="."]
+[node name="Button" parent="." instance=ExtResource("6_oqxb0")]
 layout_mode = 1
 anchors_preset = 2
+anchor_left = 0.0
 anchor_top = 1.0
+anchor_right = 0.0
 anchor_bottom = 1.0
-offset_left = 104.0
-offset_top = -62.0
-offset_right = 144.0
-offset_bottom = -22.0
+offset_left = 70.0
+offset_top = -45.0
+offset_right = 133.985
+offset_bottom = -18.0
+grow_horizontal = 1
 grow_vertical = 0
+text = "Home"
