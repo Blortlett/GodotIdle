@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b3bd2ccqkh00a"]
+[gd_scene load_steps=23 format=3 uid="uid://b3bd2ccqkh00a"]
 
 [ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_dhcfh"]
 [ext_resource type="Texture2D" uid="uid://cwn4h5cyakgm7" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookCover01a.png" id="2_il5vc"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dv0y07r2i4vmd" path="res://UI/HomeMenuUI/nHomeMenuUI.tscn" id="9_2bf1r"]
 [ext_resource type="PackedScene" uid="uid://2nnh4f80nnll" path="res://UI/DestinationMenuUI/nDestinationMenuUI.tscn" id="9_sfvvv"]
 [ext_resource type="Script" uid="uid://h20ddr8cjwko" path="res://UI/CombatMenuUI/scrCombatMenuUI.gd" id="10_2bf1r"]
+[ext_resource type="FontFile" uid="uid://n84lclh7eapu" path="res://Art/Fonts/PeaberryMono.ttf" id="10_e220e"]
 [ext_resource type="Resource" uid="uid://chhe8648spgs7" path="res://Inventory/GameInventorys/PlayerEquipmentInventory.tres" id="11_2hnsh"]
 [ext_resource type="Script" uid="uid://0k82eyh0nyh7" path="res://Inventory/Scripts/scrInventoryActions.gd" id="11_2xcof"]
 [ext_resource type="Script" uid="uid://cgimejhachxg6" path="res://Character/UI/scrCharacterDisplayController.gd" id="11_kbc3c"]
@@ -20,6 +21,10 @@
 [ext_resource type="SpriteFrames" uid="uid://bq0mjbyc7t1an" path="res://Character/Sprites/GoodGuys/sprfWarrior.tres" id="16_ryt1w"]
 [ext_resource type="SpriteFrames" uid="uid://p1na7ynjh28j" path="res://Character/Sprites/GoodGuys/sprfMage.tres" id="17_1n702"]
 [ext_resource type="SpriteFrames" uid="uid://bqcrmjx5wggrq" path="res://Character/Sprites/GoodGuys/sprfRanger.tres" id="18_5jg8s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pgv5h"]
+font = ExtResource("10_e220e")
+font_color = Color(0.00459157, 0.00354284, 0.000437961, 1)
 
 [node name="GameUI" type="Control" node_paths=PackedStringArray("mSlotParent")]
 layout_mode = 3
@@ -244,6 +249,23 @@ scale = Vector2(0.8, 0.8)
 mIsEquipmentSlot = true
 mEquipmentType = 5
 
+[node name="PlayerMoneyLabel" type="Label" parent="SystemUI/CharacterUI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = 17.29
+offset_right = 21.0
+offset_bottom = 40.29
+grow_horizontal = 2
+grow_vertical = 2
+text = "$100"
+label_settings = SubResource("LabelSettings_pgv5h")
+
 [node name="DestinationMenuUI" parent="SystemUI" instance=ExtResource("9_sfvvv")]
 layout_mode = 1
 offset_left = -90.2439
@@ -261,6 +283,7 @@ offset_bottom = 0.5
 mouse_filter = 2
 
 [node name="CombatMenuUI" type="Control" parent="SystemUI" node_paths=PackedStringArray("ButtonParent")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -297,6 +320,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CraftMenuUI" parent="SystemUI" instance=ExtResource("15_1n702")]
+visible = false
 layout_mode = 1
 
 [node name="ShopMenuUI" parent="SystemUI" instance=ExtResource("16_5jg8s")]

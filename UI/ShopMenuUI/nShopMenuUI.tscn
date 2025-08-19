@@ -27,9 +27,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 23.0
+offset_left = 37.0
 offset_top = -57.0
-offset_right = 254.785
+offset_right = 268.785
 offset_bottom = 57.0
 grow_vertical = 2
 mouse_filter = 2
@@ -39,35 +39,35 @@ mInv = ExtResource("2_gy72q")
 mSlotParent = NodePath(".")
 
 [node name="InvSlotUI" parent="InventoryGrid" instance=ExtResource("1_185nt")]
-custom_minimum_size = Vector2(36, 55)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="InvSlotUI2" parent="InventoryGrid" instance=ExtResource("1_185nt")]
-custom_minimum_size = Vector2(36, 55)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="InvSlotUI3" parent="InventoryGrid" instance=ExtResource("1_185nt")]
-custom_minimum_size = Vector2(36, 55)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="InvSlotUI4" parent="InventoryGrid" instance=ExtResource("1_185nt")]
-custom_minimum_size = Vector2(36, 55)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="InvSlotUI5" parent="InventoryGrid" instance=ExtResource("1_185nt")]
-custom_minimum_size = Vector2(36, 55)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="InvSlotUI6" parent="InventoryGrid" instance=ExtResource("1_185nt")]
-custom_minimum_size = Vector2(36, 55)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="InvSlotUI7" parent="InventoryGrid" instance=ExtResource("1_185nt")]
-custom_minimum_size = Vector2(36, 55)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="InvSlotUI8" parent="InventoryGrid" instance=ExtResource("1_185nt")]
-custom_minimum_size = Vector2(36, 55)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="."]

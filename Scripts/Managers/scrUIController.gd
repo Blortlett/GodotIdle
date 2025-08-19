@@ -4,7 +4,7 @@ extends Node
 @onready var HomeUI: Control = get_node("../GameUI/SystemUI/HomeMenuUI")
 @onready var DestinationUI: Control = get_node("../GameUI/SystemUI/DestinationMenuUI")
 @onready var EnemyCharacterUI: Control = get_node("../GameUI/SystemUI/CombatMenuUI")
-@onready var ShopMenuUI: Control = get_node("../GameUI/SystemUI/ShopMenuUI")
+@onready var mShopMenuUI: Control = get_node("../GameUI/SystemUI/ShopMenuUI")
 @onready var CraftingMenuUI: Control = get_node("../GameUI/SystemUI/CraftMenuUI")
 
 
@@ -22,7 +22,7 @@ func hide_all_uis():
 	HomeUI.visible = false
 	DestinationUI.visible = false
 	EnemyCharacterUI.visible = false
-	ShopMenuUI.visible = false
+	mShopMenuUI.visible = false
 	CraftingMenuUI.visible = false
 
 
@@ -39,7 +39,7 @@ func _on_state_changed(state_type: GameState.StateType):
 		GameState.StateType.EXPLORING:
 			EnemyCharacterUI.visible = true
 		GameState.StateType.SHOP:
-			ShopMenuUI.visible = true;
+			mShopMenuUI.visible = true;
 		GameState.StateType.CRAFTING:
 			CraftingMenuUI.visible = true;
 		_: # default case (Means shit's broken)

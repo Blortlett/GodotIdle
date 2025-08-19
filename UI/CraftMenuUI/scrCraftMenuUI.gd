@@ -4,8 +4,7 @@ var ButtonNames: Array[String];
 # Button storage
 @export var ButtonParent: GridContainer;
 var Buttons: Array[Button];
-# Button Spawnable
-@onready var mButton: PackedScene = preload("res://UI/ButtonUI/nButtonUI.tscn");
+# Button
 @onready var mHomeButton: Control = get_node("Button");
 
 # Gamestate Manager

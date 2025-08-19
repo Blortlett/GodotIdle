@@ -25,3 +25,4 @@ enum ArmorSlot
 @export var DefenseModifier: float;
 @export var MagicDefenseModifier: float;
 @export var HealAmount: float;
+@export var TimeToSell: float = 9;

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=11 format=3 uid="uid://csgm7e6002bnu"]
+[gd_resource type="Resource" script_class="Inv" load_steps=15 format=3 uid="uid://csgm7e6002bnu"]
 
 [ext_resource type="Script" uid="uid://dvu0cvlyuscvd" path="res://Inventory/Scripts/scrInventory.gd" id="1_fbi5t"]
 [ext_resource type="Script" uid="uid://bx52jjxmfncpj" path="res://Inventory/Scripts/scrInventorySlot.gd" id="2_c1fpj"]
@@ -59,7 +59,35 @@ mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
+[sub_resource type="Resource" id="Resource_7fkab"]
+script = ExtResource("2_c1fpj")
+amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
+metadata/_custom_type_script = "uid://bx52jjxmfncpj"
+
+[sub_resource type="Resource" id="Resource_pqwnt"]
+script = ExtResource("2_c1fpj")
+amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
+metadata/_custom_type_script = "uid://bx52jjxmfncpj"
+
+[sub_resource type="Resource" id="Resource_8hcb5"]
+script = ExtResource("2_c1fpj")
+amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
+metadata/_custom_type_script = "uid://bx52jjxmfncpj"
+
+[sub_resource type="Resource" id="Resource_fgcbg"]
+script = ExtResource("2_c1fpj")
+amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
+metadata/_custom_type_script = "uid://bx52jjxmfncpj"
+
 [resource]
 script = ExtResource("1_fbi5t")
-slots = Array[ExtResource("2_c1fpj")]([SubResource("Resource_4jx6n"), SubResource("Resource_1mxdw"), SubResource("Resource_pm4uy"), SubResource("Resource_nc7e1"), SubResource("Resource_hpwqo"), SubResource("Resource_swd8f"), SubResource("Resource_auakg"), SubResource("Resource_1xknk")])
+slots = Array[ExtResource("2_c1fpj")]([SubResource("Resource_4jx6n"), SubResource("Resource_1mxdw"), SubResource("Resource_pm4uy"), SubResource("Resource_nc7e1"), SubResource("Resource_hpwqo"), SubResource("Resource_swd8f"), SubResource("Resource_auakg"), SubResource("Resource_1xknk"), SubResource("Resource_7fkab"), SubResource("Resource_pqwnt"), SubResource("Resource_8hcb5"), SubResource("Resource_fgcbg")])
 metadata/_custom_type_script = "uid://dvu0cvlyuscvd"

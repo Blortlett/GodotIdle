@@ -1,5 +1,5 @@
 class_name InventoryUI extends Control;
-@export var mInv: Resource;
+@export var mInv: Inv;
 @export var mSlotParent: Node;
 var mSlots: Array[Node];
 var isOpen = false;
