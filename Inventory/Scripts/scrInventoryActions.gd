@@ -9,6 +9,9 @@ var mLastAccessedID: int;
 # Inventory UI
 @onready var mInventoryGrid: GridContainer = get_node("../InventoryGrid");
 @onready var mInventorySlots: Array[Node] = mInventoryGrid.get_children();
+#Shop inventory slots
+@onready var mShopInventoryParent: Node = get_tree().get_root().get_node("Node/GameUI/SystemUI/ShopMenuUI/InventoryGrid")
+@onready var mShopInventorySlots: Array[Node] = mShopInventoryParent.get_children()
 # Inventory Object
 @onready var mInventoryUI: InventoryUI = get_node("../../..")
 @onready var mEquipmentUI: EquipmentManager = get_node("../../CharacterUI/EquipmentUI")
@@ -33,6 +36,10 @@ func _ready() -> void:
 		var button: Control = slot #.get_node("CenterContainer")
 		button.mouse_entered.connect(func(): OnInventoryHovered(mInventoryUI, i))
 		button.mouse_exited.connect(func(): OnInventoryUnhovered(mInventoryUI, i))
+	for i in mShopInventorySlots.size():
+		var slot = mShopInventorySlots[i]
+		slot.mouse_entered.connect(func(): OnInventoryHovered(mShopInventoryParent, i))
+		slot.mouse_exited.connect(func(): OnInventoryUnhovered(mShopInventoryParent, i))
 
 func OnInventoryHovered(inventoryUI: InventoryUI, slot_index: int):
 	mLastHoveredInvUI = inventoryUI;
