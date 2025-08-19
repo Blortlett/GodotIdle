@@ -4,7 +4,9 @@ extends Node
 enum StateType {
 	HOME,
 	DESTINATION_MENU,
-	EXPLORING
+	EXPLORING,
+	SHOP,
+	CRAFTING
 }
 
 var game_manager: GameStateManager

@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct41jicsdbydu"]
+[gd_scene load_steps=6 format=3 uid="uid://ct41jicsdbydu"]
 
 [ext_resource type="PackedScene" uid="uid://0luyfwm87ckl" path="res://Inventory/UI/InventoryUI/nInvSlotUI.tscn" id="1_185nt"]
+[ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_jue5g"]
+[ext_resource type="FontFile" uid="uid://n84lclh7eapu" path="res://Art/Fonts/PeaberryMono.ttf" id="2_8jfxe"]
+[ext_resource type="Resource" uid="uid://csgm7e6002bnu" path="res://Inventory/GameInventorys/ShopInventory.tres" id="2_gy72q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jue5g"]
+font = ExtResource("2_8jfxe")
+font_size = 24
+font_color = Color(0.00377088, 0.00119058, 0.00119984, 1)
 
 [node name="ShopMenuUI" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,15 +20,60 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="InventoryGrid" type="GridContainer" parent="."]
+[node name="InventoryGrid" type="GridContainer" parent="." node_paths=PackedStringArray("mSlotParent")]
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 231.785
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = -57.0
+offset_right = 254.785
+offset_bottom = 57.0
 grow_vertical = 2
 mouse_filter = 2
-columns = 6
+columns = 4
+script = ExtResource("1_jue5g")
+mInv = ExtResource("2_gy72q")
+mSlotParent = NodePath(".")
 
 [node name="InvSlotUI" parent="InventoryGrid" instance=ExtResource("1_185nt")]
-custom_minimum_size = Vector2(60, 80)
+custom_minimum_size = Vector2(36, 55)
 layout_mode = 2
+
+[node name="InvSlotUI2" parent="InventoryGrid" instance=ExtResource("1_185nt")]
+custom_minimum_size = Vector2(36, 55)
+layout_mode = 2
+
+[node name="InvSlotUI3" parent="InventoryGrid" instance=ExtResource("1_185nt")]
+custom_minimum_size = Vector2(36, 55)
+layout_mode = 2
+
+[node name="InvSlotUI4" parent="InventoryGrid" instance=ExtResource("1_185nt")]
+custom_minimum_size = Vector2(36, 55)
+layout_mode = 2
+
+[node name="InvSlotUI5" parent="InventoryGrid" instance=ExtResource("1_185nt")]
+custom_minimum_size = Vector2(36, 55)
+layout_mode = 2
+
+[node name="InvSlotUI6" parent="InventoryGrid" instance=ExtResource("1_185nt")]
+custom_minimum_size = Vector2(36, 55)
+layout_mode = 2
+
+[node name="InvSlotUI7" parent="InventoryGrid" instance=ExtResource("1_185nt")]
+custom_minimum_size = Vector2(36, 55)
+layout_mode = 2
+
+[node name="InvSlotUI8" parent="InventoryGrid" instance=ExtResource("1_185nt")]
+custom_minimum_size = Vector2(36, 55)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = 28.0
+offset_top = 17.0
+offset_right = 228.0
+offset_bottom = 49.0
+text = "SELL ITEMS"
+label_settings = SubResource("LabelSettings_jue5g")

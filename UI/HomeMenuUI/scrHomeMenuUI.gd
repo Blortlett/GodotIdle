@@ -23,10 +23,10 @@ func OnButtonExplore():
 	mGameStateManager.SwapToDestinationMenuState();
 
 func OnButtonCraft():
-	print_debug("Craft Button Clicked")
+	mGameStateManager.SwapToCraftingState();
 
 func OnButtonShop():
-	print_debug("Shop Button Clicked")
+	mGameStateManager.SwapToShopState();
 
 # -= Assign button press to function switch =-
 func ImplementButton(_Button: Button, _ButtonIndex: int):

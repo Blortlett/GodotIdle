@@ -1,5 +1,4 @@
-class_name GameStateManager
-extends Node
+class_name GameStateManager extends Node
 
 signal state_changed(state_type: GameState.StateType)
 
@@ -10,7 +9,9 @@ func _ready() -> void:
 	gameStates = [
 		HomeState.new(self),
 		DestinationMenuState.new(self),
-		ExploringState.new(self)
+		ExploringState.new(self),
+		ShopState.new(self),
+		CraftingState.new(self),
 	]
 	
 	for state in gameStates:
@@ -21,7 +22,6 @@ func _ready() -> void:
 func ChangeState(new_state: GameState) -> void:
 	if CurrentGameState != null:
 		CurrentGameState.ExitState()
-		#CurrentGameState.queue_free()
 	
 	CurrentGameState = new_state
 	#add_child(CurrentGameState)
@@ -71,12 +71,40 @@ class ExploringState extends GameState:
 	func ExitState() -> void:
 		print("Exited Exploring State")
 
+class ShopState extends GameState:
+	func _init(manager: GameStateManager):
+		super(manager)
+		state_type = StateType.SHOP
+	
+	func EnterState() -> void:
+		print("Entered Shop State")
+		
+	func ExitState() -> void:
+		print("Exited Shop State")
+
+class CraftingState extends GameState:
+	func _init(manager: GameStateManager):
+		super(manager)
+		state_type = StateType.CRAFTING
+	
+	func EnterState() -> void:
+		print("Entered Craft State")
+		
+	func ExitState() -> void:
+		print("Exited Craft State")
+
 # Swap functions remain the same
 func SwapToHomeState():
 	ChangeState(gameStates[0])
-	
+
 func SwapToDestinationMenuState():
 	ChangeState(gameStates[1])
-	
+
 func SwapToExploringState():
 	ChangeState(gameStates[2])
+
+func SwapToShopState():
+	ChangeState(gameStates[3])
+
+func SwapToCraftingState():
+	ChangeState(gameStates[4])
