@@ -102,6 +102,206 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="CharacterUI" type="Control" parent="SystemUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 87.5
+offset_top = 0.210007
+offset_right = 87.5
+offset_bottom = 0.210007
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CharacterDisplay" parent="SystemUI/CharacterUI" instance=ExtResource("8_20xsb")]
+layout_mode = 1
+offset_left = 2.0
+offset_top = -41.71
+offset_right = 2.0
+offset_bottom = -41.71
+IsPlayerDisplay = true
+
+[node name="EquipmentUI" type="Control" parent="SystemUI/CharacterUI" node_paths=PackedStringArray("mEquipmentSlotsUI")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = -57.71
+offset_right = 75.0
+offset_bottom = 12.29
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_6j3o5")
+mEquipmentSlotsUI = [NodePath("Slots/HelmetSlot"), NodePath("Slots/ChestplateSlot"), NodePath("Slots/LegsSlot"), NodePath("Slots/BootSlot"), NodePath("Slots/WeaponSlot"), NodePath("Slots/AccessorySlot")]
+
+[node name="Slots" type="Control" parent="SystemUI/CharacterUI/EquipmentUI" node_paths=PackedStringArray("mSlotParent")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_dhcfh")
+mInv = ExtResource("11_2hnsh")
+mSlotParent = NodePath(".")
+
+[node name="HelmetSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 17.0
+offset_top = 8.99999
+offset_right = 47.0
+offset_bottom = 39.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 1
+
+[node name="ChestplateSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 158.0
+offset_top = 8.99999
+offset_right = 188.0
+offset_bottom = 39.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 2
+
+[node name="LegsSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 158.0
+offset_top = 34.0
+offset_right = 188.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 3
+
+[node name="BootSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 158.0
+offset_top = 59.0
+offset_right = 188.0
+offset_bottom = 89.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 4
+
+[node name="WeaponSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 17.0
+offset_top = 34.0
+offset_right = 47.0
+offset_bottom = 64.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 6
+
+[node name="AccessorySlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 17.0
+offset_top = 59.0
+offset_right = 47.0
+offset_bottom = 89.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.8, 0.8)
+mIsEquipmentSlot = true
+mEquipmentType = 5
+
+[node name="DestinationMenuUI" parent="SystemUI" instance=ExtResource("9_sfvvv")]
+layout_mode = 1
+offset_left = -90.2439
+offset_top = 1.98782
+offset_right = -90.2439
+offset_bottom = 1.98782
+mouse_filter = 2
+
+[node name="HomeMenuUI" parent="SystemUI" instance=ExtResource("9_2bf1r")]
+layout_mode = 1
+offset_left = -90.5
+offset_top = 0.5
+offset_right = -90.5
+offset_bottom = 0.5
+mouse_filter = 2
+
+[node name="CombatMenuUI" type="Control" parent="SystemUI" node_paths=PackedStringArray("ButtonParent")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.5
+offset_right = -88.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("10_2bf1r")
+ButtonParent = NodePath("CombatMenuButtons")
+
+[node name="CharacterDisplay" parent="SystemUI/CombatMenuUI" instance=ExtResource("8_20xsb")]
+layout_mode = 1
+offset_left = 0.0
+offset_top = -42.5
+offset_right = 0.0
+offset_bottom = -42.5
+
+[node name="CombatMenuButtons" type="GridContainer" parent="SystemUI/CombatMenuUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 46.5
+offset_right = 20.0
+offset_bottom = 86.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CraftMenuUI" parent="SystemUI" instance=ExtResource("15_1n702")]
+layout_mode = 1
+
+[node name="ShopMenuUI" parent="SystemUI" instance=ExtResource("16_5jg8s")]
+layout_mode = 1
+
 [node name="InventoryUI" type="Control" parent="SystemUI"]
 layout_mode = 1
 anchors_preset = 15
@@ -137,7 +337,15 @@ metadata/_custom_type_script = "uid://7jr5oueo8fsy"
 
 [node name="InvSlotUI" parent="SystemUI/InventoryUI/InventoryActions/ItemDragGfxHandler" instance=ExtResource("4_keych")]
 layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 1
+grow_vertical = 1
 scale = Vector2(0.7, 0.7)
+mouse_filter = 2
 
 [node name="InventoryGrid" type="GridContainer" parent="SystemUI/InventoryUI"]
 layout_mode = 1
@@ -146,13 +354,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 24.5
-offset_top = 48.5
-offset_right = 224.5
-offset_bottom = 112.5
+offset_left = 16.5
+offset_top = 37.5
+offset_right = 216.5
+offset_bottom = 101.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.77, 0.77)
+mouse_filter = 2
 columns = 6
 
 [node name="InvSlotUI" parent="SystemUI/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
@@ -190,172 +399,6 @@ layout_mode = 2
 
 [node name="InvSlotUI12" parent="SystemUI/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
 layout_mode = 2
-
-[node name="CharacterUI" type="Control" parent="SystemUI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 87.5
-offset_top = 0.210007
-offset_right = 87.5
-offset_bottom = 0.210007
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CharacterDisplay" parent="SystemUI/CharacterUI" instance=ExtResource("8_20xsb")]
-layout_mode = 1
-offset_left = 2.0
-offset_top = -41.71
-offset_right = 2.0
-offset_bottom = -41.71
-IsPlayerDisplay = true
-
-[node name="EquipmentUI" type="Control" parent="SystemUI/CharacterUI" node_paths=PackedStringArray("mEquipmentSlotsUI")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = -43.71
-offset_right = 85.0
-offset_bottom = 26.29
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("6_6j3o5")
-mEquipmentSlotsUI = [NodePath("Slots/HelmetSlot"), NodePath("Slots/ChestplateSlot"), NodePath("Slots/LegsSlot"), NodePath("Slots/BootSlot"), NodePath("Slots/WeaponSlot"), NodePath("Slots/AccessorySlot")]
-
-[node name="Slots" type="Control" parent="SystemUI/CharacterUI/EquipmentUI" node_paths=PackedStringArray("mSlotParent")]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-script = ExtResource("1_dhcfh")
-mInv = ExtResource("11_2hnsh")
-mSlotParent = NodePath(".")
-
-[node name="HelmetSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 8.99999
-offset_right = 47.0
-offset_bottom = 39.0
-scale = Vector2(0.8, 0.8)
-mIsEquipmentSlot = true
-mEquipmentType = 1
-
-[node name="ChestplateSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
-layout_mode = 0
-offset_left = 158.0
-offset_top = 8.99999
-offset_right = 188.0
-offset_bottom = 39.0
-scale = Vector2(0.8, 0.8)
-mIsEquipmentSlot = true
-mEquipmentType = 2
-
-[node name="LegsSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
-layout_mode = 0
-offset_left = 158.0
-offset_top = 34.0
-offset_right = 188.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-mIsEquipmentSlot = true
-mEquipmentType = 3
-
-[node name="BootSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
-layout_mode = 0
-offset_left = 158.0
-offset_top = 59.0
-offset_right = 188.0
-offset_bottom = 89.0
-scale = Vector2(0.8, 0.8)
-mIsEquipmentSlot = true
-mEquipmentType = 4
-
-[node name="WeaponSlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 34.0
-offset_right = 47.0
-offset_bottom = 64.0
-scale = Vector2(0.8, 0.8)
-mIsEquipmentSlot = true
-mEquipmentType = 6
-
-[node name="AccessorySlot" parent="SystemUI/CharacterUI/EquipmentUI/Slots" instance=ExtResource("4_keych")]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 59.0
-offset_right = 47.0
-offset_bottom = 89.0
-scale = Vector2(0.8, 0.8)
-mIsEquipmentSlot = true
-mEquipmentType = 5
-
-[node name="DestinationMenuUI" parent="SystemUI" instance=ExtResource("9_sfvvv")]
-layout_mode = 1
-offset_left = -90.2439
-offset_top = 1.98782
-offset_right = -90.2439
-offset_bottom = 1.98782
-
-[node name="HomeMenuUI" parent="SystemUI" instance=ExtResource("9_2bf1r")]
-layout_mode = 1
-offset_left = -90.5
-offset_top = 0.5
-offset_right = -90.5
-offset_bottom = 0.5
-
-[node name="CombatMenuUI" type="Control" parent="SystemUI" node_paths=PackedStringArray("ButtonParent")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -88.5
-offset_right = -88.5
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("10_2bf1r")
-ButtonParent = NodePath("CombatMenuButtons")
-
-[node name="CharacterDisplay" parent="SystemUI/CombatMenuUI" instance=ExtResource("8_20xsb")]
-layout_mode = 1
-offset_left = 0.0
-offset_top = -42.5
-offset_right = 0.0
-offset_bottom = -42.5
-
-[node name="CombatMenuButtons" type="GridContainer" parent="SystemUI/CombatMenuUI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = 46.5
-offset_right = 20.0
-offset_bottom = 86.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CraftMenuUI" parent="SystemUI" instance=ExtResource("15_1n702")]
-layout_mode = 1
-
-[node name="ShopMenuUI" parent="SystemUI" instance=ExtResource("16_5jg8s")]
-layout_mode = 1
 
 [node name="CharacterDisplayController" type="Node" parent="." node_paths=PackedStringArray("PlayerDisplay", "EnemyDisplay")]
 script = ExtResource("11_kbc3c")

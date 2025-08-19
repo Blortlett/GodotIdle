@@ -30,10 +30,12 @@ func OnButtonShop():
 
 # -= Assign button press to function switch =-
 func ImplementButton(_Button: Button, _ButtonIndex: int):
-	print_debug("Button Emulate");
 	if (_ButtonIndex == 0):
+		print_debug("Craft Button Emulate");
 		_Button.pressed.connect(OnButtonCraft);
 	elif (_ButtonIndex == 1):
+		print_debug("Shop Button Emulate");
 		_Button.pressed.connect(OnButtonShop);
 	elif (_ButtonIndex == 2):
+		print_debug("Explore Button Emulate");
 		_Button.pressed.connect(OnButtonExplore);

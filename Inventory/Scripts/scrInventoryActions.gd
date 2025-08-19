@@ -24,13 +24,13 @@ func _ready() -> void:
 	var EquipmentSlots: Array[SlotUI] = mEquipmentUI.GetUISlots()
 	for i in EquipmentSlots.size():
 		var slot = EquipmentSlots[i]
-		var button: Control = slot.get_node("CenterContainer")
+		var button: Control = slot #.get_node("CenterContainer")
 		button.mouse_entered.connect(func(): OnInventoryHovered(mEquipmentUI.GetUI(), i))
 		button.mouse_exited.connect(func(): OnInventoryUnhovered(mEquipmentUI.GetUI(), i))
 	# Sign up to InventoryUI interaction signals
 	for i in mInventorySlots.size():
 		var slot = mInventorySlots[i]
-		var button: Control = slot.get_node("CenterContainer")
+		var button: Control = slot #.get_node("CenterContainer")
 		button.mouse_entered.connect(func(): OnInventoryHovered(mInventoryUI, i))
 		button.mouse_exited.connect(func(): OnInventoryUnhovered(mInventoryUI, i))
 
