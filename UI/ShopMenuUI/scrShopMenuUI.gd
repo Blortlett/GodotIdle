@@ -35,10 +35,13 @@ func OnItemSell(_SlotID: int):
 	SellSlot.amount = SellSlot.item.SellPrice * SellSlot.amount
 	SellSlot.item = mMoneyItemDef;
 	mShopInventorySlotUI[_SlotID].update(SellSlot);
+	bItemSlotOccupied[_SlotID] = false
 
 func SlotUpdate():
-	if mShopInventory.slots[0].item:
-		mSellLabels[0].StartTimer(mShopInventory.slots[0].item.TimeToSell)
+	for i in range(8):
+		if mShopInventory.slots[i].item && bItemSlotOccupied[i] == false:
+			mSellLabels[i].StartTimer(mShopInventory.slots[i].item.TimeToSell)
+			bItemSlotOccupied[i] = true
 
 # Back button functionality
 func ReturnHome():

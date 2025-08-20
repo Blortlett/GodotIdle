@@ -17,5 +17,5 @@ DefenseModifier = 0.0
 MagicDefenseModifier = 0.0
 HealAmount = 0.0
 TimeToSell = 0.0
-SellPrice = 10.0
+SellPrice = 1.0
 metadata/_custom_type_script = "uid://c7op3b5r7t54q"
