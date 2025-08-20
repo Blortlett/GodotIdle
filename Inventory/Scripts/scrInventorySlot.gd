@@ -32,3 +32,7 @@ func Use():
 		amount -= 1;
 	# Use Item here
 	print_debug("Item Used!")
+
+func RemoveStack():
+	item = null;
+	amount = 0;

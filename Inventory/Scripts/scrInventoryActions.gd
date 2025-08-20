@@ -18,9 +18,12 @@ var mLastAccessedID: int;
 @onready var mInventory: Inv = mInventoryUI.GetInventory();
 # Consumable Helper
 @onready var mConsumableManager: ConsumableManager = get_tree().get_root().get_node("Node/ConsumableManager")
-
+# Playerdata
+@onready var mPlayerData: PlayerData = get_tree().get_root().get_node("Node/PlayerData")
 
 var mIsItemHeld: bool = false;
+
+var mHasMoneyBeenCollected: bool = false;
 
 func _ready() -> void:
 	# Sign up to EquipmentUI interaction signals
@@ -66,9 +69,23 @@ func _input(event: InputEvent): # would be nice to change back to _unhandled_inp
 func OnLeftMouseButtonPressed():
 	if mIsHoveringInv:
 		print_debug("Try grab from: " + mLastHoveredInvUI.name)
+		var lastSlot := mLastHoveredInvUI.mInv.slots[mLastHoveredID]
+		# If grab money, add $$ to balance and return
+		if lastSlot.item:
+			if lastSlot.item.ItemID == 135: #Money ItemID -- add 2 wallet
+				mPlayerData.AddMoney(lastSlot.amount)
+				lastSlot.RemoveStack()
+				mLastHoveredInvUI.UpdateSlots()
+				mHasMoneyBeenCollected = true;
+				return
+		#else: # Drag item
 		DragItem(mLastHoveredInvUI, mLastHoveredID);
 
 func OnLeftMouseButtonReleased():
+	if mHasMoneyBeenCollected:
+		mHasMoneyBeenCollected = false;
+		return # Return because hand is empty
+	
 	if mIsHoveringInv: # Player Suggests to move item
 		if mLastHoveredID == mLastAccessedID && mLastHoveredInvUI == mLastAccessedInvUI: 
 			# Dropped item at same location

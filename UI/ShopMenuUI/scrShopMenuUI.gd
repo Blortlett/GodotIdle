@@ -31,8 +31,9 @@ func _ready() -> void:
 
 func OnItemSell(_SlotID: int):
 	var SellSlot := mShopInventory.slots[_SlotID]
-	SellSlot.amount = SellSlot.item.SellPrice
-	SellSlot.item.ItemID = mMoneyItemDef.ItemID;
+	if SellSlot.item == null: return
+	SellSlot.amount = SellSlot.item.SellPrice * SellSlot.amount
+	SellSlot.item = mMoneyItemDef;
 	mShopInventorySlotUI[_SlotID].update(SellSlot);
 
 func SlotUpdate():

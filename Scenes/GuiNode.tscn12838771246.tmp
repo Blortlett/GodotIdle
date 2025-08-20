@@ -1,0 +1,72 @@
+[gd_scene load_steps=15 format=3 uid="uid://8vyvaxykm4g4"]
+
+[ext_resource type="PackedScene" uid="uid://b3bd2ccqkh00a" path="res://Inventory/UI/InventoryUI/nInventoryUI.tscn" id="1_x6p71"]
+[ext_resource type="Texture2D" uid="uid://cwvgpea6e7h8g" path="res://Art/wood_texture_full_screen.png" id="1_xnu72"]
+[ext_resource type="Script" uid="uid://dlkijgainja7j" path="res://Scripts/Managers/scrCharacterRegister.gd" id="2_cbp6g"]
+[ext_resource type="Script" uid="uid://dtbqlt8shj24b" path="res://Scripts/Managers/scrCombatManager.gd" id="5_idfla"]
+[ext_resource type="Script" uid="uid://bpiip7dmpkbh8" path="res://Areas/scrArea.gd" id="8_0l2m4"]
+[ext_resource type="Resource" uid="uid://croc7fprjc5ic" path="res://Character/Characters/Heroes/rMage.tres" id="8_gc5i1"]
+[ext_resource type="Resource" uid="uid://c3swi46siy438" path="res://Areas/ExplorableAreas/rSunnyMeadow.tres" id="9_xnu72"]
+[ext_resource type="Script" uid="uid://bg0uiysd0i8ja" path="res://Scripts/Managers/GameManager/scrGameManager.gd" id="10_4kpeb"]
+[ext_resource type="Resource" uid="uid://g6wywgfjtwwu" path="res://Areas/ExplorableAreas/rDecreptGraveyard.tres" id="10_yplc7"]
+[ext_resource type="Resource" uid="uid://cgdt811iygfxe" path="res://Areas/ExplorableAreas/rBottomlessCanyon.tres" id="11_5su4m"]
+[ext_resource type="Script" uid="uid://dho7oenng3gns" path="res://Scripts/Managers/scrUIController.gd" id="11_gc5i1"]
+[ext_resource type="Script" uid="uid://daodhq5dbe7" path="res://Areas/scrAreaManager.gd" id="12_0l2m4"]
+[ext_resource type="Script" uid="uid://8dyup1wg1q7x" path="res://Scripts/Managers/scrConsumableManager.gd" id="12_xnu72"]
+[ext_resource type="Script" uid="uid://c6pgxkhlsuos4" path="res://Scripts/Data/scrPlayerData.gd" id="14_yplc7"]
+
+[node name="Node" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 1003.0
+offset_top = -328.0
+offset_right = 1892.0
+offset_bottom = 1369.0
+rotation = 1.5708
+texture = ExtResource("1_xnu72")
+stretch_mode = 1
+
+[node name="GameUI" parent="." instance=ExtResource("1_x6p71")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 383.0
+offset_bottom = 215.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(192, 108)
+zoom = Vector2(3, 3)
+
+[node name="CharacterRegister" type="Node" parent="."]
+script = ExtResource("2_cbp6g")
+mActiveCharacter = ExtResource("8_gc5i1")
+metadata/_custom_type_script = "uid://dlkijgainja7j"
+
+[node name="CombatManager" type="Node" parent="."]
+script = ExtResource("5_idfla")
+metadata/_custom_type_script = "uid://dtbqlt8shj24b"
+
+[node name="GameStateManager" type="Node" parent="."]
+script = ExtResource("10_4kpeb")
+metadata/_custom_type_script = "uid://bg0uiysd0i8ja"
+
+[node name="UIController" type="Node" parent="."]
+script = ExtResource("11_gc5i1")
+metadata/_custom_type_script = "uid://dho7oenng3gns"
+
+[node name="AreaManager" type="Node" parent="."]
+script = ExtResource("12_0l2m4")
+mExplorableAreas = Array[ExtResource("8_0l2m4")]([ExtResource("9_xnu72"), ExtResource("10_yplc7"), ExtResource("11_5su4m")])
+metadata/_custom_type_script = "uid://daodhq5dbe7"
+
+[node name="ConsumableManager" type="Node" parent="."]
+script = ExtResource("12_xnu72")
+metadata/_custom_type_script = "uid://8dyup1wg1q7x"
+
+[node name="PlayerData" type="Node" parent="."]
+script = ExtResource("14_yplc7")
