@@ -10,6 +10,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_jue5g"]
 font = ExtResource("2_8jfxe")
+font_size = 24
 font_color = Color(0.00377088, 0.00119058, 0.00119984, 1)
 
 [node name="ShopMenuUI" type="Control"]
@@ -187,13 +188,10 @@ texture_filter = 1
 layout_mode = 1
 offset_left = 28.0
 offset_top = 17.0
-offset_right = 128.0
-offset_bottom = 33.0
-scale = Vector2(1.5, 1.5)
+offset_right = 228.0
+offset_bottom = 49.0
 text = "SELL ITEMS"
 label_settings = SubResource("LabelSettings_jue5g")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Button" parent="." instance=ExtResource("6_oqxb0")]
 layout_mode = 1

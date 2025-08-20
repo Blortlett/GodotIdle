@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhh3ddn8ft5wb"]
+
+[ext_resource type="Texture2D" uid="uid://cw517tuhxseog" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_FrameSelect01b.png" id="1_ojivu"]
+[ext_resource type="Script" uid="uid://dtkq77sudsanp" path="res://UI/ShopMenuUI/ShopSellSlot/SellTimer/scrSellTimerLabel.gd" id="2_dgdfg"]
+[ext_resource type="FontFile" uid="uid://n84lclh7eapu" path="res://Art/Fonts/PeaberryMono.ttf" id="2_qowf5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jox64"]
+font = ExtResource("2_qowf5")
+font_color = Color(0.00820202, 0.00820202, 0.00820202, 1)
+
+[node name="SellTimer" type="NinePatchRect"]
+z_index = 2
+texture_filter = 1
+offset_left = -1.0
+offset_top = 21.0
+offset_right = 31.0
+offset_bottom = 31.0
+texture = ExtResource("1_ojivu")
+script = ExtResource("2_dgdfg")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -5.0
+offset_right = 31.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+text = "26s"
+label_settings = SubResource("LabelSettings_jox64")
+horizontal_alignment = 1
+vertical_alignment = 1

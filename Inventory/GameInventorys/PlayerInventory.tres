@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=15 format=3 uid="uid://cwb7toopm58yt"]
+[gd_resource type="Resource" script_class="Inv" load_steps=17 format=3 uid="uid://cwb7toopm58yt"]
 
 [ext_resource type="Script" uid="uid://dvu0cvlyuscvd" path="res://Inventory/Scripts/scrInventory.gd" id="1_aul01"]
 [ext_resource type="Script" uid="uid://bx52jjxmfncpj" path="res://Inventory/Scripts/scrInventorySlot.gd" id="2_78geo"]
+[ext_resource type="Resource" uid="uid://ula6287t5uj7" path="res://Inventory/Items/Materials/Log.tres" id="3_5n7wv"]
+[ext_resource type="Resource" uid="uid://cvla0mf74k7nu" path="res://Inventory/Items/Materials/IronOre.tres" id="4_qkqac"]
 
 [sub_resource type="Resource" id="Resource_4jx6n"]
 script = ExtResource("2_78geo")
@@ -47,14 +49,16 @@ metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_auakg"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("3_5n7wv")
+amount = 2
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"
 
 [sub_resource type="Resource" id="Resource_1xknk"]
 script = ExtResource("2_78geo")
-amount = 0
+item = ExtResource("4_qkqac")
+amount = 2
 mIsEquipmentSlot = false
 mEquipmentType = 0
 metadata/_custom_type_script = "uid://bx52jjxmfncpj"

@@ -10,6 +10,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_jue5g"]
 font = ExtResource("2_8jfxe")
+font_size = 24
 font_color = Color(0.00377088, 0.00119058, 0.00119984, 1)
 
 [node name="ShopMenuUI" type="Control"]
@@ -43,157 +44,98 @@ custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="SellTimer" parent="InventoryGrid/InvSlotUI" instance=ExtResource("5_a5hc8")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -5.0
-offset_right = 16.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 32.0
+offset_bottom = 10.0
 
 [node name="InvSlotUI2" parent="InventoryGrid" instance=ExtResource("1_185nt")]
 custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="SellTimer" parent="InventoryGrid/InvSlotUI2" instance=ExtResource("5_a5hc8")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -5.0
-offset_right = 16.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 32.0
+offset_bottom = 10.0
 
 [node name="InvSlotUI3" parent="InventoryGrid" instance=ExtResource("1_185nt")]
 custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="SellTimer" parent="InventoryGrid/InvSlotUI3" instance=ExtResource("5_a5hc8")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -5.0
-offset_right = 16.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 32.0
+offset_bottom = 10.0
 
 [node name="InvSlotUI4" parent="InventoryGrid" instance=ExtResource("1_185nt")]
 custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="SellTimer" parent="InventoryGrid/InvSlotUI4" instance=ExtResource("5_a5hc8")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -5.0
-offset_right = 16.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 32.0
+offset_bottom = 10.0
 
 [node name="InvSlotUI5" parent="InventoryGrid" instance=ExtResource("1_185nt")]
 custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="SellTimer" parent="InventoryGrid/InvSlotUI5" instance=ExtResource("5_a5hc8")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -5.0
-offset_right = 16.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 32.0
+offset_bottom = 10.0
 
 [node name="InvSlotUI6" parent="InventoryGrid" instance=ExtResource("1_185nt")]
 custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="SellTimer" parent="InventoryGrid/InvSlotUI6" instance=ExtResource("5_a5hc8")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -5.0
-offset_right = 16.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 32.0
+offset_bottom = 10.0
 
 [node name="InvSlotUI7" parent="InventoryGrid" instance=ExtResource("1_185nt")]
 custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="SellTimer" parent="InventoryGrid/InvSlotUI7" instance=ExtResource("5_a5hc8")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -5.0
-offset_right = 16.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 32.0
+offset_bottom = 10.0
 
 [node name="InvSlotUI8" parent="InventoryGrid" instance=ExtResource("1_185nt")]
 custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 
 [node name="SellTimer" parent="InventoryGrid/InvSlotUI8" instance=ExtResource("5_a5hc8")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -5.0
-offset_right = 16.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 32.0
+offset_bottom = 10.0
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 1
 offset_left = 28.0
 offset_top = 17.0
-offset_right = 128.0
-offset_bottom = 33.0
-scale = Vector2(1.5, 1.5)
+offset_right = 228.0
+offset_bottom = 49.0
 text = "SELL ITEMS"
 label_settings = SubResource("LabelSettings_jue5g")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Button" parent="." instance=ExtResource("6_oqxb0")]
 layout_mode = 1
