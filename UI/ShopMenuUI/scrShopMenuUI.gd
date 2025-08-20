@@ -9,44 +9,37 @@ class_name ShopMenuUI extends Control
 #Game manager object ref
 @onready var mGameStateManager: GameStateManager = get_tree().get_root().get_node("Node/GameStateManager")
 # UI Elements
-@onready var mSellLabelSpawnable := preload("res://UI/ShopMenuUI/ShopSellSlot/SellTimer/scrSellTimerLabel.gd");
-var mSellLabels: Array[Label];
-var mSellLabelTexts: Array[Label];
+var mSellLabels: Array[SellTimerLabel];
+# Spawnable Item money
+@export var mMoneyItemDef: InvItem;
 
 # Sell Item Variables
 var iUnlockedSellSlots: int = 4;
 var iItemsForSale: int = 0;
-var fSellSlotTimers: Array[float];
-var bSellSlotOccupied: Array[bool];
+var bItemSlotOccupied: Array[bool];
 
 func _ready() -> void:
-	mShopInventory.update.connect(SlotUpdate)
+	mShopInventoryUI.SlotsUpdated.connect(SlotUpdate)
 	# Connect Home button to return home function
 	ImplementButton(mHomeButton);
-	# Create SellTimers
-	for i in range(iUnlockedSellSlots):
-		fSellSlotTimers.append(0.0)
+	# Setup Sell slot featurs such as timer label
+	for i in range(8):
+		bItemSlotOccupied.append(false)
+		mSellLabels.append(mShopInventorySlotUI[i].get_node("SellTimer"))
+		mSellLabels[i].mSellSlotID = i
+		mSellLabels[i].mParentShop = self;
+
+func OnItemSell(_SlotID: int):
+	var SellSlot := mShopInventory.slots[_SlotID]
+	SellSlot.amount = SellSlot.item.SellPrice
+	SellSlot.item.ItemID = mMoneyItemDef.ItemID;
+	mShopInventorySlotUI[_SlotID].update(SellSlot);
 
 func SlotUpdate():
-	for i in range(8):
-		if mShopInventory.slots[i] != null:
-			bSellSlotOccupied[i] = true;
-		else:
-			bSellSlotOccupied[i] = false;
+	if mShopInventory.slots[0].item:
+		mSellLabels[0].StartTimer(mShopInventory.slots[0].item.TimeToSell)
 
-func TickSellSlots(delta_time: float):
-	var i = 0
-	var tickedSlots = 0
-	while tickedSlots < iUnlockedSellSlots:
-		if bSellSlotOccupied[i] == true:
-			fSellSlotTimers[i] -= delta_time;
-			tickedSlots += 1
-		i += 1
-
-#func UpdateSellTimerLabel(TimerText: float):
-	
-
-
+# Back button functionality
 func ReturnHome():
 	mGameStateManager.SwapToHomeState()
 func ImplementButton(_Button):

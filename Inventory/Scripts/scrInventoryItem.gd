@@ -1,9 +1,8 @@
-extends Resource
+class_name InvItem extends Resource
 
-class_name InvItem
 enum ItemType
 {
-	ARMOR, WEAPON, CONSUMABLE, QUEST, MATERIAL
+	ARMOR, WEAPON, CONSUMABLE, QUEST, MATERIAL, CURRENCY
 }
 enum CombatType
 {
@@ -26,3 +25,4 @@ enum ArmorSlot
 @export var MagicDefenseModifier: float;
 @export var HealAmount: float;
 @export var TimeToSell: float = 9;
+@export var SellPrice: float = 10;

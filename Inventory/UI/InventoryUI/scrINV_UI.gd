@@ -4,6 +4,8 @@ class_name InventoryUI extends Control;
 var mSlots: Array[Node];
 var isOpen = false;
 
+signal SlotsUpdated;
+
 func _ready() -> void:
 	mSlots = mSlotParent.get_children();
 	mInv.update.connect(UpdateSlots);
@@ -11,11 +13,11 @@ func _ready() -> void:
 	open();
 
 func UpdateSlots():
+	SlotsUpdated.emit()
 	var slotCount: int = 0
 	for i in range(min(mInv.slots.size(), mSlots.size())):
 		mSlots[i].update(mInv.slots[i])
 		slotCount += 1
-	print_debug(name + "Found " + str(slotCount + 1) + " Inventory GUI slots")
 
 func open():
 	visible = true;

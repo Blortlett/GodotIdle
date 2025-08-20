@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ct41jicsdbydu"]
+[gd_scene load_steps=10 format=3 uid="uid://ct41jicsdbydu"]
 
 [ext_resource type="Script" uid="uid://ihymf167e2dj" path="res://UI/ShopMenuUI/scrShopMenuUI.gd" id="1_3qap8"]
 [ext_resource type="PackedScene" uid="uid://0luyfwm87ckl" path="res://Inventory/UI/InventoryUI/nInvSlotUI.tscn" id="1_185nt"]
 [ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_jue5g"]
 [ext_resource type="FontFile" uid="uid://n84lclh7eapu" path="res://Art/Fonts/PeaberryMono.ttf" id="2_8jfxe"]
 [ext_resource type="Resource" uid="uid://csgm7e6002bnu" path="res://Inventory/GameInventorys/ShopInventory.tres" id="2_gy72q"]
+[ext_resource type="Resource" uid="uid://dd1q7kvna3hly" path="res://Inventory/Items/Money/MoneyItem.tres" id="2_jox64"]
 [ext_resource type="PackedScene" uid="uid://dhh3ddn8ft5wb" path="res://UI/ShopMenuUI/ShopSellSlot/SellTimer/nSellTimerLabel.tscn" id="5_a5hc8"]
 [ext_resource type="PackedScene" uid="uid://cw6wtuw8h4nqc" path="res://UI/ButtonUI/nButtonUI.tscn" id="6_oqxb0"]
 
@@ -21,6 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_3qap8")
+mMoneyItemDef = ExtResource("2_jox64")
 
 [node name="InventoryGrid" type="GridContainer" parent="." node_paths=PackedStringArray("mSlotParent")]
 layout_mode = 1
