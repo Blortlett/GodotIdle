@@ -1,4 +1,7 @@
 class_name CraftMenu extends Control;
+# Player inventory
+@onready var mPlayerInventoryUI: InventoryUI = get_tree().get_root().get_node("Node/GameUI")
+@onready var mPlayerInventory: Inv = mPlayerInventoryUI.GetInventory()
 # Button name list
 var ButtonNames: Array[String];
 # -= Craftable Item UI =-
@@ -49,8 +52,20 @@ func SetCraftOutputTarget(_CraftOutputTarget: Recipe):
 	mCraftOutputDescription.SetDescription(_CraftOutputTarget)
 
 func CraftItem():
+	var CanCraft: bool = true
+	# Check we have all ingredients
+	for ingredient: ItemAmount in mSelectedRecipe.Ingredients:
+		if !mPlayerInventory.CheckHasItems(ingredient):
+			CanCraft = false;
+	if !CanCraft: return # Can't craft so you should return
 	print("Crafting: " + mSelectedRecipe.Products[0].Item.name)
+	# Remove ingredients from player inventory
+	for ingredient: ItemAmount in mSelectedRecipe.Ingredients:
+		mPlayerInventory.remove(ingredient)
+	# Insert crafted item into craft output slot
 	mOutputInvSlotUI.GetInventory().insert(mSelectedRecipe.Products[0].Item)
+	RemoveCraftables()
+	RefreshCraftables()
 
 func RemoveCraftables():
 	for child in ButtonParent.get_children():

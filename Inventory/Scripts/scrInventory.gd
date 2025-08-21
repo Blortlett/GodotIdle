@@ -14,6 +14,24 @@ func insert(item: InvItem):
 			emptySlots[0].amount = 1;
 	update.emit();
 
+func CheckHasItems(_item: ItemAmount) -> bool:
+	var itemSlots = slots.filter(func(slot): return slot.item == _item.Item)
+	var itemCount: int = 0
+	for slot: InvSlot in itemSlots:
+		itemCount += slot.amount
+	if itemCount >= _item.Amount:
+		return true;
+	else:
+		return false;
+
+func remove(_item: ItemAmount):
+	var itemSlots = slots.filter(func(slot): return slot.item == _item.Item)
+	itemSlots[0].amount -= _item.Amount;
+	if itemSlots[0].amount <= 0:
+		itemSlots[0].item = null
+	update.emit();
+	# Need to figure out a way to clear inv slot here...?
+
 func GetAllItems() -> Array[InvItem]:
 	var HeldItems: Array[InvItem]
 	for slot: InvSlot in slots:
