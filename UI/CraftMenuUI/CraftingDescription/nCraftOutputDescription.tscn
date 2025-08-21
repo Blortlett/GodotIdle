@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvd6owu6i6fba"]
+[gd_scene load_steps=6 format=3 uid="uid://dvd6owu6i6fba"]
 
 [ext_resource type="Script" uid="uid://njufs3jbecf5" path="res://UI/CraftMenuUI/CraftingDescription/scrCraftOutputDescription.gd" id="1_6snh3"]
 [ext_resource type="FontFile" uid="uid://n84lclh7eapu" path="res://Art/Fonts/PeaberryMono.ttf" id="1_taju7"]
 [ext_resource type="PackedScene" uid="uid://cw6wtuw8h4nqc" path="res://UI/ButtonUI/nButtonUI.tscn" id="3_ba84n"]
+[ext_resource type="PackedScene" uid="uid://0luyfwm87ckl" path="res://Inventory/UI/InventoryUI/nInvSlotUI.tscn" id="4_qlk03"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iqy81"]
 font = ExtResource("1_taju7")
 font_color = Color(0.00327214, 0.00387555, 0.00170103, 1)
 
-[node name="CraftOutputDescription" type="Control" node_paths=PackedStringArray("mItemNameLabel", "mItemTypeLabel", "mIngredientsParent", "mCraftButton")]
+[node name="CraftOutputDescription" type="Control" node_paths=PackedStringArray("mItemIconDisplay", "mItemNameLabel", "mItemTypeLabel", "mIngredientsParent", "mCraftButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_6snh3")
+mItemIconDisplay = NodePath("ProductIconDisplay/InvSlotUI")
 mItemNameLabel = NodePath("ItemName")
 mItemTypeLabel = NodePath("ItemType")
 mIngredientsParent = NodePath("IngredientsContainer")
@@ -28,10 +30,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -177.0
-offset_top = 43.0
-offset_right = -67.0
-offset_bottom = 66.0
+offset_left = -156.0
+offset_top = 44.0
+offset_right = -46.0
+offset_bottom = 67.0
 grow_horizontal = 0
 text = "[Item_Name]"
 label_settings = SubResource("LabelSettings_iqy81")
@@ -70,11 +72,18 @@ label_settings = SubResource("LabelSettings_iqy81")
 vertical_alignment = 1
 
 [node name="IngredientsContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_left = 975.0
-offset_top = 84.0
-offset_right = 1015.0
-offset_bottom = 124.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -164.0
+offset_top = 88.0
+offset_right = -124.0
+offset_bottom = 128.0
+grow_horizontal = 0
+scale = Vector2(0.6, 0.6)
+theme_override_constants/h_separation = 14
+columns = 6
 
 [node name="CraftButton" parent="." instance=ExtResource("3_ba84n")]
 layout_mode = 1
@@ -89,5 +98,20 @@ offset_right = -55.0
 offset_bottom = 141.0
 grow_horizontal = 0
 grow_vertical = 1
+
+[node name="ProductIconDisplay" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.0
+offset_top = 46.0
+offset_right = -136.0
+offset_bottom = 86.0
+grow_horizontal = 0
+scale = Vector2(0.4, 0.4)
+
+[node name="InvSlotUI" parent="ProductIconDisplay" instance=ExtResource("4_qlk03")]
+layout_mode = 1
 
 [connection signal="button_down" from="CraftButton" to="." method="AttemptCraft"]

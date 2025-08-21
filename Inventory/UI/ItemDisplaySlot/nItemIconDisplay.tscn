@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1lsqgg2u7fd4"]
+
+[ext_resource type="PackedScene" uid="uid://0luyfwm87ckl" path="res://Inventory/UI/InventoryUI/nInvSlotUI.tscn" id="1_35dnf"]
+
+[node name="ItemIconDisplay" type="Control"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InvSlotUI" parent="." instance=ExtResource("1_35dnf")]
+layout_mode = 1
