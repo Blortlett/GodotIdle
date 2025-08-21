@@ -18,12 +18,14 @@ ButtonParent = NodePath("GridContainer")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 37.0
+offset_right = 37.0
 grow_vertical = 2
 mouse_filter = 2
+columns = 4
 script = ExtResource("2_san1y")
 Craftables = ExtResource("3_qj0yf")
 

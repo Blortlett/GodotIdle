@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2ua4d1e13ss1" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_Slot01a.png" id="1_fxivn"]
 [ext_resource type="Texture2D" uid="uid://cj3s6gf7cewsn" path="res://Art/Items/Items32x32.png" id="3_47yyq"]
 
-[node name="InvSlotUI" type="Panel"]
+[node name="InvSlotUI" type="Panel" node_paths=PackedStringArray("mItemVisual", "mAmountText")]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(30, 30)
 anchors_preset = 15
@@ -13,6 +13,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dvaq4")
+mItemVisual = NodePath("CenterContainer/Panel/ItemDisplaySprite")
+mAmountText = NodePath("CenterContainer/Panel/Label")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(30, 30)
