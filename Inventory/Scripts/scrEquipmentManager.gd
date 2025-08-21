@@ -27,11 +27,11 @@ func _PrepAllSlotVisuals():
 	texture = load("res://Art/Items/EquipmentShadows/Accessory.png");
 	_PrepSlotVisual(texture, mEquipmentSlotsUI[5]);
 func _PrepSlotVisual(_IconTexture: Resource, _SlotUI: Node):
-	var SlotIcon = Sprite2D.new();
+	var SlotIcon: Sprite2D = Sprite2D.new();
 	SlotIcon.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST;
 	SlotIcon.texture = _IconTexture;
-	_SlotUI.add_child(SlotIcon);
-	SlotIcon.position = Vector2(0, 0);
+	_SlotUI.get_node("CenterContainer/Panel").add_child(SlotIcon);
+	SlotIcon.z_index = 1
 	SlotIcon.scale = Vector2(.8,.8);
 
 func _ready() -> void:
