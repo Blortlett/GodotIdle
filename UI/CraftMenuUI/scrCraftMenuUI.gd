@@ -10,7 +10,7 @@ var mCraftButtons: Array[Control];
 #-= Craft Output Slot =-
 @export var mCraftOutputDescription: CraftOutputDescription
 var mOutputInvSlot: InvSlot = InvSlot.new()
-@onready var mOutputInvSlotUI: SlotUI = get_node("CraftOutputSlot/InvSlotUI")
+@onready var mOutputInvSlotUI: InventoryUI = get_node("CraftOutputSlot")
 # Selected recipe
 var mIsRecipeSelected: bool = false;
 var mSelectedRecipe: Recipe = null;
@@ -26,7 +26,8 @@ var mSelectedRecipe: Recipe = null;
 func _ready() -> void:
 	mHomeButton.pressed.connect(ReturnHome)
 	mGameStateManager.state_changed.connect(CheckMenuOpen)
-	mOutputInvSlotUI.update(mOutputInvSlot)
+	#mOutputInvSlotUI.update(mOutputInvSlot)
+	mCraftOutputDescription.mCraftMenuUI = self
 
 func RefreshCraftables():
 	print_debug(":: CRAFTING ::")
@@ -46,7 +47,10 @@ func SetCraftOutputTarget(_CraftOutputTarget: Recipe):
 	mIsRecipeSelected = true;
 	mSelectedRecipe = _CraftOutputTarget
 	mCraftOutputDescription.SetDescription(_CraftOutputTarget)
-	
+
+func CraftItem():
+	print("Crafting: " + mSelectedRecipe.Products[0].Item.name)
+	mOutputInvSlotUI.GetInventory().insert(mSelectedRecipe.Products[0].Item)
 
 func RemoveCraftables():
 	for child in ButtonParent.get_children():

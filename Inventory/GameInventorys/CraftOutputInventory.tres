@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=4 format=3 uid="uid://dffa7cvjsqx8f"]
+
+[ext_resource type="Script" uid="uid://dvu0cvlyuscvd" path="res://Inventory/Scripts/scrInventory.gd" id="1_iv0c6"]
+[ext_resource type="Script" uid="uid://bx52jjxmfncpj" path="res://Inventory/Scripts/scrInventorySlot.gd" id="2_d3tps"]
+
+[sub_resource type="Resource" id="Resource_iv0c6"]
+script = ExtResource("2_d3tps")
+amount = 0
+mIsEquipmentSlot = false
+mEquipmentType = 0
+metadata/_custom_type_script = "uid://bx52jjxmfncpj"
+
+[resource]
+script = ExtResource("1_iv0c6")
+slots = Array[ExtResource("2_d3tps")]([SubResource("Resource_iv0c6")])
+metadata/_custom_type_script = "uid://dvu0cvlyuscvd"

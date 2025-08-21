@@ -12,6 +12,9 @@ var mLastAccessedID: int;
 #Shop inventory slots
 @onready var mShopInventoryParent: Node = get_tree().get_root().get_node("Node/GameUI/SystemUI/ShopMenuUI/InventoryGrid")
 @onready var mShopInventorySlots: Array[Node] = mShopInventoryParent.get_children()
+# Crafting output inventory slot
+@onready var mCraftingOutputInventoryParent = get_tree().get_root().get_node("Node/GameUI/SystemUI/CraftMenuUI/CraftOutputSlot")
+@onready var mCraftingOutputInventorySlot = get_tree().get_root().get_node("Node/GameUI/SystemUI/CraftMenuUI/CraftOutputSlot/InvSlotUI")
 # Inventory Object
 @onready var mInventoryUI: InventoryUI = get_node("../../..")
 @onready var mEquipmentUI: EquipmentManager = get_node("../../CharacterUI/EquipmentUI")
@@ -43,6 +46,11 @@ func _ready() -> void:
 		var slot = mShopInventorySlots[i]
 		slot.mouse_entered.connect(func(): OnInventoryHovered(mShopInventoryParent, i))
 		slot.mouse_exited.connect(func(): OnInventoryUnhovered(mShopInventoryParent, i))
+	# Hook up Crafting output functionality
+	# Hmm seems to want an inventory to pull from
+	mCraftingOutputInventorySlot.mouse_entered.connect(func(): OnInventoryHovered(mCraftingOutputInventoryParent, 0))
+	mCraftingOutputInventorySlot.mouse_exited.connect(func(): OnInventoryUnhovered(mCraftingOutputInventoryParent, 0)) 
+
 
 func OnInventoryHovered(inventoryUI: InventoryUI, slot_index: int):
 	mLastHoveredInvUI = inventoryUI;

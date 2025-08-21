@@ -3,6 +3,7 @@ class_name CraftOutputDescription extends Node
 @export var mItemTypeLabel: Label
 @export var mIngredientsParent: GridContainer
 @export var mCraftButton: Button
+var mCraftMenuUI: CraftMenu
 
 func _ready() -> void:
 	self.visible = false
@@ -13,6 +14,9 @@ func SetDescription(_recipe: Recipe):
 	mItemNameLabel.text = _recipe.Products[0].Item.name
 	mItemTypeLabel.text = InvItem.ItemType.keys()[_recipe.Products[0].Item.mItemType]
 	self.visible = true
+
+func AttemptCraft():
+	mCraftMenuUI.CraftItem()
 
 func ClearDescription():
 	self.visible = false;
