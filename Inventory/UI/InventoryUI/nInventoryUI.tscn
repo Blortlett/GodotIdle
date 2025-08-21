@@ -265,6 +265,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "$100"
 label_settings = SubResource("LabelSettings_pgv5h")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DestinationMenuUI" parent="SystemUI" instance=ExtResource("9_sfvvv")]
 layout_mode = 1
@@ -283,7 +285,6 @@ offset_bottom = 0.5
 mouse_filter = 2
 
 [node name="CombatMenuUI" type="Control" parent="SystemUI" node_paths=PackedStringArray("ButtonParent")]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -319,11 +320,31 @@ offset_bottom = 86.5
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="EnemiesKilledLabel" type="Label" parent="SystemUI/CombatMenuUI"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = 17.29
+offset_right = 21.0
+offset_bottom = 40.29
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = SubResource("LabelSettings_pgv5h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CraftMenuUI" parent="SystemUI" instance=ExtResource("15_1n702")]
 visible = false
 layout_mode = 1
 
 [node name="ShopMenuUI" parent="SystemUI" instance=ExtResource("16_5jg8s")]
+visible = false
 layout_mode = 1
 
 [node name="InventoryUI" type="Control" parent="SystemUI"]

@@ -18,6 +18,8 @@ var IsCombatActive: bool = false;
 var PlayerAttackTimer: float = 1;
 var EnemyAttackTimer: float = 1;
 
+signal EnemyDeath
+
 # On tick
 func _process(delta):
 	# Heal player timer always runs
@@ -144,6 +146,7 @@ func HandleCharacterDeath():
 		var LootDrop: Array[InvSlot] = mCharacterRegister.KillEnemy();
 		AddLootDropToInv(LootDrop); # Drop Loot
 		mCharacterDisplayController.EnemyDisplay.PlayDeathAnimation();
+		EnemyDeath.emit()
 		EndCombat();
 	# Player Death
 	if (mCharacterRegister.mActiveCharacter.CurrentHealth <= 0):

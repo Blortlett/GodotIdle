@@ -161,6 +161,8 @@ func DragItem(inventoryUI: InventoryUI, slot_index: int):
 func DropDraggedItem(inventoryUI: InventoryUI, slot_index: int):
 	if !inventoryUI:
 		return; # invalid operation, no drop spot found
+	if !mLastAccessedInvUI:
+		return; # invalid operation, drag origin was empty space - no slot
 	# Get destination slot
 	var slotToDropItem: InvSlot = inventoryUI.GetInventory().slots[slot_index];
 	var originalSlot: InvSlot = mLastAccessedInvUI.GetInventory().slots[mLastAccessedID];

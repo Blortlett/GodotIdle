@@ -47,7 +47,7 @@ class HomeState extends GameState:
 		
 	func ExitState() -> void:
 		print("Exited Home State")
-		mCombatManager.IsHome = false;
+		
 
 class DestinationMenuState extends GameState:
 	func _init(manager: GameStateManager):
@@ -61,12 +61,14 @@ class DestinationMenuState extends GameState:
 		print("Exited Destination Menu State")
 
 class ExploringState extends GameState:
+	@onready var mCombatManager: CombatManager = get_tree().get_root().get_node("Node/CombatManager")
 	func _init(manager: GameStateManager):
 		super(manager)
 		state_type = StateType.EXPLORING
 		
 	func EnterState() -> void:
 		print("Entered Exploring State")
+		mCombatManager.IsHome = false;
 		
 	func ExitState() -> void:
 		print("Exited Exploring State")
