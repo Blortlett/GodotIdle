@@ -11,8 +11,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_u64yr")
 mInvSlotUI = NodePath("InvSlotUI")
 
 [node name="InvSlotUI" parent="." instance=ExtResource("1_y81jp")]
 layout_mode = 1
+
+[connection signal="gui_input" from="InvSlotUI" to="." method="_on_inv_slot_ui_gui_input"]

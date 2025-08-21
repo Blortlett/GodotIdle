@@ -1,11 +1,19 @@
 class_name CraftMenu extends Control;
 # Button name list
 var ButtonNames: Array[String];
+# -= Craftable Item UI =-
 # Crafting Slot button storage
 @export var ButtonParent: GridContainer;
 # Button spawnable:
 @export var CraftButtonSpawnable: PackedScene = preload("res://UI/CraftMenuUI/CraftSlot/nCraftableSlot.tscn")
-var mCraftButtons: Array[Button];
+var mCraftButtons: Array[Control];
+#-= Craft Output Slot =-
+@export var mCraftOutputDescription: CraftOutputDescription
+var mOutputInvSlot: InvSlot = InvSlot.new()
+@onready var mOutputInvSlotUI: SlotUI = get_node("CraftOutputSlot/InvSlotUI")
+# Selected recipe
+var mIsRecipeSelected: bool = false;
+var mSelectedRecipe: Recipe = null;
 
 # Gamestate Manager
 @onready var mGameStateManager: GameStateManager = get_tree().get_root().get_node("Node/GameStateManager")
@@ -18,16 +26,27 @@ var mCraftButtons: Array[Button];
 func _ready() -> void:
 	mHomeButton.pressed.connect(ReturnHome)
 	mGameStateManager.state_changed.connect(CheckMenuOpen)
+	mOutputInvSlotUI.update(mOutputInvSlot)
 
 func RefreshCraftables():
 	print_debug(":: CRAFTING ::")
 	var CraftableRecipes: Array[Recipe] = mCraftingDictionary.GetCraftableRecipies()
 	for i in range(CraftableRecipes.size()):
 		var craftButton: CraftableSlotUI= CraftButtonSpawnable.instantiate()
-		craftButton.SetDisplayItem(CraftableRecipes[i].Products[0].Item)
+		craftButton.SetDisplayItem(CraftableRecipes[i])
+		craftButton.mOwnerUI = self
 		mCraftButtons.append(craftButton)
 		ButtonParent.add_child(craftButton)
 		print_debug("recipe craftable: " + CraftableRecipes[i].Products[0].Item.name)
+
+func SetCraftOutputTarget(_CraftOutputTarget: Recipe):
+	if !_CraftOutputTarget:
+		print("Craft target set to empty object!")
+		return
+	mIsRecipeSelected = true;
+	mSelectedRecipe = _CraftOutputTarget
+	mCraftOutputDescription.SetDescription(_CraftOutputTarget)
+	
 
 func RemoveCraftables():
 	for child in ButtonParent.get_children():
@@ -37,9 +56,10 @@ func RemoveCraftables():
 #Home Button
 func ReturnHome():
 	mGameStateManager.SwapToHomeState()
-#Open/Close listener
+# Listen for menu Open/Close
 func CheckMenuOpen(new_state_type: GameState.StateType):
 	if new_state_type == GameState.StateType.CRAFTING:
 		RefreshCraftables()
 	else:
 		RemoveCraftables()
+		mCraftOutputDescription.ClearDescription()

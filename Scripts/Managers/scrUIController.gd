@@ -7,6 +7,10 @@ extends Node
 @onready var mShopMenuUI: Control = get_node("../GameUI/SystemUI/ShopMenuUI")
 @onready var CraftingMenuUI: Control = get_node("../GameUI/SystemUI/CraftMenuUI")
 
+# Player UIs / Right side screen UIs
+@onready var mInventoryUI: Control = get_tree().get_root().get_node("Node/GameUI/SystemUI/InventoryUI")
+@onready var mCharacterUI: Control = get_tree().get_root().get_node("Node/GameUI/SystemUI/CharacterUI")
+
 
 func _ready():
 	# Connect to state manager signals
@@ -25,6 +29,13 @@ func hide_all_uis():
 	mShopMenuUI.visible = false
 	CraftingMenuUI.visible = false
 
+func hide_player_uis():
+	#mInventoryUI.visible = false;
+	mCharacterUI.visible = false;
+
+func show_player_uis():
+	#mInventoryUI.visible = true;
+	mCharacterUI.visible = true;
 
 func _on_state_changed(state_type: GameState.StateType):
 	# Hide all first
@@ -34,6 +45,7 @@ func _on_state_changed(state_type: GameState.StateType):
 	match state_type:
 		GameState.StateType.HOME:
 			HomeUI.visible = true
+			show_player_uis();
 		GameState.StateType.DESTINATION_MENU:
 			DestinationUI.visible = true
 		GameState.StateType.EXPLORING:
@@ -42,5 +54,6 @@ func _on_state_changed(state_type: GameState.StateType):
 			mShopMenuUI.visible = true;
 		GameState.StateType.CRAFTING:
 			CraftingMenuUI.visible = true;
+			hide_player_uis()
 		_: # default case (Means shit's broken)
 			print_debug("Broke ass broken state fuck")

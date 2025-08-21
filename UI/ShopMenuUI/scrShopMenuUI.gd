@@ -1,6 +1,5 @@
 class_name ShopMenuUI extends Control
 # HomeButton
-@onready var mHomeButtonParent = get_node("ButtonParent")
 @onready var mHomeButton: Control = get_node("Button");
 # Shop Inventory
 @onready var mShopInventoryUI: InventoryUI = get_node("InventoryGrid")

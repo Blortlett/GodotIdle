@@ -1,11 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dovwwhvoh2cto"]
+[gd_scene load_steps=9 format=3 uid="uid://dovwwhvoh2cto"]
 
 [ext_resource type="Script" uid="uid://bdwbouykgljvk" path="res://UI/CraftMenuUI/scrCraftMenuUI.gd" id="1_ywx8l"]
 [ext_resource type="Script" uid="uid://dv8hrvgbyh4mv" path="res://Inventory/Crafting/scrCraftingRecipies.gd" id="2_san1y"]
 [ext_resource type="Resource" uid="uid://thka7a5dfkfi" path="res://Inventory/Crafting/RecipieBooks/BookAllRecipies.tres" id="3_qj0yf"]
+[ext_resource type="PackedScene" uid="uid://0luyfwm87ckl" path="res://Inventory/UI/InventoryUI/nInvSlotUI.tscn" id="4_ggusc"]
+[ext_resource type="FontFile" uid="uid://n84lclh7eapu" path="res://Art/Fonts/PeaberryMono.ttf" id="5_ggusc"]
+[ext_resource type="PackedScene" uid="uid://dvd6owu6i6fba" path="res://UI/CraftMenuUI/CraftingDescription/nCraftOutputDescription.tscn" id="7_iqy81"]
 [ext_resource type="PackedScene" uid="uid://cw6wtuw8h4nqc" path="res://UI/ButtonUI/nButtonUI.tscn" id="10_m4j1o"]
 
-[node name="CraftMenuUI" type="Control" node_paths=PackedStringArray("ButtonParent")]
+[sub_resource type="LabelSettings" id="LabelSettings_mew3r"]
+font = ExtResource("5_ggusc")
+font_color = Color(0.00377088, 0.00119058, 0.00119984, 1)
+
+[node name="CraftMenuUI" type="Control" node_paths=PackedStringArray("ButtonParent", "mCraftOutputDescription")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,15 +22,14 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_ywx8l")
 ButtonParent = NodePath("GridContainer")
+mCraftOutputDescription = NodePath("CraftOutputDescription")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 37.0
-offset_right = 37.0
-grow_vertical = 2
+offset_left = 28.0
+offset_top = 50.0
+offset_right = 28.0
+offset_bottom = 50.0
 mouse_filter = 2
 columns = 4
 script = ExtResource("2_san1y")
@@ -43,3 +49,57 @@ offset_bottom = -18.0
 grow_horizontal = 1
 grow_vertical = 0
 text = "Home"
+
+[node name="LeftTitleLabel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 28.0
+offset_top = 17.0
+offset_right = 128.0
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+text = "CRAFTABLES"
+label_settings = SubResource("LabelSettings_mew3r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftTitleLabel2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -141.0
+offset_top = 17.0
+offset_right = -81.0
+offset_bottom = 33.0
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
+text = "OUTPUT"
+label_settings = SubResource("LabelSettings_mew3r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CraftOutputSlot" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_top = 112.0
+offset_right = -10.0
+offset_bottom = 152.0
+grow_horizontal = 0
+
+[node name="InvSlotUI" parent="CraftOutputSlot" instance=ExtResource("4_ggusc")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CraftOutputDescription" parent="." instance=ExtResource("7_iqy81")]
+layout_mode = 1

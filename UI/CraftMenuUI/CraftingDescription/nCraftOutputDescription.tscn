@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvd6owu6i6fba"]
+
+[ext_resource type="Script" uid="uid://njufs3jbecf5" path="res://UI/CraftMenuUI/CraftingDescription/scrCraftOutputDescription.gd" id="1_6snh3"]
+[ext_resource type="FontFile" uid="uid://n84lclh7eapu" path="res://Art/Fonts/PeaberryMono.ttf" id="1_taju7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iqy81"]
+font = ExtResource("1_taju7")
+font_color = Color(0.00327214, 0.00387555, 0.00170103, 1)
+
+[node name="CraftOutputDescription" type="Control" node_paths=PackedStringArray("mItemNameLabel", "mItemTypeLabel", "mIngredientsParent")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_6snh3")
+mItemNameLabel = NodePath("ItemName")
+mItemTypeLabel = NodePath("ItemType")
+mIngredientsParent = NodePath("IngredientsContainer")
+
+[node name="ItemName" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -177.0
+offset_top = 50.0
+offset_right = -67.0
+offset_bottom = 73.0
+grow_horizontal = 0
+text = "[Item_Name]"
+label_settings = SubResource("LabelSettings_iqy81")
+vertical_alignment = 1
+
+[node name="ItemType" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -177.0
+offset_top = 71.0
+offset_right = -67.0
+offset_bottom = 94.0
+grow_horizontal = 0
+scale = Vector2(0.6, 0.6)
+text = "[Item_Desc]"
+label_settings = SubResource("LabelSettings_iqy81")
+vertical_alignment = 1
+
+[node name="IngredientsLabel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -177.0
+offset_top = 89.0
+offset_right = -57.0
+offset_bottom = 105.0
+grow_horizontal = 0
+scale = Vector2(0.6, 0.6)
+text = "Ingredients:"
+label_settings = SubResource("LabelSettings_iqy81")
+vertical_alignment = 1
+
+[node name="IngredientsContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
