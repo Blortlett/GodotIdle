@@ -13,3 +13,10 @@ func insert(item: InvItem):
 			emptySlots[0].item = item;
 			emptySlots[0].amount = 1;
 	update.emit();
+
+func GetAllItems() -> Array[InvItem]:
+	var HeldItems: Array[InvItem]
+	for slot: InvSlot in slots:
+		if slot.item:
+			HeldItems.append(slot.item)
+	return HeldItems

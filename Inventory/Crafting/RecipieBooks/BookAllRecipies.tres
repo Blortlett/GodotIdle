@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RecipeBook" load_steps=9 format=3 uid="uid://thka7a5dfkfi"]
+
+[ext_resource type="Script" uid="uid://borwlqxwjdxm5" path="res://Inventory/Crafting/scrRecipie.gd" id="1_avod4"]
+[ext_resource type="Resource" uid="uid://dkog2evn3c1u4" path="res://Inventory/Crafting/Recipies/rBow_Recipe.tres" id="2_ra1pg"]
+[ext_resource type="Resource" uid="uid://bnw8sof1fu5w8" path="res://Inventory/Crafting/Recipies/rIronDagger_Recipe.tres" id="3_sgt6l"]
+[ext_resource type="Resource" uid="uid://dlg83yuxi8bak" path="res://Inventory/Crafting/Recipies/rIronSword_Recipe.tres" id="4_uxcij"]
+[ext_resource type="Resource" uid="uid://c8vl7lnluj162" path="res://Inventory/Crafting/Recipies/rIronWand_Recipe.tres" id="5_7qf81"]
+[ext_resource type="Resource" uid="uid://ntdr5daviq10" path="res://Inventory/Crafting/Recipies/rRangerBow_Recipe.tres" id="6_5f4fy"]
+[ext_resource type="Resource" uid="uid://0fgbv1yjujgf" path="res://Inventory/Crafting/Recipies/rWoodStaff_Recipe.tres" id="7_s4e4f"]
+[ext_resource type="Script" uid="uid://nk6p2uedkhsi" path="res://Inventory/Crafting/scrRecipeBook.gd" id="8_ab0sj"]
+
+[resource]
+script = ExtResource("8_ab0sj")
+mRecipies = Array[ExtResource("1_avod4")]([ExtResource("2_ra1pg"), ExtResource("3_sgt6l"), ExtResource("4_uxcij"), ExtResource("5_7qf81"), ExtResource("6_5f4fy"), ExtResource("7_s4e4f")])
+metadata/_custom_type_script = "uid://nk6p2uedkhsi"
