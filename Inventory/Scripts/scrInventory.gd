@@ -5,7 +5,8 @@ signal update;
 #insert item into first spot in inventory. will stack
 func insert(item: InvItem):
 	var itemSlots = slots.filter(func(slot): return slot.item == item)
-	if !itemSlots.is_empty():
+	# If item exists in inventory already, and item to insert is not a weapon or armor piece
+	if !itemSlots.is_empty() && item.mItemType != InvItem.ItemType.WEAPON && item.mItemType != InvItem.ItemType.ARMOR:
 		itemSlots[0].amount += 1;
 	else:
 		var emptySlots = slots.filter(func(slot): return slot.item == null)
