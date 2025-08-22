@@ -8,9 +8,8 @@ func _ready() -> void:
 	mItemSlotUI.update(mItemSlot)
 	mItemSlotUI.visible = false;
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if mIsItemHeld:
-		var mouse_pos = get_viewport().get_mouse_position()
 		var local_mouse_pos = mItemSlotUI.get_parent().get_local_mouse_position()
 		mItemSlotUI.position = local_mouse_pos + DraggedItemUIOffset;
 

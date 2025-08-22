@@ -8,7 +8,7 @@ func TriggerDamageNumber(dmgValue: float):
 	var scene: PackedScene = load("res://UI/DamageNumbers/nDmgNumber.tscn")
 	var newDmgNumber: Label = scene.instantiate() as Label
 	self.add_child(newDmgNumber)
-	var DmgNumBehavior: DamageNumberBehavior = newDmgNumber;
+
 	
 	#Set number to healing or damage style
 	if (dmgValue < 0): # CharacterHealing
