@@ -11,8 +11,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if mIsItemHeld:
 		var mouse_pos = get_viewport().get_mouse_position()
-		var transformed_pos = get_viewport_transform().affine_inverse() * mouse_pos
-		mItemSlotUI.position = transformed_pos + DraggedItemUIOffset;
+		var local_mouse_pos = mItemSlotUI.get_parent().get_local_mouse_position()
+		mItemSlotUI.position = local_mouse_pos + DraggedItemUIOffset;
 
 func OnItemDragged(_Slot: InvSlot):
 	# Take item from Inventory

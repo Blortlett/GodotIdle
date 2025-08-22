@@ -50,6 +50,8 @@ func _EnemyAttackTick():
 			EnemyAttackTimer = mCharacterRegister.mActiveEnemyCharacter.AttackSpeed;
 
 func HealPlayerTick():
+	if mCharacterRegister.mActiveCharacter.CurrentHealth <= 0 && !IsHome:
+			return
 	if CharacterHealCurrentTimer <= 0:
 		# Heal player & apply health cap
 		var PlayerCharacter = mCharacterRegister.mActiveCharacter;

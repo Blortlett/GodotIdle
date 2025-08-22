@@ -377,6 +377,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("12_6j3o5")
+DraggedItemUIOffset = Vector2(-15, -15)
 metadata/_custom_type_script = "uid://7jr5oueo8fsy"
 
 [node name="InvSlotUI" parent="SystemUI/InventoryUI/InventoryActions/ItemDragGfxHandler" instance=ExtResource("4_keych")]
