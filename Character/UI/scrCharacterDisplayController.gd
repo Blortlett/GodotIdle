@@ -18,10 +18,13 @@ func SetPlayerCharacterSpriteFromWeaponType(_CombatType: InvItem.CombatType):
 	match _CombatType:
 		InvItem.CombatType.MAGIC:
 			PlayerDisplay.DisplaySprite.sprite_frames = mPlayerCharacterAnimations[0]
+			PlayerDisplay.CreatureNameDisplay.text = mCharacterRegister.mPlayerCharacters[0].Name
 		InvItem.CombatType.RANGED:
 			PlayerDisplay.DisplaySprite.sprite_frames = mPlayerCharacterAnimations[1]
+			PlayerDisplay.CreatureNameDisplay.text = mCharacterRegister.mPlayerCharacters[1].Name
 		InvItem.CombatType.MELEE:
 			PlayerDisplay.DisplaySprite.sprite_frames = mPlayerCharacterAnimations[2]
+			PlayerDisplay.CreatureNameDisplay.text = mCharacterRegister.mPlayerCharacters[2].Name
 	PlayerDisplay.OnPlayerArriveHome(); #Janky way to swap to idle
 
 func UpdateCharacterHealthVisuals():

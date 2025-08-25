@@ -4,6 +4,8 @@ class_name CharacterRegister
 @export var mActiveCharacter: Character;
 var mActiveEnemyCharacter: Character;
 
+@export var mPlayerCharacters: Array[Character];
+
 @onready var mInventoryUI: InventoryUI = get_node("../GameUI");
 @onready var mCombatManager: CombatManager = get_node("../CombatManager");
 @onready var mCharacterDisplayController: CharacterDisplayController = get_node("../GameUI/CharacterDisplayController");

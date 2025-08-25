@@ -1,9 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://8vyvaxykm4g4"]
+[gd_scene load_steps=18 format=3 uid="uid://8vyvaxykm4g4"]
 
 [ext_resource type="PackedScene" uid="uid://b3bd2ccqkh00a" path="res://Inventory/UI/InventoryUI/nInventoryUI.tscn" id="1_x6p71"]
 [ext_resource type="Texture2D" uid="uid://cwvgpea6e7h8g" path="res://Art/wood_texture_full_screen.png" id="1_xnu72"]
 [ext_resource type="Script" uid="uid://dlkijgainja7j" path="res://Scripts/Managers/scrCharacterRegister.gd" id="2_cbp6g"]
+[ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="5_ejwnr"]
 [ext_resource type="Script" uid="uid://dtbqlt8shj24b" path="res://Scripts/Managers/scrCombatManager.gd" id="5_idfla"]
+[ext_resource type="Resource" uid="uid://dg3s05hoirm13" path="res://Character/Characters/Heroes/rRanger.tres" id="6_icscj"]
+[ext_resource type="Resource" uid="uid://ckcfd0biiasvc" path="res://Character/Characters/Heroes/rWarrior.tres" id="7_lunvl"]
 [ext_resource type="Script" uid="uid://bpiip7dmpkbh8" path="res://Areas/scrArea.gd" id="8_0l2m4"]
 [ext_resource type="Resource" uid="uid://croc7fprjc5ic" path="res://Character/Characters/Heroes/rMage.tres" id="8_gc5i1"]
 [ext_resource type="Resource" uid="uid://c3swi46siy438" path="res://Areas/ExplorableAreas/rSunnyMeadow.tres" id="9_xnu72"]
@@ -45,6 +48,7 @@ zoom = Vector2(3, 3)
 [node name="CharacterRegister" type="Node" parent="."]
 script = ExtResource("2_cbp6g")
 mActiveCharacter = ExtResource("8_gc5i1")
+mPlayerCharacters = Array[ExtResource("5_ejwnr")]([ExtResource("8_gc5i1"), ExtResource("6_icscj"), ExtResource("7_lunvl")])
 metadata/_custom_type_script = "uid://dlkijgainja7j"
 
 [node name="CombatManager" type="Node" parent="."]
