@@ -56,7 +56,7 @@ func SaveHighscore(_HighscoreData: HighscoreData):
 
 func RestartGame():
 	print("Restarting Game...")
-	mUIController._ready()
+	mUIController.StartGame()
 	mGameStateManager.SwapToHomeState()
 	mPlayerData.ResetData()
 	mPlayerInventory.GetInventory().ClearInventory()

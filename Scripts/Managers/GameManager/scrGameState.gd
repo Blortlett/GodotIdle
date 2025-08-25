@@ -8,6 +8,7 @@ enum StateType {
 	SHOP,
 	CRAFTING,
 	GAMEOVER,
+	MAINMENU,
 }
 
 var game_manager: GameStateManager

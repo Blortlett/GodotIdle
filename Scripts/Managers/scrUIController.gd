@@ -5,24 +5,35 @@ class_name UIController extends Node
 @onready var EnemyCharacterUI: Control = get_node("../GameUI/SystemUI/CombatMenuUI")
 @onready var mShopMenuUI: Control = get_node("../GameUI/SystemUI/ShopMenuUI")
 @onready var CraftingMenuUI: Control = get_node("../GameUI/SystemUI/CraftMenuUI")
-
 # Player UIs / Right side screen UIs
 @onready var mInventoryUI: Control = get_tree().get_root().get_node("Node/GameUI/SystemUI/InventoryUI")
 @onready var mCharacterUI: Control = get_tree().get_root().get_node("Node/GameUI/SystemUI/CharacterUI")
-
 # GameOver UI
 @onready var mGameOverUI: Leaderboard = get_tree().get_root().get_node("Node/GameUI/SystemUI/Leaderboard")
+# MainMenu UI
+@onready var mMainMenuUI: MainMenu = get_tree().get_root().get_node("Node/GameUI/SystemUI/MainMenuUI")
 
 func _ready():
 	# Connect to state manager signals
 	var state_manager = get_node("../GameStateManager")
 	if state_manager:
 		state_manager.state_changed.connect(_on_state_changed)
-	
+	# Display MainMenu
+	DisplayMainMenu()
+
+func DisplayMainMenu():
+	hide_all_uis()
+	HomeUI.visible = false;
+	mInventoryUI.visible = false;
+	mCharacterUI.visible = false;
+	mMainMenuUI.visible = true;
+
+func StartGame():
 	hide_all_uis()
 	HomeUI.visible = true;
 	mInventoryUI.visible = true;
 	mCharacterUI.visible = true;
+	mMainMenuUI.visible = false;
 
 func ShowGameOverUI():
 	mGameOverUI.Open()

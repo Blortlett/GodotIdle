@@ -13,12 +13,13 @@ func _ready() -> void:
 		ShopState.new(self),
 		CraftingState.new(self),
 		GameOverState.new(self),
+		MainMenuState.new(self),
 	]
 	
 	for state in gameStates:
 		self.add_child(state)
 	
-	ChangeState(gameStates[0])
+	ChangeState(gameStates[6])
 
 func ChangeState(new_state: GameState) -> void:
 	if CurrentGameState != null:
@@ -108,6 +109,16 @@ class CraftingState extends GameState:
 	func ExitState() -> void:
 		print("Exited Craft State")
 
+class MainMenuState extends GameState:
+	func _init(manager: GameStateManager):
+		super(manager)
+		state_type = StateType.MAINMENU
+	func EnterState() -> void:
+		print("Entered Craft State")
+		
+	func ExitState() -> void:
+		print("Exited Craft State")
+
 # Swap functions remain the same
 func SwapToHomeState():
 	ChangeState(gameStates[0])
@@ -126,3 +137,6 @@ func SwapToCraftingState():
 
 func SwapToGameOverState():
 	ChangeState(gameStates[5])
+
+func SwapToMainMenuState():
+	ChangeState(gameStates[6])
