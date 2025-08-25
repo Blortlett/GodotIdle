@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8aw6sgpiap08"]
+[gd_scene load_steps=14 format=3 uid="uid://c8aw6sgpiap08"]
 
 [ext_resource type="Script" uid="uid://b8d1riuq4m3fn" path="res://Character/UI/scrCharacterDisplayUI.gd" id="1_vjeiu"]
 [ext_resource type="Texture2D" uid="uid://b3eswuyjyk6bx" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_Frame01a.png" id="2_cq7bf"]
 [ext_resource type="Texture2D" uid="uid://c1tfg1qrmh5f" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_Bar01a.png" id="3_mcttn"]
 [ext_resource type="FontFile" uid="uid://bhkd6t2hvac7k" path="res://Art/Fonts/PeaberryBase.ttf" id="4_acxql"]
 [ext_resource type="SpriteFrames" uid="uid://ck6sjg3apgjg1" path="res://Character/Sprites/BadGuys/sprfSlime.tres" id="5_25vls"]
+[ext_resource type="Shader" uid="uid://cd4l5nhi78cbn" path="res://Art/Shaders/shaderGlow.gdshader" id="5_ctor0"]
 [ext_resource type="Script" uid="uid://dcd6ff85kotbe" path="res://UI/DamageNumbers/DamageNumberController.gd" id="6_cq7bf"]
 [ext_resource type="LabelSettings" uid="uid://brx41ctbqnjir" path="res://UI/DamageNumbers/DmgNumLabelSettings.tres" id="7_ctor0"]
 [ext_resource type="LabelSettings" uid="uid://bcggigd5pug7c" path="res://UI/DamageNumbers/HealNumLabelSettings.tres" id="8_qrdnq"]
@@ -20,6 +21,14 @@ width = 68
 font = ExtResource("4_acxql")
 shadow_size = 2
 shadow_color = Color(0, 0, 0, 0.137255)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qrdnq"]
+shader = ExtResource("5_ctor0")
+shader_parameter/glow_color = Color(1, 0.9, 0.5, 1)
+shader_parameter/glow_intensity = 0.56
+shader_parameter/glow_distance = 1.699
+shader_parameter/blend_amount = 0.18
+shader_parameter/pulse_speed = 0.0
 
 [node name="CharacterDisplay" type="Control" node_paths=PackedStringArray("CreatureSpriteDisplay", "CreatureInfoPanel", "DisplaySprite", "CreatureNameDisplay", "CreatureHealthDisplay")]
 layout_mode = 3
@@ -140,6 +149,7 @@ grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CreatureDisplay/CenterContainer"]
 texture_filter = 1
+material = SubResource("ShaderMaterial_qrdnq")
 scale = Vector2(2, 2)
 sprite_frames = ExtResource("5_25vls")
 animation = &"Attack2"

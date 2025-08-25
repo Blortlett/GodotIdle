@@ -3,8 +3,16 @@ class_name AudioManager extends Node
 @onready var PlayerHitAudioPlayer: AudioStreamPlayer = get_tree().get_root().get_node("Node/AudioPlayers/PlayerHitAudioStreamPlayer")
 @onready var EnemyAttackAudioPlayer: AudioStreamPlayer = get_tree().get_root().get_node("Node/AudioPlayers/EnemyAttackAudioStreamPlayer")
 @onready var EnemyHitAudioPlayer: AudioStreamPlayer = get_tree().get_root().get_node("Node/AudioPlayers/EnemyHitAudioStreamPlayer")
+@onready var ButtonClickAudioPlayer: AudioStreamPlayer = get_tree().get_root().get_node("Node/AudioPlayers/ButtonAudioStreamPlayer")
 
 @onready var mCharacterRegister: CharacterRegister = get_tree().get_root().get_node("Node/CharacterRegister")
+
+@export var mButtonAudio: Array[AudioStream]
+
+func ButtonClickPlayAudio():
+	var audioIndex = randi_range(0, 2)
+	ButtonClickAudioPlayer.stream = mButtonAudio[audioIndex]
+	ButtonClickAudioPlayer.play()
 
 func PlayerAttackPlayAudio():
 	if mCharacterRegister.mActiveCharacter.mAttackSound:

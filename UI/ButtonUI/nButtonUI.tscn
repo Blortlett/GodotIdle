@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw6wtuw8h4nqc"]
+[gd_scene load_steps=7 format=3 uid="uid://cw6wtuw8h4nqc"]
 
 [ext_resource type="Texture2D" uid="uid://kqhn0hwcpnid" path="res://Art/TravelBookUI/AnimatedSprites/Button/UI_TravelBook_Button01a_4.png" id="1_ixhkc"]
+[ext_resource type="Script" uid="uid://dkjrcidx2q4fm" path="res://UI/ButtonUI/scrButtonClick.gd" id="2_4moh0"]
 [ext_resource type="FontFile" uid="uid://bhkd6t2hvac7k" path="res://Art/Fonts/PeaberryBase.ttf" id="2_6hh5t"]
+[ext_resource type="Texture2D" uid="uid://coevcludfskv0" path="res://Art/TravelBookUI/AnimatedSprites/Button/UI_TravelBook_Button01a_1.png" id="4_4moh0"]
 
 [sub_resource type="Theme" id="Theme_ixhkc"]
 default_font = ExtResource("2_6hh5t")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4moh0"]
 
 [node name="Button" type="Button"]
 texture_filter = 1
@@ -20,10 +24,28 @@ offset_bottom = -297.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_ixhkc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4moh0")
 text = "Sunny Meadow"
 flat = true
+script = ExtResource("2_4moh0")
 
-[node name="ButtonGFX" type="NinePatchRect" parent="."]
+[node name="ButtonGFXPushed" type="NinePatchRect" parent="."]
+visible = false
+show_behind_parent = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4moh0")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ButtonGFXReleased" type="NinePatchRect" parent="."]
 show_behind_parent = true
 texture_filter = 1
 layout_mode = 1
