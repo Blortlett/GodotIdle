@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://ckcfd0biiasvc"]
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://ckcfd0biiasvc"]
 
 [ext_resource type="SpriteFrames" uid="uid://bq0mjbyc7t1an" path="res://Character/Sprites/GoodGuys/sprfWarrior.tres" id="1_fggq8"]
+[ext_resource type="AudioStream" uid="uid://d11ptu0umcsx2" path="res://Art/SFX/Melee/Sword/DSGNMisc_MELEE-Bit Sword_HY_PC-001.wav" id="2_h2xu1"]
 [ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="2_qd3sn"]
+[ext_resource type="AudioStream" uid="uid://cayjep8517klh" path="res://Art/SFX/Melee/Sword/DSGNMisc_MELEE-Bit Sword_HY_PC-002.wav" id="3_ew23r"]
+[ext_resource type="AudioStream" uid="uid://cfowawbb730r1" path="res://Art/SFX/Melee/Sword/DSGNMisc_MELEE-Bit Sword_HY_PC-003.wav" id="4_slnoo"]
+[ext_resource type="AudioStream" uid="uid://ckcr0nav2waug" path="res://Art/SFX/Character/Generic/Hit/Sharp/DSGNMisc_HIT-Hit Noise_HY_PC-001.wav" id="5_rav2r"]
+[ext_resource type="AudioStream" uid="uid://wcg2i3g51epd" path="res://Art/SFX/Character/Generic/Hit/Sharp/DSGNMisc_HIT-Hit Noise_HY_PC-002.wav" id="6_waxox"]
+[ext_resource type="AudioStream" uid="uid://bam5qm7762hbp" path="res://Art/SFX/Character/Generic/Hit/Sharp/DSGNMisc_HIT-Hit Noise_HY_PC-003.wav" id="7_lfqgb"]
 
 [resource]
 script = ExtResource("2_qd3sn")
@@ -15,4 +21,6 @@ MagicDamage = 0.0
 Defense = 5.0
 MagicDefense = 0.0
 AttackSpeed = 0.9
+mHitSound = Array[AudioStream]([ExtResource("5_rav2r"), ExtResource("6_waxox"), ExtResource("7_lfqgb")])
+mAttackSound = Array[AudioStream]([ExtResource("2_h2xu1"), ExtResource("3_ew23r"), ExtResource("4_slnoo")])
 metadata/_custom_type_script = "uid://dhdrxna4ooxij"

@@ -1,8 +1,14 @@
-[gd_resource type="Resource" script_class="Character" load_steps=4 format=3 uid="uid://bpgn4u4gf56w"]
+[gd_resource type="Resource" script_class="Character" load_steps=10 format=3 uid="uid://bpgn4u4gf56w"]
 
 [ext_resource type="SpriteFrames" uid="uid://77nb86i1fech" path="res://Character/Sprites/BadGuys/sprfSkeleton.tres" id="1_hj4dg"]
 [ext_resource type="Resource" uid="uid://b3cu65phfuqve" path="res://Inventory/LootTable/Tables/SkeletonLootTable.tres" id="1_ue78r"]
 [ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="2_vbpxy"]
+[ext_resource type="AudioStream" uid="uid://d31yife3xubku" path="res://Art/SFX/Character/Skeleton/Attack/DSGNMisc_SKILL IMPACT-Pebbles_HY_PC-001.wav" id="2_yvv5c"]
+[ext_resource type="AudioStream" uid="uid://dasmhoi4sdbu8" path="res://Art/SFX/Character/Skeleton/Attack/DSGNMisc_SKILL IMPACT-Pebbles_HY_PC-002.wav" id="3_5n37p"]
+[ext_resource type="AudioStream" uid="uid://c262wfo0ybh3e" path="res://Art/SFX/Character/Skeleton/Attack/DSGNMisc_SKILL IMPACT-Pebbles_HY_PC-003.wav" id="4_0mnn2"]
+[ext_resource type="AudioStream" uid="uid://c6e513tahcmwi" path="res://Art/SFX/Character/Skeleton/Hit/DSGNMisc_HIT-Hit Rattle_HY_PC-001.wav" id="5_1667u"]
+[ext_resource type="AudioStream" uid="uid://dy0u614d6x6a8" path="res://Art/SFX/Character/Skeleton/Hit/DSGNMisc_HIT-Hit Rattle_HY_PC-002.wav" id="6_5v6yr"]
+[ext_resource type="AudioStream" uid="uid://bdgb82ue1qgyg" path="res://Art/SFX/Character/Skeleton/Hit/DSGNMisc_HIT-Hit Rattle_HY_PC-003.wav" id="7_r1oyg"]
 
 [resource]
 script = ExtResource("2_vbpxy")
@@ -17,4 +23,6 @@ Defense = 2.0
 MagicDefense = 4.0
 AttackSpeed = 1.4
 mLootTable = ExtResource("1_ue78r")
+mHitSound = Array[AudioStream]([ExtResource("5_1667u"), ExtResource("6_5v6yr"), ExtResource("7_r1oyg")])
+mAttackSound = Array[AudioStream]([ExtResource("2_yvv5c"), ExtResource("3_5n37p"), ExtResource("4_0mnn2")])
 metadata/_custom_type_script = "uid://dhdrxna4ooxij"

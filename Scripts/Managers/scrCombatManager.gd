@@ -14,6 +14,9 @@ var CharacterHealCurrentTimer: float = CharacterHealTimerMax;
 @onready var mPlayerEquipmentManager: EquipmentManager = get_node("../GameUI/SystemUI/CharacterUI/EquipmentUI");
 @onready var mGameStateManager: GameStateManager = get_tree().get_root().get_node("Node/GameStateManager")
 
+# Audio manager
+@onready var mAudioManager: AudioManager = get_tree().get_root().get_node("Node/AudioPlayers")
+
 var IsCombatActive: bool = false;
 # Attack cooldown
 var PlayerAttackTimer: float = 1;
@@ -38,17 +41,21 @@ func _process(delta):
 
 func _PlayerAttackTick():
 	# Player attack here
-			mCharacterDisplayController.PlayerDisplay.PlayAttackAnimation();
-			ApplyAttackDamage(mCharacterRegister.mActiveCharacter, mCharacterRegister.mActiveEnemyCharacter)
-			# Reset Player attack timer
-			PlayerAttackTimer = mCharacterRegister.mActiveCharacter.AttackSpeed;
+	mCharacterDisplayController.PlayerDisplay.PlayAttackAnimation();
+	ApplyAttackDamage(mCharacterRegister.mActiveCharacter, mCharacterRegister.mActiveEnemyCharacter)
+	# Reset Player attack timer
+	PlayerAttackTimer = mCharacterRegister.mActiveCharacter.AttackSpeed;
+	mAudioManager.EnemyHitPlayAudio()
+	mAudioManager.PlayerAttackPlayAudio()
 
 func _EnemyAttackTick():
 	#Enemy attack here
-			mCharacterDisplayController.EnemyDisplay.PlayAttackAnimation();
-			ApplyAttackDamage(mCharacterRegister.mActiveEnemyCharacter, mCharacterRegister.mActiveCharacter)
-			# Reset Enemy attack timer
-			EnemyAttackTimer = mCharacterRegister.mActiveEnemyCharacter.AttackSpeed;
+	mCharacterDisplayController.EnemyDisplay.PlayAttackAnimation();
+	ApplyAttackDamage(mCharacterRegister.mActiveEnemyCharacter, mCharacterRegister.mActiveCharacter)
+	# Reset Enemy attack timer
+	EnemyAttackTimer = mCharacterRegister.mActiveEnemyCharacter.AttackSpeed;
+	mAudioManager.PlayerHitPlayAudio()
+	mAudioManager.EnemyAttackPlayAudio()
 
 func HealPlayerTick():
 	if mCharacterRegister.mActiveCharacter.CurrentHealth <= 0 && !IsHome:

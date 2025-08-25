@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://8vyvaxykm4g4"]
+[gd_scene load_steps=19 format=3 uid="uid://8vyvaxykm4g4"]
 
 [ext_resource type="PackedScene" uid="uid://b3bd2ccqkh00a" path="res://Inventory/UI/InventoryUI/nInventoryUI.tscn" id="1_x6p71"]
 [ext_resource type="Texture2D" uid="uid://cwvgpea6e7h8g" path="res://Art/wood_texture_full_screen.png" id="1_xnu72"]
@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://daodhq5dbe7" path="res://Areas/scrAreaManager.gd" id="12_0l2m4"]
 [ext_resource type="Script" uid="uid://8dyup1wg1q7x" path="res://Scripts/Managers/scrConsumableManager.gd" id="12_xnu72"]
 [ext_resource type="Script" uid="uid://c6pgxkhlsuos4" path="res://Scripts/Data/scrPlayerData.gd" id="14_yplc7"]
+[ext_resource type="Script" uid="uid://dckidhvtbon68" path="res://Scripts/Managers/scrAudioManager.gd" id="18_icscj"]
 
 [node name="Node" type="Node"]
 
@@ -74,3 +75,14 @@ metadata/_custom_type_script = "uid://8dyup1wg1q7x"
 
 [node name="PlayerData" type="Node" parent="."]
 script = ExtResource("14_yplc7")
+
+[node name="AudioPlayers" type="Node" parent="."]
+script = ExtResource("18_icscj")
+
+[node name="PlayerAttackAudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="PlayerHitAudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="EnemyAttackAudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+
+[node name="EnemyHitAudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]

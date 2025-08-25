@@ -1,8 +1,14 @@
-[gd_resource type="Resource" script_class="Character" load_steps=4 format=3 uid="uid://cthf622hxw7xg"]
+[gd_resource type="Resource" script_class="Character" load_steps=10 format=3 uid="uid://cthf622hxw7xg"]
 
 [ext_resource type="Resource" uid="uid://d23ss2774chmo" path="res://Inventory/LootTable/Tables/WolfLootTable.tres" id="1_nocrd"]
 [ext_resource type="SpriteFrames" uid="uid://dm2w2d2vhjx6c" path="res://Character/Sprites/BadGuys/sprfWolf.tres" id="2_fkpck"]
+[ext_resource type="AudioStream" uid="uid://d0sorbfajvx8e" path="res://Art/SFX/Character/Generic/Hit/Melow/DSGNMisc_SKILL RELEASE-Chirping Critter_HY_PC-001.wav" id="2_g8pqi"]
+[ext_resource type="AudioStream" uid="uid://d11ptu0umcsx2" path="res://Art/SFX/Melee/Sword/DSGNMisc_MELEE-Bit Sword_HY_PC-001.wav" id="2_opc5d"]
 [ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="2_x5yvg"]
+[ext_resource type="AudioStream" uid="uid://c7u8bu356liig" path="res://Art/SFX/Character/Generic/Hit/Melow/DSGNMisc_SKILL RELEASE-Chirping Critter_HY_PC-002.wav" id="3_3i5ep"]
+[ext_resource type="AudioStream" uid="uid://cayjep8517klh" path="res://Art/SFX/Melee/Sword/DSGNMisc_MELEE-Bit Sword_HY_PC-002.wav" id="3_bmplr"]
+[ext_resource type="AudioStream" uid="uid://cfowawbb730r1" path="res://Art/SFX/Melee/Sword/DSGNMisc_MELEE-Bit Sword_HY_PC-003.wav" id="4_ko6im"]
+[ext_resource type="AudioStream" uid="uid://bxkq85mxupk4g" path="res://Art/SFX/Character/Generic/Hit/Melow/DSGNMisc_SKILL RELEASE-Chirping Critter_HY_PC-003.wav" id="4_sln0r"]
 
 [resource]
 script = ExtResource("2_x5yvg")
@@ -17,4 +23,6 @@ Defense = 4.0
 MagicDefense = 2.0
 AttackSpeed = 1.2
 mLootTable = ExtResource("1_nocrd")
+mHitSound = Array[AudioStream]([ExtResource("2_g8pqi"), ExtResource("3_3i5ep"), ExtResource("4_sln0r")])
+mAttackSound = Array[AudioStream]([ExtResource("2_opc5d"), ExtResource("3_bmplr"), ExtResource("4_ko6im")])
 metadata/_custom_type_script = "uid://dhdrxna4ooxij"

@@ -28,6 +28,9 @@ enum AllianceType
 
 @export var mLootTable: LootTable;
 
+@export var mHitSound: Array[AudioStream]
+@export var mAttackSound: Array[AudioStream]
+
 var CharacterID: int;
 var CurrentHealth: float;
 

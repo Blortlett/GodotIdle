@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="Character" load_steps=3 format=3 uid="uid://dg3s05hoirm13"]
+[gd_resource type="Resource" script_class="Character" load_steps=9 format=3 uid="uid://dg3s05hoirm13"]
 
-[ext_resource type="SpriteFrames" uid="uid://bqcrmjx5wggrq" path="res://Character/Sprites/GoodGuys/sprfWarrior.tres" id="1_r4blx"]
+[ext_resource type="SpriteFrames" uid="uid://bqcrmjx5wggrq" path="res://Character/Sprites/GoodGuys/sprfRanger.tres" id="1_r4blx"]
+[ext_resource type="AudioStream" uid="uid://d10br8lwvct8t" path="res://Art/SFX/Magic/NoisyHit/DSGNMisc_HIT-Noisy Hit_HY_PC-001.wav" id="2_85c1v"]
 [ext_resource type="Script" uid="uid://dhdrxna4ooxij" path="res://Character/scrCharacter.gd" id="2_rnd26"]
+[ext_resource type="AudioStream" uid="uid://bvk8y0egamjws" path="res://Art/SFX/Magic/NoisyHit/DSGNMisc_HIT-Noisy Hit_HY_PC-002.wav" id="3_0alln"]
+[ext_resource type="AudioStream" uid="uid://c8eg50g0ckf8w" path="res://Art/SFX/Magic/NoisyHit/DSGNMisc_HIT-Noisy Hit_HY_PC-003.wav" id="4_ull7y"]
+[ext_resource type="AudioStream" uid="uid://ckcr0nav2waug" path="res://Art/SFX/Character/Generic/Hit/Sharp/DSGNMisc_HIT-Hit Noise_HY_PC-001.wav" id="5_gsdaw"]
+[ext_resource type="AudioStream" uid="uid://wcg2i3g51epd" path="res://Art/SFX/Character/Generic/Hit/Sharp/DSGNMisc_HIT-Hit Noise_HY_PC-002.wav" id="6_p7ehb"]
+[ext_resource type="AudioStream" uid="uid://bam5qm7762hbp" path="res://Art/SFX/Character/Generic/Hit/Sharp/DSGNMisc_HIT-Hit Noise_HY_PC-003.wav" id="7_q3kcw"]
 
 [resource]
 script = ExtResource("2_rnd26")
@@ -15,4 +21,6 @@ MagicDamage = 4.0
 Defense = 3.0
 MagicDefense = 2.0
 AttackSpeed = 0.8
+mHitSound = Array[AudioStream]([ExtResource("5_gsdaw"), ExtResource("6_p7ehb"), ExtResource("7_q3kcw")])
+mAttackSound = Array[AudioStream]([ExtResource("2_85c1v"), ExtResource("3_0alln"), ExtResource("4_ull7y")])
 metadata/_custom_type_script = "uid://dhdrxna4ooxij"
