@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b3bd2ccqkh00a"]
+[gd_scene load_steps=29 format=3 uid="uid://b3bd2ccqkh00a"]
 
 [ext_resource type="Script" uid="uid://c3uatp5gji5ue" path="res://Inventory/UI/InventoryUI/scrINV_UI.gd" id="1_dhcfh"]
 [ext_resource type="Texture2D" uid="uid://cwn4h5cyakgm7" path="res://Art/TravelBookUI/Sprites/UI_TravelBook_BookCover01a.png" id="2_il5vc"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://cpg1a1wsy0lyf" path="res://UI/LeaderboardUI/HighscoreListing/nHighscoreListing.tscn" id="19_7v7bm"]
 [ext_resource type="Script" uid="uid://djtkogxn2euc2" path="res://UI/LeaderboardUI/HighscoreTextInput/scrTextInput.gd" id="21_wdj51"]
 [ext_resource type="FontFile" uid="uid://bhkd6t2hvac7k" path="res://Art/Fonts/PeaberryBase.ttf" id="22_g7yk1"]
-[ext_resource type="PackedScene" uid="uid://cw6wtuw8h4nqc" path="res://UI/ButtonUI/nButtonUI.tscn" id="23_cxxgu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pgv5h"]
 font = ExtResource("10_e220e")
@@ -459,7 +458,8 @@ layout_mode = 2
 [node name="InvSlotUI12" parent="SystemUI/InventoryUI/InventoryGrid" instance=ExtResource("4_keych")]
 layout_mode = 2
 
-[node name="Leaderboard" type="Control" parent="SystemUI" node_paths=PackedStringArray("HighscoreParentUI", "mNameTextInput", "RestartButton")]
+[node name="Leaderboard" type="Control" parent="SystemUI" node_paths=PackedStringArray("HighscoreParentUI", "mNameTextInput")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -470,7 +470,6 @@ mouse_filter = 2
 script = ExtResource("18_flelm")
 HighscoreParentUI = NodePath("HighscoresDisplayUI/GridContainer")
 mNameTextInput = NodePath("TextInputUI")
-RestartButton = NodePath("RestartGameButton")
 
 [node name="LeaderBoardTitle" type="Control" parent="SystemUI/Leaderboard"]
 layout_mode = 1
@@ -566,18 +565,6 @@ offset_right = 283.0
 offset_bottom = 117.0
 theme_override_fonts/font = ExtResource("22_g7yk1")
 text = ">"
-
-[node name="RestartGameButton" parent="SystemUI/Leaderboard" instance=ExtResource("23_cxxgu")]
-layout_mode = 1
-anchors_preset = 7
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -62.0
-offset_top = -49.0
-offset_right = 62.0
-offset_bottom = -22.0
-grow_vertical = 0
-text = "RESTART"
 
 [node name="CharacterDisplayController" type="Node" parent="." node_paths=PackedStringArray("PlayerDisplay", "EnemyDisplay")]
 script = ExtResource("11_kbc3c")

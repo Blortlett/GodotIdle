@@ -1,5 +1,4 @@
-class_name UIController
-extends Node
+class_name UIController extends Node
 
 @onready var HomeUI: Control = get_node("../GameUI/SystemUI/HomeMenuUI")
 @onready var DestinationUI: Control = get_node("../GameUI/SystemUI/DestinationMenuUI")
@@ -11,6 +10,8 @@ extends Node
 @onready var mInventoryUI: Control = get_tree().get_root().get_node("Node/GameUI/SystemUI/InventoryUI")
 @onready var mCharacterUI: Control = get_tree().get_root().get_node("Node/GameUI/SystemUI/CharacterUI")
 
+# GameOver UI
+@onready var mGameOverUI: Leaderboard = get_tree().get_root().get_node("Node/GameUI/SystemUI/Leaderboard")
 
 func _ready():
 	# Connect to state manager signals
@@ -20,7 +21,16 @@ func _ready():
 	
 	hide_all_uis()
 	HomeUI.visible = true;
+	mInventoryUI.visible = true;
+	mCharacterUI.visible = true;
 
+func ShowGameOverUI():
+	mGameOverUI.Open()
+	mInventoryUI.visible = false
+
+func HideGameOverUI():
+	mGameOverUI.Close()
+	mInventoryUI.visible = true
 
 func hide_all_uis():
 	HomeUI.visible = false

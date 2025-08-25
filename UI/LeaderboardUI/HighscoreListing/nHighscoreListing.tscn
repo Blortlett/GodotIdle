@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpg1a1wsy0lyf"]
+
+[ext_resource type="Script" uid="uid://cgovsycvnc0xb" path="res://UI/LeaderboardUI/HighscoreListing/scrHighscoreListing.gd" id="1_7k7tw"]
+[ext_resource type="FontFile" uid="uid://bhkd6t2hvac7k" path="res://Art/Fonts/PeaberryBase.ttf" id="1_dxqai"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_flelm"]
+font = ExtResource("1_dxqai")
+font_color = Color(0.00376037, 0.00374117, 0.00130869, 1)
+
+[node name="HighscoreListing" type="Control" node_paths=PackedStringArray("NameLabelUI", "KillsLabelUI", "CashLabelUI", "ScoreLabelUI")]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_7k7tw")
+NameLabelUI = NodePath("PlayerNameDisplayUI")
+KillsLabelUI = NodePath("EnemyKillsDisplayUI")
+CashLabelUI = NodePath("CashDisplayUI")
+ScoreLabelUI = NodePath("FinalScoreDisplayUI")
+
+[node name="PlayerNameDisplayUI" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 19.0
+offset_right = 79.0
+offset_bottom = 16.0
+text = "[Name]"
+label_settings = SubResource("LabelSettings_flelm")
+
+[node name="EnemyKillsDisplayUI" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 111.0
+offset_right = 171.0
+offset_bottom = 16.0
+text = "[Kills]"
+label_settings = SubResource("LabelSettings_flelm")
+
+[node name="CashDisplayUI" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 214.0
+offset_right = 274.0
+offset_bottom = 16.0
+text = "[Cash]"
+label_settings = SubResource("LabelSettings_flelm")
+
+[node name="FinalScoreDisplayUI" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 304.0
+offset_right = 364.0
+offset_bottom = 16.0
+text = "[Score]"
+label_settings = SubResource("LabelSettings_flelm")

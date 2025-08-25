@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HighscoreData" load_steps=2 format=3 uid="uid://umanug4r3045"]
+
+[ext_resource type="Script" uid="uid://suea12p83snw" path="res://UI/LeaderboardUI/HighscoreListing/scrHighscoreData.gd" id="1_qr3xc"]
+
+[resource]
+script = ExtResource("1_qr3xc")
+PlayerName = "Mr. Key"
+EnemyKills = 30
+CashCollected = 2000
+metadata/_custom_type_script = "uid://suea12p83snw"

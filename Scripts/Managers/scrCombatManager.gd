@@ -12,6 +12,7 @@ var CharacterHealCurrentTimer: float = CharacterHealTimerMax;
 @onready var mInventoryUI: InventoryUI = get_node("../GameUI");
 @onready var mCharacterDisplayController: CharacterDisplayController = get_node("../GameUI/CharacterDisplayController");
 @onready var mPlayerEquipmentManager: EquipmentManager = get_node("../GameUI/SystemUI/CharacterUI/EquipmentUI");
+@onready var mGameStateManager: GameStateManager = get_tree().get_root().get_node("Node/GameStateManager")
 
 var IsCombatActive: bool = false;
 # Attack cooldown
@@ -153,6 +154,7 @@ func HandleCharacterDeath():
 	# Player Death
 	if (mCharacterRegister.mActiveCharacter.CurrentHealth <= 0):
 		mCharacterDisplayController.PlayerDisplay.PlayDeathAnimation();
+		mGameStateManager.SwapToGameOverState();
 		EndCombat();
 
 func AddLootDropToInv(lootDrop: Array[InvSlot]):

@@ -12,6 +12,7 @@ func _ready() -> void:
 		ExploringState.new(self),
 		ShopState.new(self),
 		CraftingState.new(self),
+		GameOverState.new(self),
 	]
 	
 	for state in gameStates:
@@ -73,6 +74,18 @@ class ExploringState extends GameState:
 	func ExitState() -> void:
 		print("Exited Exploring State")
 
+class GameOverState extends GameState:
+	@onready var mLeaderboardUI: Leaderboard = get_tree().get_root().get_node("Node/GameUI/SystemUI/Leaderboard")
+	@onready var mDisplayManager: UIController = get_tree().get_root().get_node("Node/UIController")
+	func _init(manager: GameStateManager):
+		super(manager)
+		state_type = StateType.GAMEOVER
+	func EnterState() -> void:
+		mLeaderboardUI.mNameTextInput.GetName()
+		mDisplayManager.hide_all_uis()
+		mDisplayManager.hide_player_uis()
+		mDisplayManager.ShowGameOverUI()
+
 class ShopState extends GameState:
 	func _init(manager: GameStateManager):
 		super(manager)
@@ -110,3 +123,6 @@ func SwapToShopState():
 
 func SwapToCraftingState():
 	ChangeState(gameStates[4])
+
+func SwapToGameOverState():
+	ChangeState(gameStates[5])

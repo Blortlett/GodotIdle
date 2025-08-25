@@ -6,7 +6,8 @@ enum StateType {
 	DESTINATION_MENU,
 	EXPLORING,
 	SHOP,
-	CRAFTING
+	CRAFTING,
+	GAMEOVER,
 }
 
 var game_manager: GameStateManager
