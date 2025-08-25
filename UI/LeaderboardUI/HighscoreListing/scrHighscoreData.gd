@@ -2,7 +2,7 @@ class_name HighscoreData extends Resource
 @export var PlayerName: String
 @export var EnemyKills: int
 @export var CashCollected: int
-var FinalScore: int
+@export var FinalScore: int
 
 var KillToScoreMult = 10
 var CashToScoreMult = 3

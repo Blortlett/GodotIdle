@@ -10,7 +10,7 @@ func GetName():
 	self.visible = true
 	# Configure the LineEdit for mobile input
 	name_input.virtual_keyboard_enabled = true
-	name_input.max_length = 9  # Optional: limit name length
+	name_input.max_length = 7  # limit name length
 	
 	# Connect signals
 	name_input.text_submitted.connect(_on_name_submitted)

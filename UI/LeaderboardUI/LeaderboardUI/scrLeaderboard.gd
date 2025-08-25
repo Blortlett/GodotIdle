@@ -25,7 +25,7 @@ func Close():
 	self.visible = false;
 
 func LoadLeaderboardData():
-	if ResourceLoader.exists(save_path):
+	if FileAccess.file_exists(save_path):
 		mLeaderboardData = ResourceLoader.load(save_path) as LeaderboardData
 	else:
 		mLeaderboardData = LeaderboardData.new()  # Create empty if none exists
@@ -41,7 +41,6 @@ func DisplayLeaderboard():
 		HighscoreParentUI.add_child(NewHighscoreListing)
 
 func SaveHighscore(_HighscoreData: HighscoreData):
-	LoadLeaderboardData()
 	mLeaderboardData.highscores.append(_HighscoreData)
 	var err = ResourceSaver.save(mLeaderboardData, save_path)
 	if err != OK:
