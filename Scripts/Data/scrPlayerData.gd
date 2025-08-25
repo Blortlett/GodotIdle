@@ -6,6 +6,11 @@ var mEnemiesKilled: int = 0;
 @onready var mEnemyKillCountDisplay: Label = get_tree().get_root().get_node("Node/GameUI/SystemUI/CombatMenuUI/EnemiesKilledLabel")
 @onready var mCombatManager: CombatManager = get_tree().get_root().get_node("Node/CombatManager")
 
+func ResetData():
+	mPlayerMoney = 0;
+	mEnemiesKilled = 0;
+	_ready()
+
 func _ready() -> void:
 	RefreshPlayerMoneyDisplay()
 	RefreshEnemyKillCountDisplay()

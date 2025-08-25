@@ -11,6 +11,11 @@ var save_path = "user://highscore_leaderboard.tres"
 # Restart button
 @export var RestartButton: Button
 
+# Restartables
+@onready var mGameStateManager: GameStateManager = get_tree().get_root().get_node("Node/GameStateManager")
+@onready var mUIController: UIController = get_tree().get_root().get_node("Node/UIController")
+@onready var mPlayerData: PlayerData = get_tree().get_root().get_node("Node/PlayerData")
+
 func _ready() -> void:
 	RestartButton.pressed.connect(RestartGame)
 	mNameTextInput.mLeaderboardController = self
@@ -49,3 +54,7 @@ func SaveHighscore(_HighscoreData: HighscoreData):
 
 func RestartGame():
 	print("Restarting Game...")
+	mUIController._ready()
+	mGameStateManager.SwapToHomeState()
+	mPlayerData.ResetData()
+	Close()
