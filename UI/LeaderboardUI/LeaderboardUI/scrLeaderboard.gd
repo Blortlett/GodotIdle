@@ -15,6 +15,8 @@ var save_path = "user://highscore_leaderboard.tres"
 @onready var mGameStateManager: GameStateManager = get_tree().get_root().get_node("Node/GameStateManager")
 @onready var mUIController: UIController = get_tree().get_root().get_node("Node/UIController")
 @onready var mPlayerData: PlayerData = get_tree().get_root().get_node("Node/PlayerData")
+@onready var mPlayerInventory: InventoryUI = get_tree().get_root().get_node("Node/GameUI")
+@onready var mPlayerEquipmentInventory: InventoryUI = get_tree().get_root().get_node("Node/GameUI/SystemUI/CharacterUI/EquipmentUI/Slots")
 
 func _ready() -> void:
 	RestartButton.pressed.connect(RestartGame)
@@ -57,4 +59,6 @@ func RestartGame():
 	mUIController._ready()
 	mGameStateManager.SwapToHomeState()
 	mPlayerData.ResetData()
+	mPlayerInventory.GetInventory().ClearInventory()
+	mPlayerEquipmentInventory.GetInventory().ClearInventory()
 	Close()

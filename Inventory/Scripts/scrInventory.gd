@@ -2,6 +2,12 @@ class_name Inv extends Resource
 @export var slots: Array[InvSlot];
 signal update;
 
+func ClearInventory():
+	for slot: InvSlot in slots:
+		slot.item = null;
+		slot.amount = 0;
+	update.emit();
+
 #insert item into first spot in inventory. will stack
 func insert(item: InvItem):
 	var itemSlots = slots.filter(func(slot): return slot.item == item)

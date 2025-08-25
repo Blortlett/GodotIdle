@@ -156,6 +156,7 @@ func HandleCharacterDeath():
 		mCharacterDisplayController.PlayerDisplay.PlayDeathAnimation();
 		mGameStateManager.SwapToGameOverState();
 		EndCombat();
+		mCharacterRegister.mActiveCharacter.CurrentHealth = mCharacterRegister.mActiveCharacter.Health
 
 func AddLootDropToInv(lootDrop: Array[InvSlot]):
 	# foreach InventorySlot
